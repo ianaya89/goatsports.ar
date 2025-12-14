@@ -42,9 +42,9 @@ const upcomingCampus: CampusEvent[] = [
     description:
       "Mudamos toda la experiencia GOAT a la ciudad de Rosario, y te invitamos a vivir esta edición en las instalaciones de primer nivel que nos ofrece Estancia Damfield.",
     imageUrl: "/images/damfield.jpg",
-    isPast: false,
+    isPast: true,
     link: "https://rosario.goatsports.ar",
-    openRegistration: true,
+    openRegistration: false,
   },{
     id: "summer-2025",
     title: "Campus Verano 2025 en GEBA",

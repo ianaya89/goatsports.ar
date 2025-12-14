@@ -16,15 +16,15 @@ export default function CampusPromoModal({ isOpen, onClose }: CampusPromoModalPr
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[650px] max-h-[90vh] m-4 sm:m-0 overflow-y-auto p-0 border-0">
         {/* Hidden Dialog Title for Accessibility */}
-        <DialogTitle className="sr-only">Campus Verano 2025 Rosario - Inscripciones Abiertas</DialogTitle>
+        <DialogTitle className="sr-only">Campus Verano 2025 GEBA - Inscripciones Abiertas</DialogTitle>
 
         {/* Hero Section with Overlay */}
         <div className="relative h-72">
           {/* Background Image with Gradient Overlay */}
           <div className="absolute inset-0">
             <ImageWithFallback
-              src="/images/damfield.jpg"
-              alt="Campus Verano 2025 Rosario"
+              src="/images/campus-coaches-players.jpg"
+              alt="Campus Verano 2025 GEBA"
               fallbackSrc="/placeholder-kngc1.png"
               className="w-full h-full object-cover"
             />
@@ -59,7 +59,7 @@ export default function CampusPromoModal({ isOpen, onClose }: CampusPromoModalPr
               CAMPUS VERANO 2025
             </h2>
             <p className="text-xl font-bold text-yellow-400">
-              ROSARIO • SANTA FE
+              GEBA • CIUDAD DE BUENOS AIRES
             </p>
           </div>
         </div>
@@ -75,7 +75,7 @@ export default function CampusPromoModal({ isOpen, onClose }: CampusPromoModalPr
                 </div>
                 <div>
                   <p className="text-xs text-gray-500 uppercase font-medium">Fecha</p>
-                  <p className="text-sm font-bold text-gray-900">9, 10 y 11 Diciembre</p>
+                  <p className="text-sm font-bold text-gray-900">Diciembre 2025</p>
                 </div>
               </div>
             </div>
@@ -86,7 +86,7 @@ export default function CampusPromoModal({ isOpen, onClose }: CampusPromoModalPr
                 </div>
                 <div>
                   <p className="text-xs text-gray-500 uppercase font-medium">Lugar</p>
-                  <p className="text-sm font-bold text-gray-900">Estancia Damfield</p>
+                  <p className="text-sm font-bold text-gray-900">GEBA</p>
                 </div>
               </div>
             </div>
@@ -98,20 +98,15 @@ export default function CampusPromoModal({ isOpen, onClose }: CampusPromoModalPr
               <Trophy className="h-5 w-5 text-green-600 mt-0.5" />
               <div>
                 <p className="text-sm font-bold text-gray-900 mb-2">
-                  ¡Cuanto más temprano asegures tu lugar, más dinero te ahorrás!
+                  ¡Nuestro Campus en GEBA ya se convirtió en un clásico del verano!
                 </p>
                 <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-600">Primer Lote (1-31 Oct):</span>
-                    <span className="text-sm font-bold text-green-600">$170.000</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-600">Segundo Lote (1-20 Nov):</span>
-                    <span className="text-sm font-bold text-orange-600">$185.000</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-600">Último Lote (21 Nov-5 Dic):</span>
-                    <span className="text-sm font-bold text-red-600">$200.000</span>
+                  <div className="text-center">
+                    <p className="text-sm text-gray-600 mb-2">Seguinos en Instagram para enterarte primero cuando abramos inscripciones.</p>
+                    <span className="inline-flex items-center gap-1 rounded-full bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1.5">
+                      <Users className="h-3 w-3" />
+                      @goatsports.ar
+                    </span>
                   </div>
                 </div>
               </div>
@@ -121,9 +116,9 @@ export default function CampusPromoModal({ isOpen, onClose }: CampusPromoModalPr
 
           {/* CTA Buttons */}
           <div className="space-y-3">
-            <a href="https://rosario.goatsports.ar" target="_blank" className="block">
+            <a href="https://summer.goatsports.ar" target="_blank" className="block">
               <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 group">
-                <span>¡RESERVÁ TU LUGAR AHORA!</span>
+                <span>¡CONOCÉ MÁS SOBRE EL CAMPUS!</span>
                 <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </a>
