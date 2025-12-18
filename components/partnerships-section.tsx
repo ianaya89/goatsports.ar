@@ -112,8 +112,8 @@ export default function PartnershipsSection() {
               </h3>
               <p className="text-white/90 text-lg tablet:text-xl leading-relaxed text-center mb-8">
                 <strong className="text-cyan-300">GOAT Sports</strong> y <strong className="text-cyan-300">US Full Ride</strong> se
-                unieron para abrir las puertas de las mejores universidades de Estados Unidos a jugadores de hockey argentinos.
-                Esta alianza estratégica combina la experiencia de GOAT en el desarrollo deportivo con la expertise de US Full Ride
+                unieron para abrir las puertas de las mejores universidades de Estados Unidos a jugadoras de hockey argentinas.
+                Esta alianza estratégica combina la experiencia de GOAT en el desarrollo deportivo con el expertise de US Full Ride
                 en becas universitarias, creando un camino único para que puedas <strong className="text-white">estudiar, competir
                 y crecer profesionalmente</strong> en el país del norte.
               </p>
@@ -123,8 +123,8 @@ export default function PartnershipsSection() {
                 <div className="flex items-start gap-3 bg-white/5 rounded-xl p-4">
                   <CheckCircle2 className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-semibold text-white mb-1">Becas que cubren todo</h4>
-                    <p className="text-white/70 text-sm">Matrícula, alojamiento, comida, libros y equipamiento deportivo</p>
+                    <h4 className="font-semibold text-white mb-1">Becas de hasta el 100%</h4>
+                    <p className="text-white/70 text-sm">Pueden incluir matrícula, alojamiento, comida, libros y equipamiento deportivo</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 bg-white/5 rounded-xl p-4">
