@@ -23,6 +23,7 @@ const objetivos = [
   "convertirte en profesional",
   "desarrollar tu potencial",
   "formar parte de un equipo",
+  "estudiar en USA"
 ]
 
 export default function HeroSection() {

@@ -5,7 +5,7 @@ import type React from "react"
 import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu, X, MessageCircle } from "lucide-react"
+import { Menu, X, MessageCircle, GraduationCap } from "lucide-react"
 import { getWhatsAppLink } from "@/utils/whatsapp-link"
 
 // Obtener el enlace de WhatsApp correctamente formateado
@@ -50,6 +50,14 @@ export default function Navbar() {
 
           {/* Desktop Navigation - Cambiado de md: a tablet: */}
           <nav className="hidden tablet:flex items-center space-x-8">
+            <a
+              href="#becas-usa"
+              className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-semibold bg-blue-50 hover:bg-blue-100 px-3 py-1.5 rounded-full transition-colors"
+              onClick={(e) => handleSmoothScroll(e, "becas-usa")}
+            >
+              <GraduationCap className="w-4 h-4" />
+              Estudia en USA
+            </a>
             <a
               href="#services"
               className="text-gray-600 hover:text-blue-600 font-medium"
@@ -126,6 +134,14 @@ export default function Navbar() {
       {isMenuOpen && (
         <div className="tablet:hidden bg-white border-t">
           <div className="container mx-auto px-4 py-4 space-y-4">
+            <a
+              href="#becas-usa"
+              className="flex items-center gap-2 text-blue-600 font-semibold py-2 bg-blue-50 px-3 rounded-lg"
+              onClick={(e) => handleSmoothScroll(e, "becas-usa")}
+            >
+              <GraduationCap className="w-5 h-5" />
+              Estudia en USA
+            </a>
             <a
               href="#services"
               className="block text-gray-600 hover:text-blue-600 font-medium py-2"

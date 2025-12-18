@@ -13,6 +13,7 @@ import HeroSection from "@/components/hero-section"
 import ContactForm from "@/components/contact-form"
 import NewsletterForm from "@/components/newsletter-form"
 import SponsorsSection from "@/components/sponsors-section"
+import PartnershipsSection from "@/components/partnerships-section"
 import CampusPromoModal from "@/components/campus-promo-modal"
 import { getWhatsAppLink } from "@/utils/whatsapp-link"
 import { servicesData } from "@/data/services-data"
@@ -30,7 +31,7 @@ export default function Home() {
   useEffect(() => {
     if (!isPromoEnabled) return
     const timer = setTimeout(() => {
-      setIsPromoModalOpen(true)
+      setIsPromoModalOpen(false)
     }, 1000) // Open after 1.5 seconds to let the page load
 
     return () => clearTimeout(timer)
@@ -97,6 +98,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Partnerships Section - Becas USA */}
+      <PartnershipsSection />
 
       {/* Staff Section (Combined About and Team) */}
       <section className="py-12 tablet:py-18 bg-gradient-to-b from-gray-50 via-white to-gray-50/50 relative overflow-hidden" id="staff">
