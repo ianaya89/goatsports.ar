@@ -35,6 +35,19 @@ const upcomingCampus: CampusEvent[] = [
   //   openRegistration: true,
   // },
   {
+    id: "summer-2026",
+    title: "Campus Verano 2026 en GEBA",
+    date: "Febrero 2026",
+    location: "Ciudad de Buenos Aires",
+    description:
+      "¡Empezá el 2026 con todo! Nuestro Campus de Verano en GEBA ya es un clásico que se supera año tras año. Arrancá la temporada con la mejor preparación, los mejores coaches y toda la energía GOAT. Seguinos en Instagram para enterarte primero cuando abramos inscripciones.",
+    imageUrl: "/images/campus-coaches-players.jpg",
+    isPast: false,
+    comingSoon: true,
+    link: "https://summer.goatsports.ar",
+    openRegistration: false,
+  },
+  {
     id: "rosario-2025",
     title: "Campus Verano 2025 en Rosario",
     date: "9, 10 y 11 de Diciembre 2025",
@@ -53,10 +66,11 @@ const upcomingCampus: CampusEvent[] = [
     description:
       "Nuestro Campus en GEBA ya se convirtió un clásico del verano que mejora cada año, y el 2025 no sera la excepción. Seguinos en Instagram para enterarte primero cuando abramos inscripciones.",
     imageUrl: "/images/campus-coaches-players.jpg",
-    isPast: false,
+    isPast: true,
     comingSoon: false,
     link: "https://summer.goatsports.ar",
-    openRegistration: true,
+    galleryUrl: "https://drive.google.com/drive/u/0/folders/1bsYB7a6nSPdCvlogMs8gukOTYH0Fq-Nr",
+    openRegistration: false,
   },
   {
     id: "winter-2025",
@@ -127,7 +141,7 @@ export default function CampusSection() {
             {/* All Campus - Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {upcomingCampus.map((campus, index) => (
-                <Card key={campus.id} className="overflow-hidden border border-gray-200 bg-white shadow-lg flex flex-col min-h-[600px] relative">
+                <Card key={campus.id} className={`overflow-hidden border border-gray-200 bg-white shadow-lg flex flex-col min-h-[600px] relative ${upcomingCampus.length % 2 !== 0 && index === 0 ? 'md:col-span-2' : ''}`}>
                   <div className="h-48 overflow-hidden">
                     <ImageWithFallback
                       src={campus.imageUrl || "/placeholder.svg"}
@@ -199,43 +213,6 @@ export default function CampusSection() {
               ))}
             </div>
           </div>
-        </div>
-      )}
-
-      {/* Past Campus - Cambiado a 1 columna para tablet y menos */}
-      {activeTab === "past" && (
-        <div className="grid grid-cols-1 tablet:grid-cols-3 gap-8">
-          {campusEvents.map((event, index) => (
-            <Card key={event.id} className="overflow-hidden border border-gray-200">
-              <div className="h-48 overflow-hidden">
-                <ImageWithFallback
-                  src={event.imageUrl || "/placeholder.svg"}
-                  alt={`${event.title} - Imagen de participantes`}
-                  fallbackSrc={`/placeholder.svg?height=300&width=400&query=past%20hockey%20camp%20${index}`}
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                />
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-3">{event.title}</h3>
-
-                <div className="flex items-center mb-2">
-                  <Calendar className="h-4 w-4 text-blue-600 mr-2" />
-                  <span className="text-sm text-gray-700">{event.date}</span>
-                </div>
-
-                <div className="flex items-center mb-4">
-                  <MapPin className="h-4 w-4 text-blue-600 mr-2" />
-                  <span className="text-sm text-gray-700">{event.location}</span>
-                </div>
-
-                <p className="text-gray-600 text-sm mb-6 line-clamp-3">{event.description}</p>
-
-                <Button variant="outline" className="w-full border-blue-600 text-blue-600 hover:bg-blue-50">
-                  <ImageIcon className="h-4 w-4 mr-2" /> Ver Galería
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
         </div>
       )}
     </div>
