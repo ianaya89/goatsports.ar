@@ -68,7 +68,7 @@ export default function StaffSection() {
         <div className="relative group">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
           <img
-            src="/images/team-training.jpeg"
+            src="/images/staff.jpg"
             alt="Equipo de Entrenadores de GOAT Sports"
             className="relative rounded-2xl shadow-2xl w-full transform group-hover:scale-105 transition-transform duration-500 hover-lift"
           />

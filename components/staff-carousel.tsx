@@ -12,7 +12,6 @@ interface StaffMember {
   name: string
   position: string
   bio: string
-  imageQuery: string
   imageUrl: string
 }
 
@@ -22,23 +21,20 @@ const staffMembers: StaffMember[] = [
     name: "Santiago Tarazona",
     position: "Co-Fundador",
     bio: "Jugador Olimpico con mas de 10 años de presencia en la Selección masculina de Hockey.",
-    imageQuery: "male field hockey coach with clipboard",
-    imageUrl: "ito.jpg",
+    imageUrl: "santi.jpg",
   },
   {
     id: 3,
     name: "Gonzalo Basualdo",
     position: "Co-Fundador",
     bio: "Jugador, entrenador y formador con gran experiencia en clubes de primera division y selecciones locales.",
-    imageQuery: "young female field hockey coach with children",
-    imageUrl: "basu.jpg",
+    imageUrl: "gonza.jpg",
   },
   {
     id: 4,
     name: "Thomas Habif",
     position: "Co-Fundador",
     bio: "Jugador Olimpico con mas de 100 partidos internacionles en la Selección masculina de Hockey",
-    imageQuery: "sports performance analyst with laptop",
     imageUrl: "thomas.jpg",
   },
   {
@@ -46,7 +42,6 @@ const staffMembers: StaffMember[] = [
     name: "Ignacio Anaya",
     position: "Co-Fundador",
     bio: "Jugador y Capitán de la primera division del Club Gimnasia y Esgrima.",
-    imageQuery: "professional female field hockey coach",
     imageUrl: "nacho.jpg",
   },
   // {
@@ -213,7 +208,7 @@ export default function StaffCarousel() {
                       <CardContent className="p-0 flex flex-col h-full">
                         <div className="w-full h-48">
                           <img
-                            src={`images/${member.imageUrl}?height=200&width=300&query=${member.imageQuery}`}
+                            src={`images/${member.imageUrl}?height=200&width=300`}
                             alt={member.name}
                             className="w-full h-full object-cover"
                           />
