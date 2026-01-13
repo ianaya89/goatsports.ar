@@ -1,16 +1,59 @@
 {
-  "name": "GOAT Sports",
+  "name": "GOAT Sports - Academia Deportiva de Elite",
   "short_name": "GOAT Sports",
-  "description": "Entrenamiento especializado en hockey sobre césped, fútbol y rugby | Campus y clinicas de entrenamiento",
+  "description": "Academia deportiva especializada en hockey sobre césped, fútbol y rugby. Entrenamiento personalizado, campus deportivos y servicios de consultoría en Buenos Aires, Argentina.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#00237c",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "es-AR",
+  "categories": ["sports", "education", "fitness"],
   "icons": [
     {
       "src": "/favicon.ico",
       "sizes": "64x64",
       "type": "image/x-icon"
+    },
+    {
+      "src": "/images/goat-sports-logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/goat-sports-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
-  ]
+  ],
+  "screenshots": [
+    {
+      "src": "/images/training-center.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "Training Center GOAT Sports"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Campus",
+      "short_name": "Campus",
+      "description": "Ver próximos campus deportivos",
+      "url": "/#campus",
+      "icons": [{ "src": "/favicon.ico", "sizes": "64x64" }]
+    },
+    {
+      "name": "Contacto",
+      "short_name": "Contacto",
+      "description": "Contactar a GOAT Sports",
+      "url": "/#contact",
+      "icons": [{ "src": "/favicon.ico", "sizes": "64x64" }]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
 }
