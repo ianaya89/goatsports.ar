@@ -3,11 +3,14 @@
 import type React from "react"
 
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Send } from "lucide-react"
 
 export default function ContactForm() {
+  const t = useTranslations("contact.form")
+
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -24,7 +27,6 @@ export default function ContactForm() {
     setFormState((prev) => ({ ...prev, submitting: true, error: false }))
 
     try {
-      // Enviar datos a Formspree usando el endpoint proporcionado
       const response = await fetch("https://formspree.io/f/xgvknbkj", {
         method: "POST",
         headers: {
@@ -40,14 +42,12 @@ export default function ContactForm() {
       })
 
       if (response.ok) {
-        // Éxito
         setFormState((prev) => ({
           ...prev,
           submitted: true,
           submitting: false,
         }))
       } else {
-        // Error
         throw new Error("Error al enviar el formulario")
       }
     } catch (error) {
@@ -70,8 +70,8 @@ export default function ContactForm() {
       <Card className="bg-white/10 backdrop-blur-sm border-white/20">
         <CardContent className="p-6 text-center">
           <div className="bg-green-500/20 text-white p-4 rounded-lg mb-4">
-            <h3 className="text-xl font-bold mb-2">¡Mensaje Enviado!</h3>
-            <p>Gracias por contactarnos. Nos pondremos en contacto contigo lo antes posible.</p>
+            <h3 className="text-xl font-bold mb-2">{t("success.title")}</h3>
+            <p>{t("success.description")}</p>
           </div>
           <Button
             onClick={() =>
@@ -86,7 +86,7 @@ export default function ContactForm() {
             }
             className="bg-white text-blue-600 hover:bg-white/90"
           >
-            Enviar otro mensaje
+            {t("success.sendAnother")}
           </Button>
         </CardContent>
       </Card>
@@ -100,7 +100,7 @@ export default function ContactForm() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-white mb-1">
-                Nombre completo
+                {t("fullName")}
               </label>
               <input
                 type="text"
@@ -109,13 +109,13 @@ export default function ContactForm() {
                 value={formState.name}
                 onChange={handleChange}
                 className="w-full px-4 py-2 bg-white/20 border border-white/30 rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
-                placeholder="Tu nombre"
+                placeholder={t("namePlaceholder")}
                 required
               />
             </div>
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-white mb-1">
-                Email
+                {t("email")}
               </label>
               <input
                 type="email"
@@ -124,7 +124,7 @@ export default function ContactForm() {
                 value={formState.email}
                 onChange={handleChange}
                 className="w-full px-4 py-2 bg-white/20 border border-white/30 rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
-                placeholder="tu@email.com"
+                placeholder={t("emailPlaceholder")}
                 required
               />
             </div>
@@ -132,7 +132,7 @@ export default function ContactForm() {
 
           <div>
             <label htmlFor="phone" className="block text-sm font-medium text-white mb-1">
-              Teléfono (opcional)
+              {t("phone")}
             </label>
             <input
               type="tel"
@@ -141,13 +141,13 @@ export default function ContactForm() {
               value={formState.phone}
               onChange={handleChange}
               className="w-full px-4 py-2 bg-white/20 border border-white/30 rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
-              placeholder="+54 9 11 1234 5678"
+              placeholder={t("phonePlaceholder")}
             />
           </div>
 
           <div>
             <label htmlFor="message" className="block text-sm font-medium text-white mb-1">
-              Mensaje
+              {t("message")}
             </label>
             <textarea
               id="message"
@@ -156,14 +156,14 @@ export default function ContactForm() {
               onChange={handleChange}
               rows={4}
               className="w-full px-4 py-2 bg-white/20 border border-white/30 rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
-              placeholder="¿En qué podemos ayudarte?"
+              placeholder={t("messagePlaceholder")}
               required
             ></textarea>
           </div>
 
           {formState.error && (
             <div className="bg-red-500/20 text-white p-3 rounded-lg">
-              <p>Hubo un error al enviar tu mensaje. Por favor, intenta nuevamente.</p>
+              <p>{t("error")}</p>
             </div>
           )}
 
@@ -195,12 +195,12 @@ export default function ContactForm() {
                       d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                     ></path>
                   </svg>
-                  Enviando...
+                  {t("sending")}
                 </span>
               ) : (
                 <span className="flex items-center">
                   <Send className="mr-2 h-4 w-4" />
-                  Enviar mensaje
+                  {t("submit")}
                 </span>
               )}
             </Button>

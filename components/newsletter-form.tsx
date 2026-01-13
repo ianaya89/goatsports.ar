@@ -3,10 +3,12 @@
 import type React from "react"
 
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 
 export default function NewsletterForm() {
+  const t = useTranslations("newsletter")
   const [email, setEmail] = useState("")
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
   const [errorMessage, setErrorMessage] = useState("")
@@ -19,7 +21,6 @@ export default function NewsletterForm() {
     setStatus("loading")
 
     try {
-      // Enviar a tu endpoint de API que se conectará con Brevo
       const response = await fetch("/api/subscribe", {
         method: "POST",
         headers: {
@@ -46,15 +47,13 @@ export default function NewsletterForm() {
 
   return (
     <div className="max-w-xl mx-auto text-center">
-      <h2 className="text-2xl tablet:text-3xl font-bold mb-4">Mantente Actualizado</h2>
-      <p className="text-gray-600 mb-6">
-        Suscríbete a nuestro boletín para recibir consejos de entrenamiento, anuncios de eventos y ofertas exclusivas.
-      </p>
+      <h2 className="text-2xl tablet:text-3xl font-bold mb-4">{t("title")}</h2>
+      <p className="text-gray-600 mb-6">{t("description")}</p>
 
       {status === "success" ? (
         <div className="bg-green-50 border border-green-200 text-green-700 p-4 rounded-md">
-          <p className="font-medium">¡Gracias por suscribirte!</p>
-          <p className="text-sm mt-1">Te has suscrito correctamente a nuestro newsletter.</p>
+          <p className="font-medium">{t("success.title")}</p>
+          <p className="text-sm mt-1">{t("success.description")}</p>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
@@ -62,7 +61,7 @@ export default function NewsletterForm() {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Ingresa tu email"
+            placeholder={t("placeholder")}
             className="flex-grow px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600"
             required
           />
@@ -86,11 +85,11 @@ export default function NewsletterForm() {
                     d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                   ></path>
                 </svg>
-                Suscribiendo...
+                {t("subscribing")}
               </span>
             ) : (
               <span className="flex items-center">
-                Suscribirse <ArrowRight className="ml-2 h-4 w-4" />
+                {t("submit")} <ArrowRight className="ml-2 h-4 w-4" />
               </span>
             )}
           </Button>

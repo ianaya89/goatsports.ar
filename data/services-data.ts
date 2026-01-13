@@ -1,5 +1,99 @@
 import type { ServiceDetails } from "@/components/service-modal"
 
+export function getServicesData(t: (key: string) => string): ServiceDetails[] {
+  return [
+    {
+      title: t("personalTraining.title"),
+      description: t("personalTraining.description"),
+      longDescription: t("personalTraining.longDescription"),
+      schedule: [t("personalTraining.schedule.0"), t("personalTraining.schedule.1")],
+      features: [
+        t("personalTraining.features.0"),
+        t("personalTraining.features.1"),
+        t("personalTraining.features.2"),
+        t("personalTraining.features.3"),
+      ],
+      images: [
+        {
+          src: "/images/personalizado.jpeg",
+          alt: t("personalTraining.images.0"),
+        },
+        {
+          src: "/images/personalizado-hockey.jpeg",
+          alt: t("personalTraining.images.1"),
+        },
+        {
+          src: "/images/personalizado-hockey-2.jpeg",
+          alt: t("personalTraining.images.2"),
+        },
+        {
+          src: "/images/personalizado-hockey-3.jpeg",
+          alt: t("personalTraining.images.3"),
+        },
+      ],
+    },
+    {
+      title: t("academies.title"),
+      description: t("academies.description"),
+      longDescription: t("academies.longDescription"),
+      schedule: [t("academies.schedule.0"), t("academies.schedule.1"), t("academies.schedule.2")],
+      features: [
+        t("academies.features.0"),
+        t("academies.features.1"),
+        t("academies.features.2"),
+        t("academies.features.3"),
+      ],
+      images: [
+        {
+          src: "/images/hockey-academy.jpg",
+          alt: "Entrenamiento de academia de hockey",
+        },
+        {
+          src: "/images/hockey-academy-2.jpeg",
+          alt: "Entrenamiento juvenil de rugby",
+        },
+        {
+          src: "/images/hockey-academy-3.jpeg",
+          alt: "Práctica de equipo de hockey",
+        },
+        {
+          src: "/images/rugby-training-indoor.jpeg",
+          alt: "Taller de habilidades de rugby",
+        },
+      ],
+    },
+    {
+      title: t("teamTraining.title"),
+      description: t("teamTraining.description"),
+      longDescription: t("teamTraining.longDescription"),
+      schedule: [
+        t("teamTraining.schedule.0"),
+        t("teamTraining.schedule.1"),
+        t("teamTraining.schedule.2"),
+        t("teamTraining.schedule.3"),
+      ],
+      features: [
+        t("teamTraining.features.0"),
+        t("teamTraining.features.1"),
+        t("teamTraining.features.2"),
+        t("teamTraining.features.3"),
+        t("teamTraining.features.4"),
+      ],
+      images: [
+        {
+          src: "/images/uba.jpg",
+          alt: "Equipo de hockey entrenando",
+        },
+        {
+          src: "/images/team-recovery-session.jpeg",
+          alt: "Sesión de entrenamiento de equipo de rugby",
+        },
+      ],
+    },
+  ]
+}
+
+// Legacy export for backwards compatibility during migration
 export const servicesData: ServiceDetails[] = [
   {
     title: "Entrenamiento Personalizado",
@@ -10,17 +104,12 @@ export const servicesData: ServiceDetails[] = [
     schedule: [
       "Lunes a Viernes: 8:00 - 21:00 (sesiones de 60 o 90 minutos)",
       "Sábados: 9:00 - 13:00 (sesiones de 60 o 90 minutos)",
-      // "Disponibilidad para programar sesiones en horarios específicos",
-      // "Posibilidad de paquetes de 4, 8 o 12 sesiones mensuales",
     ],
     features: [
       "Evaluación inicial completa de habilidades o condición física",
       "Plan de entrenamiento personalizado según objetivos",
-      // "Análisis de video para corrección técnica",
-      // "Seguimiento de progreso con métricas específicas",
       "Acceso a instalaciones de primer nivel",
       "Entrenadores con experiencia nacional e internacional",
-      // "Informe mensual de progreso y recomendaciones",
     ],
     images: [
       {
@@ -105,14 +194,6 @@ export const servicesData: ServiceDetails[] = [
         src: "/images/team-recovery-session.jpeg",
         alt: "Sesión de entrenamiento de equipo de rugby",
       },
-      // {
-      //   src: "/placeholder-6lvip.png",
-      //   alt: "Análisis de video para equipos deportivos",
-      // },
-      // {
-      //   src: "/placeholder-y0egj.png",
-      //   alt: "Vestuarios de instalaciones deportivas",
-      // },
     ],
   },
 ]

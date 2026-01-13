@@ -3,37 +3,29 @@
 import type React from "react"
 
 import { useState } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Menu, X, MessageCircle, GraduationCap } from "lucide-react"
-import { getWhatsAppLink } from "@/utils/whatsapp-link"
-
-// Obtener el enlace de WhatsApp correctamente formateado
-const whatsappLink = getWhatsAppLink(
-  "Hola, me gustaria obtener mas informacion sobre los planes de entrenamiento. Muchas gracias!",
-)
+import { useTranslations } from "next-intl"
+import { Link } from "@/i18n/routing"
+import { Menu, X, GraduationCap } from "lucide-react"
+import LanguageSwitcher from "./language-switcher"
 
 export default function Navbar() {
+  const t = useTranslations("nav")
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  // Función para manejar el scroll suave
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault()
     const targetElement = document.getElementById(targetId)
 
     if (targetElement) {
-      // Cerrar el menú móvil si está abierto
       if (isMenuOpen) {
         setIsMenuOpen(false)
       }
 
-      // Scroll suave con animación
       targetElement.scrollIntoView({
         behavior: "smooth",
         block: "start",
       })
 
-      // Actualizar la URL sin recargar la página
       window.history.pushState(null, "", `#${targetId}`)
     }
   }
@@ -48,7 +40,6 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Desktop Navigation - Cambiado de md: a tablet: */}
           <nav className="hidden tablet:flex items-center space-x-8">
             <a
               href="#becas-usa"
@@ -56,69 +47,63 @@ export default function Navbar() {
               onClick={(e) => handleSmoothScroll(e, "becas-usa")}
             >
               <GraduationCap className="w-4 h-4" />
-              Estudia en USA
+              {t("studyInUSA")}
             </a>
             <a
               href="#services"
               className="text-gray-600 hover:text-blue-600 font-medium"
               onClick={(e) => handleSmoothScroll(e, "services")}
             >
-              Programas
+              {t("programs")}
             </a>
             <a
               href="#staff"
               className="text-gray-600 hover:text-blue-600 font-medium"
               onClick={(e) => handleSmoothScroll(e, "staff")}
             >
-              Nosotros
+              {t("aboutUs")}
             </a>
             <a
               href="#training-center"
               className="text-gray-600 hover:text-blue-600 font-medium"
               onClick={(e) => handleSmoothScroll(e, "training-center")}
             >
-              Training Center
+              {t("trainingCenter")}
             </a>
             <a
               href="#campus"
               className="text-gray-600 hover:text-blue-600 font-medium"
               onClick={(e) => handleSmoothScroll(e, "campus")}
             >
-              Campus
+              {t("campus")}
             </a>
             <a
               href="#consulting"
               className="text-gray-600 hover:text-blue-600 font-medium"
               onClick={(e) => handleSmoothScroll(e, "consulting")}
             >
-              Consultoría
+              {t("consulting")}
             </a>
             <a
               href="#testimonials"
               className="text-gray-600 hover:text-blue-600 font-medium"
               onClick={(e) => handleSmoothScroll(e, "testimonials")}
             >
-              Testimonios
+              {t("testimonials")}
             </a>
             <a
               href="#contact"
               className="text-gray-600 hover:text-blue-600 font-medium"
               onClick={(e) => handleSmoothScroll(e, "contact")}
             >
-              Contacto
+              {t("contact")}
             </a>
           </nav>
 
-          <div className="hidden tablet:flex items-center space-x-4">
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="inline-block">
-              <Button className="bg-blue-600 hover:bg-blue-700 flex items-center gap-2">
-                <MessageCircle className="h-5 w-5" />
-                Anotate!
-              </Button>
-            </a>
+          <div className="hidden tablet:flex items-center">
+            <LanguageSwitcher />
           </div>
 
-          {/* Mobile Menu Button - Cambiado de md: a tablet: */}
           <div className="tablet:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -130,7 +115,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu - Cambiado de md: a tablet: */}
       {isMenuOpen && (
         <div className="tablet:hidden bg-white border-t">
           <div className="container mx-auto px-4 py-4 space-y-4">
@@ -140,64 +124,59 @@ export default function Navbar() {
               onClick={(e) => handleSmoothScroll(e, "becas-usa")}
             >
               <GraduationCap className="w-5 h-5" />
-              Estudia en USA
+              {t("studyInUSA")}
             </a>
             <a
               href="#services"
               className="block text-gray-600 hover:text-blue-600 font-medium py-2"
               onClick={(e) => handleSmoothScroll(e, "services")}
             >
-              Programas
+              {t("programs")}
             </a>
             <a
               href="#staff"
               className="block text-gray-600 hover:text-blue-600 font-medium py-2"
               onClick={(e) => handleSmoothScroll(e, "staff")}
             >
-              Nosotros
+              {t("aboutUs")}
             </a>
             <a
               href="#training-center"
               className="block text-gray-600 hover:text-blue-600 font-medium py-2"
               onClick={(e) => handleSmoothScroll(e, "training-center")}
             >
-              Training Center
+              {t("trainingCenter")}
             </a>
             <a
               href="#campus"
               className="block text-gray-600 hover:text-blue-600 font-medium py-2"
               onClick={(e) => handleSmoothScroll(e, "campus")}
             >
-              Campus
+              {t("campus")}
             </a>
             <a
               href="#consulting"
               className="block text-gray-600 hover:text-blue-600 font-medium py-2"
               onClick={(e) => handleSmoothScroll(e, "consulting")}
             >
-              Consultoría
+              {t("consulting")}
             </a>
             <a
               href="#testimonials"
               className="block text-gray-600 hover:text-blue-600 font-medium py-2"
               onClick={(e) => handleSmoothScroll(e, "testimonials")}
             >
-              Testimonios
+              {t("testimonials")}
             </a>
             <a
               href="#contact"
               className="block text-gray-600 hover:text-blue-600 font-medium py-2"
               onClick={(e) => handleSmoothScroll(e, "contact")}
             >
-              Contacto
+              {t("contact")}
             </a>
-            <div className="pt-4 flex flex-col space-y-2">
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="w-full">
-                <Button className="bg-blue-600 hover:bg-blue-700 w-full flex items-center justify-center gap-2">
-                  <MessageCircle className="h-5 w-5" />
-                  Anotate!
-                </Button>
-              </a>
+            <div className="pt-4 flex justify-center">
+              <LanguageSwitcher />
             </div>
           </div>
         </div>

@@ -1,13 +1,10 @@
-import Link from "next/link"
+"use client"
+
+import { useTranslations } from "next-intl"
+import { Link } from "@/i18n/routing"
 import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin, MessageCircle, ExternalLink } from "lucide-react"
 import { getWhatsAppLink } from "@/utils/whatsapp-link"
 
-// Obtener el enlace de WhatsApp correctamente formateado
-const whatsappLink = getWhatsAppLink(
-  "Hola, me gustaria obtener mas informacion sobre los planes de entrenamiento. Muchas gracias!",
-)
-
-// Componente personalizado para el icono de TikTok
 function TikTok({ className }: { className?: string }) {
   return (
     <svg
@@ -28,6 +25,11 @@ function TikTok({ className }: { className?: string }) {
 }
 
 export default function Footer() {
+  const t = useTranslations("footer")
+  const tNav = useTranslations("nav")
+
+  const whatsappLink = getWhatsAppLink(tNav("whatsappMessage"))
+
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 py-12">
@@ -37,10 +39,13 @@ export default function Footer() {
               <img src="/images/horizontal-logo-white.png" alt="GOAT Sports Logo" className="h-12 w-auto" />
             </div>
             <p className="text-gray-400 mb-4">
-              GOAT Sports, <b>mucho más que un training center.</b>
+              <span dangerouslySetInnerHTML={{ __html: t("tagline").replace("mucho más que un training center", "<b>mucho más que un training center</b>") }} />
             </p>
             <div className="flex space-x-4">
-              <a href="https://www.facebook.com/profile.php?id=61575793396752" className="text-gray-400 hover:text-white">
+              <a
+                href="https://www.facebook.com/profile.php?id=61575793396752"
+                className="text-gray-400 hover:text-white"
+              >
                 <Facebook className="h-5 w-5" />
               </a>
               <a href="https://www.instagram.com/goatsports.arg" className="text-gray-400 hover:text-white">
@@ -61,48 +66,48 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Enlaces Rápidos</h3>
+            <h3 className="text-lg font-semibold mb-4">{t("quickLinks")}</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="#services" className="text-gray-400 hover:text-white">
-                  Programas
+                  {tNav("programs")}
                 </Link>
               </li>
               <li>
                 <Link href="#staff" className="text-gray-400 hover:text-white">
-                  Nosotros
+                  {tNav("aboutUs")}
                 </Link>
               </li>
               <li>
                 <Link href="#training-center" className="text-gray-400 hover:text-white">
-                  Training Center
+                  {tNav("trainingCenter")}
                 </Link>
               </li>
               <li>
                 <Link href="#campus" className="text-gray-400 hover:text-white">
-                  Campus
+                  {tNav("campus")}
                 </Link>
               </li>
               <li>
                 <Link href="#consulting" className="text-gray-400 hover:text-white">
-                  Consultoría
+                  {tNav("consulting")}
                 </Link>
               </li>
               <li>
                 <Link href="#testimonials" className="text-gray-400 hover:text-white">
-                  Testimonios
+                  {tNav("testimonials")}
                 </Link>
               </li>
               <li>
                 <Link href="#contact" className="text-gray-400 hover:text-white">
-                  Contacto
+                  {tNav("contact")}
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contacto</h3>
+            <h3 className="text-lg font-semibold mb-4">{t("contact")}</h3>
             <ul className="space-y-4">
               <li className="flex">
                 <MapPin className="h-5 w-5 text-gray-400 mr-2 flex-shrink-0" />
@@ -124,20 +129,19 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Horarios</h3>
+            <h3 className="text-lg font-semibold mb-4">{t("hours")}</h3>
             <ul className="space-y-2">
               <li className="text-gray-400">
-                <span className="font-medium">Lunes a Viernes:</span> 8:00 - 21:00
+                <span className="font-medium">{t("weekdays")}:</span> 8:00 - 21:00
               </li>
             </ul>
 
-            {/* Trabaja con nosotros - Badge (Movido aquí) */}
             <div className="mt-6">
               <a
                 href="https://www.linkedin.com/jobs/goat-sports-jobs-worldwide"
                 className="inline-flex items-center bg-blue-600/20 text-blue-400 hover:bg-blue-600/30 transition-colors px-4 py-2 rounded-full font-medium"
               >
-                Unite a nuestro equipo
+                {t("joinTeam")}
                 <ExternalLink className="ml-2 h-4 w-4" />
               </a>
             </div>
@@ -146,7 +150,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col tablet:flex-row justify-center items-center">
           <p className="text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} GOAT Sports. Todos los derechos reservados.
+            &copy; {new Date().getFullYear()} {t("copyright")}
           </p>
         </div>
       </div>

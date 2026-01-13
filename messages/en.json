@@ -1,0 +1,393 @@
+{
+  "nav": {
+    "studyInUSA": "Study in USA",
+    "programs": "Programs",
+    "aboutUs": "About Us",
+    "trainingCenter": "Training Center",
+    "campus": "Campus",
+    "consulting": "Consulting",
+    "testimonials": "Testimonials",
+    "contact": "Contact",
+    "signUp": "Sign Up!",
+    "whatsappMessage": "Hi, I would like to get more information about the training plans. Thank you!"
+  },
+  "hero": {
+    "title": "Come to GOAT to",
+    "objectives": {
+      "0": "learn to play",
+      "1": "improve your technique",
+      "2": "master the game",
+      "3": "compete at the highest level",
+      "4": "go further",
+      "5": "push your limits",
+      "6": "become a professional",
+      "7": "develop your potential",
+      "8": "be part of a team",
+      "9": "study in the USA"
+    },
+    "subtitle": "No matter what your goal is, we help you achieve it. Group and personalized programs designed to take you to the next level, whatever your starting point.",
+    "bookSession": "Book a Session",
+    "explorePrograms": "Explore Programs"
+  },
+  "services": {
+    "title": "Training Programs",
+    "description": "Comprehensive programs designed to enhance sports development in all its facets. We offer specific training for each discipline, tailored to individual needs and goals of each athlete, from beginners to professionals."
+  },
+  "personalTraining": {
+    "title": "Personal Training",
+    "description": "Individual sessions tailored to your specific needs. Develop your skills with personalized attention from our expert coaches.",
+    "longDescription": "Our personalized training program is designed to maximize your sports potential through individualized sessions. We work with a comprehensive approach that covers technical, tactical, physical, and mental aspects. Each session is specifically planned for you, considering your goals, current level, and playing position. Our coaches help you identify areas for improvement and develop a progressive plan to take you to the next level.",
+    "schedule": {
+      "0": "Monday to Friday: 8:00 AM - 9:00 PM (60 or 90-minute sessions)",
+      "1": "Saturdays: 9:00 AM - 1:00 PM (60 or 90-minute sessions)"
+    },
+    "features": {
+      "0": "Complete initial skills or fitness assessment",
+      "1": "Personalized training plan based on your goals",
+      "2": "Access to first-class facilities",
+      "3": "Coaches with national and international experience"
+    },
+    "images": {
+      "0": "Personal hockey training",
+      "1": "Personal hockey training",
+      "2": "Sports performance analysis",
+      "3": "Youth rugby training"
+    }
+  },
+  "academies": {
+    "title": "Hockey and Rugby Academies",
+    "description": "Join our structured program with regular training sessions, skill development workshops, and competitive play opportunities in hockey and rugby.",
+    "longDescription": "GOAT Sports Academies offer a comprehensive development program for hockey and rugby players of all levels. Participants train in small groups organized by age and level, allowing for comprehensive attention within a team environment.",
+    "schedule": {
+      "0": "Hockey - Monday to Friday 6:00 PM - 9:00 PM",
+      "1": "Rugby - Wednesday and Friday 5:00 PM - 7:00 PM",
+      "2": "Additional fitness preparation sessions"
+    },
+    "features": {
+      "0": "Small groups (maximum 8 players per coach)",
+      "1": "Structured program with monthly goals",
+      "2": "Specialized coaches with national and international experience",
+      "3": "Access to special clinics with professional players"
+    }
+  },
+  "teamTraining": {
+    "title": "Train with your team",
+    "description": "Rent our first-class facilities for training with your team. Full access to fields, equipment, and everything you need to train.",
+    "longDescription": "We offer our facilities for teams looking for a professional space for their training. Rental includes full access to our playing fields with professional synthetic surface, specialized training equipment, and high-performance gym. Optionally, we can provide specialized coaches for specific sessions or themed clinics. Our facilities are ideal for club teams, national teams, school teams, or corporate groups looking for a premium training experience.",
+    "schedule": {
+      "0": "Monday to Friday: 7:00 AM - 11:00 PM (subject to availability)",
+      "1": "Saturdays: 8:00 AM - 1:00 PM",
+      "2": "Possibility of recurring weekly or monthly bookings",
+      "3": "Special hours available for concentrations or intensive sessions"
+    },
+    "features": {
+      "0": "Playing fields with professional synthetic surface",
+      "1": "Complete training equipment",
+      "2": "Access to high-performance gym",
+      "3": "Locker rooms with showers",
+      "4": "Option to hire specialized coaches"
+    }
+  },
+  "partnerships": {
+    "headline": "Want to study and play",
+    "headlineHighlight": "hockey in the USA?",
+    "tagline": "Turn your dream into your future.",
+    "allianceTitle": "An alliance to fulfill your American dream",
+    "allianceDescription": "GOAT Sports and US Full Ride have joined forces to open the doors of the best universities in the United States to Argentine hockey players. This strategic alliance combines GOAT's expertise in sports development with US Full Ride's expertise in university scholarships, creating a unique path for you to study, compete, and grow professionally in the USA.",
+    "benefits": {
+      "scholarships": {
+        "title": "Scholarships up to 100%",
+        "description": "Can include tuition, accommodation, meals, books, and sports equipment"
+      },
+      "competition": {
+        "title": "High-level competition",
+        "description": "Play in NCAA college leagues while you study"
+      },
+      "support": {
+        "title": "Comprehensive support",
+        "description": "We guide you from application to your arrival in the USA"
+      },
+      "network": {
+        "title": "Network of contacts",
+        "description": "Connect with coaches and universities throughout the United States"
+      }
+    },
+    "cta": "I want to know more",
+    "stats": {
+      "athletes": "Scholarship athletes",
+      "universities": "Universities",
+      "guidedProcess": "Guided process"
+    }
+  },
+  "staff": {
+    "title": "About Us",
+    "description": "We are partners, friends, and teammates, driven by the passion to accompany athletes on their journey towards their dreams. We set out to create a place where we can give you the tools, support, and guidance you need to achieve any goal you set.",
+    "description2": "At GOAT Sports, we are dedicated to developing field hockey players who excel on and off the field. With a comprehensive approach, we work on your technique, tactical vision, physical condition, and mental strength.",
+    "features": {
+      "experts": {
+        "title": "Expert Coaches",
+        "description": "Our coaching team includes former national players and certified instructors with years of experience."
+      },
+      "personalized": {
+        "title": "Personalized Development",
+        "description": "We create individualized training plans based on your current abilities and future goals."
+      },
+      "facilities": {
+        "title": "First-class Facilities",
+        "description": "Train in premium facilities with the most advanced equipment and technology."
+      },
+      "results": {
+        "title": "Proven Results",
+        "description": "Our athletes have achieved results at collegiate, national, and international levels."
+      }
+    },
+    "teamTitle": "Our Team",
+    "teamDescription": "Meet the people who will accompany you in your athletic growth. Each of our coaches brings their unique experience and passion for the sport to help you reach your full potential.",
+    "members": {
+      "santiago": {
+        "position": "Co-Founder",
+        "bio": "Olympic player with over 10 years of presence on the Men's National Hockey Team."
+      },
+      "gonzalo": {
+        "position": "Co-Founder",
+        "bio": "Player, coach, and trainer with extensive experience in first division clubs and local teams."
+      },
+      "thomas": {
+        "position": "Co-Founder",
+        "bio": "Olympic player with over 100 international caps on the Men's National Hockey Team."
+      },
+      "ignacio": {
+        "position": "Co-Founder",
+        "bio": "Player and Captain of the first division at Gimnasia y Esgrima Club."
+      }
+    },
+    "prevPage": "Previous page",
+    "nextPage": "Next page",
+    "goToPage": "Go to page"
+  },
+  "trainingCenter": {
+    "title": "Training Center",
+    "description": "Discover our first-class facilities designed to maximize your performance and training experience.",
+    "facilityTitle": "First-class Facilities",
+    "facilityDescription": "Our training center located in Vicente López features two synthetic turf fields, gym, and everything needed for sports development in a professional environment.",
+    "availableNow": "Available now",
+    "location": "Vicente López",
+    "ctaTitle": "Want to see our facilities?",
+    "ctaDescription": "We invite you to visit our training center and experience firsthand everything GOAT Sports has to offer.",
+    "scheduleVisit": "Schedule a Visit",
+    "whatsappMessage": "Hi, I would like to schedule a visit to the facilities. Thanks!"
+  },
+  "campus": {
+    "title": "Campus & Clinics",
+    "description": "Our GOAT Sports Hockey Campus are immersive experiences designed for players of all levels: from beginners to high-performance athletes. Over several days, you'll combine technical training, tactical work, specific physical preparation, and mental strengthening dynamics, while we create a fun environment and instill a passion for the sport.",
+    "description2": "Come perfect your game, meet new friends, and experience sports with the energy and support of GOAT Sports.",
+    "upcoming": "Upcoming Campus",
+    "past": "Past Campus",
+    "badges": {
+      "openRegistration": "Registration open",
+      "finished": "Finished",
+      "comingSoon": "Coming soon"
+    },
+    "buttons": {
+      "followInstagram": "Follow us on Instagram",
+      "viewGallery": "View Photo Gallery",
+      "registerNow": "Register Now",
+      "moreInfo": "More Information"
+    },
+    "events": {
+      "summer2026": {
+        "title": "Summer Campus 2026 at GEBA",
+        "date": "February 2026",
+        "location": "Buenos Aires City",
+        "description": "Start 2026 strong! Our Summer Campus at GEBA is already a classic that surpasses itself year after year. Start the season with the best preparation, the best coaches, and all the GOAT energy. Follow us on Instagram to be the first to know when we open registration."
+      },
+      "rosario2025": {
+        "title": "Summer Campus 2025 in Rosario",
+        "date": "December 9, 10 and 11, 2025",
+        "location": "Rosario, Santa Fe",
+        "description": "We're bringing the full GOAT experience to Rosario, and we invite you to experience this edition at the first-class facilities offered by Estancia Damfield."
+      },
+      "summer2025": {
+        "title": "Summer Campus 2025 at GEBA",
+        "date": "December 2025",
+        "location": "Buenos Aires City",
+        "description": "Our Campus at GEBA has become a summer classic that improves every year, and 2025 will be no exception. Follow us on Instagram to be the first to know when we open registration."
+      },
+      "winter2025": {
+        "title": "Winter Campus 2025 at GEBA",
+        "date": "July 28 to August 1, 2025",
+        "location": "Buenos Aires City",
+        "description": "Don't miss our upcoming Winter Campus! 2 to 3 days of intensive training with the best coaches. Perfect your technique, improve your physical condition, and develop your tactical vision in a professional and fun environment. Limited spots, reserve your place now!"
+      },
+      "gbaSur2025": {
+        "title": "GBA South Campus 2025 at MGRC",
+        "date": "July 21, 22 and 23, 2025",
+        "location": "Monte Grande, Buenos Aires Province",
+        "description": "You asked for it and we listened - we're coming to the South Zone! Introducing the Winter Campus at Monte Grande Rugby Club. The same experience as always, but closer to you."
+      }
+    }
+  },
+  "consulting": {
+    "title": "Consulting",
+    "description": "Professional sports consulting services for clubs, schools, and gated communities looking to elevate their sports level.",
+    "servicesTitle": "Consulting Services",
+    "services": {
+      "clubs": {
+        "title": "Club Consulting",
+        "description": "Comprehensive advice to improve hockey programs, from organizational structure to training methods."
+      },
+      "schools": {
+        "title": "School Programs",
+        "description": "Development of educational hockey programs adapted to the school environment, integrating sports values with academic objectives."
+      },
+      "communities": {
+        "title": "Services for Gated Communities",
+        "description": "Creation and management of recreational and competitive programs for residential communities."
+      },
+      "methods": {
+        "title": "Training Methods",
+        "description": "Implementation of innovative methodologies based on the latest trends and backed by sports science."
+      },
+      "clinics": {
+        "title": "Personalized Clinics",
+        "description": "Design and execution of clinics tailored to specific needs, focused on technical, tactical, or physical areas."
+      }
+    },
+    "cta": "Request Information",
+    "whatsappMessage": "Hi, I would like to get information about consulting services. Thanks!"
+  },
+  "testimonials": {
+    "title": "What Our Athletes Say",
+    "description": "Hear from athletes who have transformed their game with GOAT Sports.",
+    "items": {
+      "catalina": {
+        "quote": "Training at GOAT helped me grow tremendously in technique and maintaining daily discipline. Improving and enhancing my athletic level!",
+        "name": "Catalina Alimenti",
+        "title": "Las Leonas Player"
+      },
+      "angie": {
+        "quote": "Training at Goat not only enhanced and took my technical and physical abilities to another level, but it's also a place with incredible energy and atmosphere that pushes you to go further and where you truly learn from the best",
+        "name": "Angie Belosio",
+        "title": "Banco Nacion Player"
+      },
+      "martina": {
+        "quote": "I really enjoy GOAT camps! They allow me to improve my skills and learn new technical gestures. The coaches are amazing!!! They're always looking out for us and taking care of us at all times",
+        "name": "Martina Giannini",
+        "title": "GEBA Player"
+      },
+      "sofia": {
+        "quote": "I've been training for 3 years and I love it because the coaches help me so much. It's a space where I feel comfortable and where I really notice my growth as a player. I'm very grateful for everyone's support and dedication, I know I can always count on them!",
+        "name": "Sofia Villarreal",
+        "title": "GEBA Player"
+      }
+    }
+  },
+  "contact": {
+    "title": "Ready to take your game to the next level?",
+    "description": "Contact us today and start your path to sports excellence.",
+    "form": {
+      "fullName": "Full name",
+      "email": "Email",
+      "phone": "Phone (optional)",
+      "message": "Message",
+      "namePlaceholder": "Your name",
+      "emailPlaceholder": "you@email.com",
+      "phonePlaceholder": "+1 234 567 8900",
+      "messagePlaceholder": "How can we help you?",
+      "submit": "Send message",
+      "sending": "Sending...",
+      "success": {
+        "title": "Message Sent!",
+        "description": "Thank you for contacting us. We will get back to you as soon as possible.",
+        "sendAnother": "Send another message"
+      },
+      "error": "There was an error sending your message. Please try again."
+    }
+  },
+  "newsletter": {
+    "title": "Stay Updated",
+    "description": "Subscribe to our newsletter to receive training tips, event announcements, and exclusive offers.",
+    "placeholder": "Enter your email",
+    "submit": "Subscribe",
+    "subscribing": "Subscribing...",
+    "success": {
+      "title": "Thank you for subscribing!",
+      "description": "You have successfully subscribed to our newsletter."
+    }
+  },
+  "footer": {
+    "tagline": "GOAT Sports, much more than a training center.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "hours": "Hours",
+    "weekdays": "Monday to Friday",
+    "joinTeam": "Join our team",
+    "copyright": "GOAT Sports. All rights reserved."
+  },
+  "registration": {
+    "backToCampus": "Back to Campus",
+    "title": "Registration: Winter Campus 2025",
+    "date": "July 28 to August 1, 2025 • Buenos Aires, Argentina",
+    "campusInfo": "Campus Information",
+    "features": {
+      "0": "Daily technical and tactical training",
+      "1": "Sessions with international coaches",
+      "2": "Personalized video analysis",
+      "3": "Competitions and friendly matches",
+      "4": "Accommodation and meals included",
+      "5": "GOAT Sports training kit"
+    },
+    "price": "Price",
+    "priceValue": "$120,000 ARS",
+    "paymentInstallments": "Installment payment available",
+    "payWithMercadoPago": "Pay with Mercado Pago",
+    "scanQR": "Scan this QR code with the Mercado Pago app to pay",
+    "form": {
+      "title": "Registration Form",
+      "fullName": "Full name",
+      "email": "Email",
+      "phone": "Phone",
+      "age": "Age",
+      "experience": "Experience level",
+      "selectLevel": "Select level",
+      "levels": {
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advanced": "Advanced",
+        "elite": "Elite"
+      },
+      "club": "Current club (optional)",
+      "paymentMethod": "Payment method",
+      "paymentOptions": {
+        "cash": "Cash (in-person payment)",
+        "transfer": "Bank transfer",
+        "mercadopago": "Mercado Pago (online payment)"
+      },
+      "submit": "Complete Registration",
+      "processing": "Processing...",
+      "paymentComplete": "I have completed the payment",
+      "backToForm": "Back to form"
+    },
+    "success": {
+      "title": "Registration Successful!",
+      "message": "Your registration for Winter Campus 2024 has been recorded successfully. We will contact you shortly to confirm the details",
+      "andPayment": " and payment process",
+      "newRegistration": "Make another registration"
+    },
+    "error": "There was an error processing your registration. Please try again."
+  },
+  "sponsors": {
+    "title": "Our Sponsors",
+    "description": "We thank the brands that trust us and make our work easier",
+    "officialSponsor": "Official Sponsor"
+  },
+  "common": {
+    "whatsappMessage": "Hi, I would like to get more information about GOAT Sports. Thanks!"
+  },
+  "metadata": {
+    "title": "GOAT Sports - Field Hockey, Football and Rugby Training Academy",
+    "description": "Sports academy specializing in field hockey, football, and rugby. We offer personalized training, sports camps, and consulting services for clubs and schools in Buenos Aires, Argentina.",
+    "ogTitle": "GOAT Sports - Elite Sports Academy",
+    "ogDescription": "Expert field hockey, football, and rugby training. Personalized coaching and immersive programs to take your skills to the next level."
+  }
+}
