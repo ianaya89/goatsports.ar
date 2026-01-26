@@ -36,7 +36,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 tablet:grid-cols-4 gap-8">
           <div>
             <div className="mb-4">
-              <img src="/images/horizontal-logo-white.png" alt="GOAT Sports Logo" className="h-12 w-auto" />
+              <img src="/images/horizontal-logo-white.png" alt="GOAT Sports Logo" width={180} height={48} className="h-12 w-auto" />
             </div>
             <p className="text-gray-400 mb-4">
               <span dangerouslySetInnerHTML={{ __html: t("tagline").replace("mucho más que un training center", "<b>mucho más que un training center</b>") }} />
@@ -45,22 +45,38 @@ export default function Footer() {
               <a
                 href="https://www.facebook.com/profile.php?id=61575793396752"
                 className="text-gray-400 hover:text-white"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <Facebook className="h-5 w-5" />
+                <Facebook className="h-5 w-5" aria-hidden="true" />
               </a>
-              <a href="https://www.instagram.com/goatsports.arg" className="text-gray-400 hover:text-white">
-                <Instagram className="h-5 w-5" />
+              <a
+                href="https://www.instagram.com/goatsports.arg"
+                className="text-gray-400 hover:text-white"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Instagram className="h-5 w-5" aria-hidden="true" />
               </a>
-              <a href="https://www.linkedin.com/company/goatsportsar" className="text-gray-400 hover:text-white">
-                <Linkedin className="h-5 w-5" />
+              <a
+                href="https://www.linkedin.com/company/goatsportsar"
+                className="text-gray-400 hover:text-white"
+                aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Linkedin className="h-5 w-5" aria-hidden="true" />
               </a>
               <a
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white"
+                aria-label="WhatsApp"
               >
-                <MessageCircle className="h-5 w-5" />
+                <MessageCircle className="h-5 w-5" aria-hidden="true" />
               </a>
             </div>
           </div>
@@ -110,17 +126,17 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">{t("contact")}</h3>
             <ul className="space-y-4">
               <li className="flex">
-                <MapPin className="h-5 w-5 text-gray-400 mr-2 flex-shrink-0" />
+                <MapPin className="h-5 w-5 text-gray-400 mr-2 flex-shrink-0" aria-hidden="true" />
                 <span className="text-gray-400">San Martin 1649 (Vicente Lopez CP1638), Buenos Aires - Argentina</span>
               </li>
               <li className="flex">
-                <Phone className="h-5 w-5 text-gray-400 mr-2 flex-shrink-0" />
+                <Phone className="h-5 w-5 text-gray-400 mr-2 flex-shrink-0" aria-hidden="true" />
                 <a href={`tel:+5491126578585`} className="text-gray-400 hover:text-white">
                   +54 9 11 2567 8585
                 </a>
               </li>
               <li className="flex">
-                <Mail className="h-5 w-5 text-gray-400 mr-2 flex-shrink-0" />
+                <Mail className="h-5 w-5 text-gray-400 mr-2 flex-shrink-0" aria-hidden="true" />
                 <a href="mailto:hola@goatsports.ar" className="text-gray-400 hover:text-white">
                   hola@goatsports.ar
                 </a>
@@ -142,7 +158,7 @@ export default function Footer() {
                 className="inline-flex items-center bg-blue-600/20 text-blue-400 hover:bg-blue-600/30 transition-colors px-4 py-2 rounded-full font-medium"
               >
                 {t("joinTeam")}
-                <ExternalLink className="ml-2 h-4 w-4" />
+                <ExternalLink className="ml-2 h-4 w-4" aria-hidden="true" />
               </a>
             </div>
           </div>

@@ -480,7 +480,7 @@ fbq('track', 'PageView');`,
           <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
             {children}
             <Analytics />
-            <IntercomProvider />
+            {/* <IntercomProvider /> */}
 
             {/* Structured Data - Multiple Schemas */}
             {structuredData.map((schema, index) => (

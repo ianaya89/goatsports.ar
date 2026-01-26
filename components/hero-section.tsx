@@ -88,7 +88,7 @@ export default function HeroSection() {
               className={`
                 inline-block
                 text-5xl sm:text-6xl tablet:text-7xl
-                transition-all duration-500 ease-in-out
+                transition-[opacity,transform] duration-500 ease-in-out
                 ${isChanging ? "opacity-0 transform translate-y-8" : "opacity-100 transform translate-y-0"}
               `}
               style={{
@@ -123,7 +123,7 @@ export default function HeroSection() {
               size="lg"
               className="bg-white text-blue-700 hover:bg-blue-50 flex items-center gap-2 w-full sm:w-auto hover-lift transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/25"
             >
-              <MessageCircle className="h-5 w-5" />
+              <MessageCircle className="h-5 w-5" aria-hidden="true" />
               {t("bookSession")}
             </Button>
           </a>

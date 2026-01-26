@@ -36,7 +36,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <img src="/images/goat-sports-logo.png" alt="GOAT Sports Logo" className="h-8 tablet:h-10 w-auto" />
+              <img src="/images/goat-sports-logo.png" alt="GOAT Sports Logo" width={120} height={40} className="h-8 tablet:h-10 w-auto" />
             </Link>
           </div>
 
@@ -46,7 +46,7 @@ export default function Navbar() {
               className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-semibold bg-blue-50 hover:bg-blue-100 px-3 py-1.5 rounded-full transition-colors"
               onClick={(e) => handleSmoothScroll(e, "becas-usa")}
             >
-              <GraduationCap className="w-4 h-4" />
+              <GraduationCap className="w-4 h-4" aria-hidden="true" />
               {t("studyInUSA")}
             </a>
             <a
@@ -107,9 +107,11 @@ export default function Navbar() {
           <div className="tablet:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-600 hover:text-blue-600 focus:outline-none"
+              className="text-gray-600 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 rounded-md p-1"
+              aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+              aria-expanded={isMenuOpen}
             >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMenuOpen ? <X className="h-6 w-6" aria-hidden="true" /> : <Menu className="h-6 w-6" aria-hidden="true" />}
             </button>
           </div>
         </div>
@@ -123,7 +125,7 @@ export default function Navbar() {
               className="flex items-center gap-2 text-blue-600 font-semibold py-2 bg-blue-50 px-3 rounded-lg"
               onClick={(e) => handleSmoothScroll(e, "becas-usa")}
             >
-              <GraduationCap className="w-5 h-5" />
+              <GraduationCap className="w-5 h-5" aria-hidden="true" />
               {t("studyInUSA")}
             </a>
             <a

@@ -158,7 +158,7 @@ export default function RegistrationForm({ onSubmitStart, onSubmitSuccess, isSub
       <div className="bg-blue-50 border-l-4 border-blue-600 p-4 mb-6">
         <div className="flex">
           <div className="flex-shrink-0">
-            <Info className="h-5 w-5 text-blue-600" />
+            <Info className="h-5 w-5 text-blue-600" aria-hidden="true" />
           </div>
           <div className="ml-3">
             <p className="text-sm text-blue-700">
@@ -182,8 +182,9 @@ export default function RegistrationForm({ onSubmitStart, onSubmitSuccess, isSub
               id="firstName"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
+              autoComplete="given-name"
               className={`w-full px-3 py-2 border ${errors.firstName ? "border-red-500" : "border-gray-300"} rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600`}
-              placeholder="Tu nombre"
+              placeholder="Tu nombre…"
             />
             {errors.firstName && <p className="mt-1 text-sm text-red-500">{errors.firstName}</p>}
           </div>
@@ -197,8 +198,9 @@ export default function RegistrationForm({ onSubmitStart, onSubmitSuccess, isSub
               id="lastName"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
+              autoComplete="family-name"
               className={`w-full px-3 py-2 border ${errors.lastName ? "border-red-500" : "border-gray-300"} rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600`}
-              placeholder="Tu apellido"
+              placeholder="Tu apellido…"
             />
             {errors.lastName && <p className="mt-1 text-sm text-red-500">{errors.lastName}</p>}
           </div>
@@ -212,6 +214,8 @@ export default function RegistrationForm({ onSubmitStart, onSubmitSuccess, isSub
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              autoComplete="email"
+              spellCheck={false}
               className={`w-full px-3 py-2 border ${errors.email ? "border-red-500" : "border-gray-300"} rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600`}
               placeholder="tu@email.com"
             />
@@ -227,6 +231,7 @@ export default function RegistrationForm({ onSubmitStart, onSubmitSuccess, isSub
               id="phone"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
+              autoComplete="tel"
               className={`w-full px-3 py-2 border ${errors.phone ? "border-red-500" : "border-gray-300"} rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600`}
               placeholder="+54 9 11 1234 5678"
             />
@@ -248,7 +253,7 @@ export default function RegistrationForm({ onSubmitStart, onSubmitSuccess, isSub
                     errors.birthDate && "border-red-500",
                   )}
                 >
-                  <CalendarIcon className="mr-2 h-4 w-4" />
+                  <CalendarIcon className="mr-2 h-4 w-4" aria-hidden="true" />
                   {birthDate ? format(birthDate, "PPP", { locale: es }) : <span>Seleccionar fecha</span>}
                 </Button>
               </PopoverTrigger>
@@ -283,8 +288,9 @@ export default function RegistrationForm({ onSubmitStart, onSubmitSuccess, isSub
               id="club"
               value={club}
               onChange={(e) => setClub(e.target.value)}
+              autoComplete="organization"
               className={`w-full px-3 py-2 border ${errors.club ? "border-red-500" : "border-gray-300"} rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600`}
-              placeholder="Nombre de tu club actual"
+              placeholder="Nombre de tu club actual…"
             />
             {errors.club && <p className="mt-1 text-sm text-red-500">{errors.club}</p>}
           </div>
@@ -327,7 +333,7 @@ export default function RegistrationForm({ onSubmitStart, onSubmitSuccess, isSub
             <div className="space-y-1 text-center">
               {!medicalCertificate ? (
                 <>
-                  <Upload className="mx-auto h-12 w-12 text-gray-400" />
+                  <Upload className="mx-auto h-12 w-12 text-gray-400" aria-hidden="true" />
                   <div className="flex text-sm text-gray-600">
                     <label
                       htmlFor="file-upload"
@@ -352,13 +358,18 @@ export default function RegistrationForm({ onSubmitStart, onSubmitSuccess, isSub
                 <div className="flex items-center justify-center flex-col">
                   <div className="flex items-center justify-between bg-blue-50 p-3 rounded-md w-full mb-2">
                     <div className="flex items-center">
-                      <Check className="h-5 w-5 text-green-500 mr-2" />
+                      <Check className="h-5 w-5 text-green-500 mr-2" aria-hidden="true" />
                       <span className="text-sm font-medium truncate" style={{ maxWidth: "200px" }}>
                         {medicalCertificate.name}
                       </span>
                     </div>
-                    <button type="button" onClick={handleRemoveFile} className="text-red-500 hover:text-red-700">
-                      <X className="h-5 w-5" />
+                    <button
+                      type="button"
+                      onClick={handleRemoveFile}
+                      className="text-red-500 hover:text-red-700"
+                      aria-label="Eliminar archivo"
+                    >
+                      <X className="h-5 w-5" aria-hidden="true" />
                     </button>
                   </div>
                   <button
@@ -461,7 +472,7 @@ export default function RegistrationForm({ onSubmitStart, onSubmitSuccess, isSub
             onChange={(e) => setAllergies(e.target.value)}
             rows={3}
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
-            placeholder="Describe cualquier alergia o condición médica que debamos conocer"
+            placeholder="Describe cualquier alergia o condición médica que debamos conocer…"
           ></textarea>
         </div>
       </div>
@@ -479,7 +490,7 @@ export default function RegistrationForm({ onSubmitStart, onSubmitSuccess, isSub
             onChange={(e) => setObjectives(e.target.value)}
             rows={4}
             className={`w-full px-3 py-2 border ${errors.objectives ? "border-red-500" : "border-gray-300"} rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600`}
-            placeholder="Describe tus objetivos, habilidades que quieres mejorar, etc."
+            placeholder="Describe tus objetivos, habilidades que quieres mejorar, etc…"
           ></textarea>
           {errors.objectives && <p className="mt-1 text-sm text-red-500">{errors.objectives}</p>}
         </div>

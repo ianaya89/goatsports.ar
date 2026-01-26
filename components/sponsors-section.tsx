@@ -26,16 +26,6 @@ const sponsorLogos: SponsorLogo[] = [
     width: 100,
   },
   {
-    name: "Balling",
-    src: "/images/sponsors/balling-logo.webp",
-    width: 140,
-  },
-  {
-    name: "Lecker",
-    src: "/images/sponsors/balling-logo.svg",
-    width: 140,
-  },
-  {
     name: "Algabo",
     src: "/images/sponsors/algabo.png",
     width: 140,

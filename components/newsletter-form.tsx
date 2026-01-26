@@ -62,6 +62,9 @@ export default function NewsletterForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder={t("placeholder")}
+            aria-label={t("placeholder")}
+            autoComplete="email"
+            spellCheck={false}
             className="flex-grow px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600"
             required
           />
@@ -89,7 +92,7 @@ export default function NewsletterForm() {
               </span>
             ) : (
               <span className="flex items-center">
-                {t("submit")} <ArrowRight className="ml-2 h-4 w-4" />
+                {t("submit")} <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
               </span>
             )}
           </Button>

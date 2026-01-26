@@ -43,7 +43,7 @@ export default function CampusPromoModal({ isOpen, onClose }: CampusPromoModalPr
           {/* Floating Badge */}
           <div className="absolute top-4 right-4 z-10">
             <span className="inline-flex items-center gap-1 rounded-full bg-green-500/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 shadow-lg animate-pulse">
-              <Star className="h-3 w-3" />
+              <Star className="h-3 w-3" aria-hidden="true" />
               INSCRIPCIONES ABIERTAS
             </span>
           </div>
@@ -71,7 +71,7 @@ export default function CampusPromoModal({ isOpen, onClose }: CampusPromoModalPr
             <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
-                  <Calendar className="h-4 w-4 text-blue-600" />
+                  <Calendar className="h-4 w-4 text-blue-600" aria-hidden="true" />
                 </div>
                 <div>
                   <p className="text-xs text-gray-500 uppercase font-medium">Fecha</p>
@@ -82,7 +82,7 @@ export default function CampusPromoModal({ isOpen, onClose }: CampusPromoModalPr
             <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
-                  <MapPin className="h-4 w-4 text-blue-600" />
+                  <MapPin className="h-4 w-4 text-blue-600" aria-hidden="true" />
                 </div>
                 <div>
                   <p className="text-xs text-gray-500 uppercase font-medium">Lugar</p>
@@ -95,7 +95,7 @@ export default function CampusPromoModal({ isOpen, onClose }: CampusPromoModalPr
           {/* Pricing Info */}
           <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-4 mb-6 border border-green-100">
             <div className="flex items-start gap-3">
-              <Trophy className="h-5 w-5 text-green-600 mt-0.5" />
+              <Trophy className="h-5 w-5 text-green-600 mt-0.5" aria-hidden="true" />
               <div>
                 <p className="text-sm font-bold text-gray-900 mb-2">
                   ¡Nuestro Campus en GEBA ya se convirtió en un clásico del verano!
@@ -112,10 +112,10 @@ export default function CampusPromoModal({ isOpen, onClose }: CampusPromoModalPr
 
           {/* CTA Buttons */}
           <div className="space-y-3">
-            <a href="https://summer.goatsports.ar/inscripcion" target="_blank" className="block">
-              <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 group">
+            <a href="https://summer.goatsports.ar/inscripcion" target="_blank" rel="noopener noreferrer" className="block">
+              <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-[transform,shadow] duration-200 group">
                 <span>¡INSCRIBITE AHORA!</span>
-                <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Button>
             </a>
             <Button

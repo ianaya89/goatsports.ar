@@ -108,6 +108,7 @@ export default function ContactForm() {
                 name="name"
                 value={formState.name}
                 onChange={handleChange}
+                autoComplete="name"
                 className="w-full px-4 py-2 bg-white/20 border border-white/30 rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
                 placeholder={t("namePlaceholder")}
                 required
@@ -123,6 +124,8 @@ export default function ContactForm() {
                 name="email"
                 value={formState.email}
                 onChange={handleChange}
+                autoComplete="email"
+                spellCheck={false}
                 className="w-full px-4 py-2 bg-white/20 border border-white/30 rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
                 placeholder={t("emailPlaceholder")}
                 required
@@ -140,6 +143,7 @@ export default function ContactForm() {
               name="phone"
               value={formState.phone}
               onChange={handleChange}
+              autoComplete="tel"
               className="w-full px-4 py-2 bg-white/20 border border-white/30 rounded-md text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
               placeholder={t("phonePlaceholder")}
             />
@@ -199,7 +203,7 @@ export default function ContactForm() {
                 </span>
               ) : (
                 <span className="flex items-center">
-                  <Send className="mr-2 h-4 w-4" />
+                  <Send className="mr-2 h-4 w-4" aria-hidden="true" />
                   {t("submit")}
                 </span>
               )}
