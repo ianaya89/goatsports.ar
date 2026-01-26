@@ -27,8 +27,8 @@ export default function Home() {
   useEffect(() => {
     if (!isPromoEnabled) return
     const timer = setTimeout(() => {
-      setIsPromoModalOpen(false)
-    }, 1000)
+      setIsPromoModalOpen(true)
+    }, 1500)
 
     return () => clearTimeout(timer)
   }, [isPromoEnabled])

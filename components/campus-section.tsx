@@ -24,9 +24,9 @@ const upcomingCampus: CampusEvent[] = [
     translationKey: "summer2026",
     imageUrl: "/images/campus-coaches-players.jpg",
     isPast: false,
-    comingSoon: true,
+    comingSoon: false,
     link: "https://summer.goatsports.ar",
-    openRegistration: false,
+    openRegistration: true,
   },
   {
     id: "rosario-2025",
