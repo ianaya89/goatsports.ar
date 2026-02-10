@@ -29,6 +29,15 @@ const upcomingCampus: CampusEvent[] = [
     openRegistration: true,
   },
   {
+    id: "showcase-usa-2026",
+    translationKey: "showcaseUsa2026",
+    imageUrl: "/images/showcase-usa.jpg",
+    isPast: false,
+    comingSoon: false,
+    link: "https://usa.goatsports.ar",
+    openRegistration: true,
+  },
+  {
     id: "rosario-2025",
     translationKey: "rosario2025",
     imageUrl: "/images/damfield.jpg",

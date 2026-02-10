@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
-import { Calendar, MapPin, X, Star, Users, Trophy, ArrowRight } from "lucide-react"
+import { Calendar, MapPin, X, Star, Trophy, ArrowRight, GraduationCap } from "lucide-react"
 import ImageWithFallback from "./image-with-fallback"
 
 interface CampusPromoModalProps {
@@ -16,15 +16,15 @@ export default function CampusPromoModal({ isOpen, onClose }: CampusPromoModalPr
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[650px] max-h-[90vh] m-4 sm:m-0 overflow-y-auto p-0 border-0">
         {/* Hidden Dialog Title for Accessibility */}
-        <DialogTitle className="sr-only">Campus Verano 2026 GEBA - Inscripciones Abiertas</DialogTitle>
+        <DialogTitle className="sr-only">Showcase USA - Becas Universitarias de Hockey</DialogTitle>
 
         {/* Hero Section with Overlay */}
         <div className="relative h-72">
           {/* Background Image with Gradient Overlay */}
           <div className="absolute inset-0">
             <ImageWithFallback
-              src="/images/campus-coaches-players.jpg"
-              alt="Campus Verano 2026 GEBA"
+              src="/images/showcase-usa.jpg"
+              alt="Showcase USA - Becas Universitarias"
               fallbackSrc="/placeholder-kngc1.png"
               className="w-full h-full object-cover"
             />
@@ -52,14 +52,14 @@ export default function CampusPromoModal({ isOpen, onClose }: CampusPromoModalPr
           <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
             <div className="flex items-center gap-2 mb-2">
               <div className="h-px bg-white/50 flex-1" />
-              <span className="text-xs uppercase tracking-widest text-white/80 font-medium">GOAT SPORTS</span>
+              <span className="text-xs uppercase tracking-widest text-white/80 font-medium">GOAT SPORTS × US FULL RIDE</span>
               <div className="h-px bg-white/50 flex-1" />
             </div>
             <h2 className="text-3xl font-black mb-1">
-              CAMPUS VERANO 2026
+              SHOWCASE USA
             </h2>
             <p className="text-xl font-bold text-yellow-400">
-              GEBA • CIUDAD DE BUENOS AIRES
+              BECAS UNIVERSITARIAS DE HOCKEY
             </p>
           </div>
         </div>
@@ -71,11 +71,11 @@ export default function CampusPromoModal({ isOpen, onClose }: CampusPromoModalPr
             <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
-                  <Calendar className="h-4 w-4 text-blue-600" aria-hidden="true" />
+                  <GraduationCap className="h-4 w-4 text-blue-600" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-500 uppercase font-medium">Fecha</p>
-                  <p className="text-sm font-bold text-gray-900">Febrero 2026</p>
+                  <p className="text-xs text-gray-500 uppercase font-medium">Becas</p>
+                  <p className="text-sm font-bold text-gray-900">Hasta el 100%</p>
                 </div>
               </div>
             </div>
@@ -86,35 +86,34 @@ export default function CampusPromoModal({ isOpen, onClose }: CampusPromoModalPr
                 </div>
                 <div>
                   <p className="text-xs text-gray-500 uppercase font-medium">Lugar</p>
-                  <p className="text-sm font-bold text-gray-900">GEBA</p>
+                  <p className="text-sm font-bold text-gray-900">GEBA, Buenos Aires</p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Pricing Info */}
-          <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-4 mb-6 border border-green-100">
+          {/* Info */}
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-4 mb-6 border border-blue-100">
             <div className="flex items-start gap-3">
-              <Trophy className="h-5 w-5 text-green-600 mt-0.5" aria-hidden="true" />
+              <Trophy className="h-5 w-5 text-blue-600 mt-0.5" aria-hidden="true" />
               <div>
                 <p className="text-sm font-bold text-gray-900 mb-2">
-                  ¡Nuestro Campus en GEBA ya se convirtió en un clásico del verano!
+                  ¡Estudiá y jugá al hockey en universidades de Estados Unidos!
                 </p>
                 <div className="space-y-2">
                   <div className="text-center">
-                    <p className="text-sm text-gray-600 mb-2">¡Las inscripciones ya están abiertas! Asegurá tu lugar.</p>
+                    <p className="text-sm text-gray-600 mb-2">Evaluación técnica y táctica, grabación en video y charla informativa sobre becas NCAA. Para jugadoras de 14 a 22 años.</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-
           {/* CTA Buttons */}
           <div className="space-y-3">
-            <a href="https://summer.goatsports.ar/inscripcion" target="_blank" rel="noopener noreferrer" className="block">
+            <a href="https://usa.goatsports.ar" target="_blank" rel="noopener noreferrer" className="block">
               <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-[transform,shadow] duration-200 group">
-                <span>¡INSCRIBITE AHORA!</span>
+                <span>¡QUIERO SABER MÁS!</span>
                 <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Button>
             </a>
