@@ -164,10 +164,18 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col tablet:flex-row justify-center items-center">
+        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col tablet:flex-row justify-center items-center gap-4">
           <p className="text-gray-400 text-sm">
             &copy; {new Date().getFullYear()} {t("copyright")}
           </p>
+          <a
+            href="https://comercial.goatsports.ar"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors"
+          >
+            {t("commercialProposal")}
+          </a>
         </div>
       </div>
     </footer>

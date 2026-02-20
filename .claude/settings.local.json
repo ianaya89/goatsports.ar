@@ -11,7 +11,8 @@
       "Bash(ls:*)",
       "WebFetch(domain:usa.goatsports.ar)",
       "WebSearch",
-      "WebFetch(domain:unsplash.com)"
+      "WebFetch(domain:unsplash.com)",
+      "Bash(npx next build:*)"
     ],
     "deny": [],
     "ask": []

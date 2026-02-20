@@ -7,6 +7,8 @@ interface SponsorLogo {
   name: string
   src: string
   width: number
+  url?: string
+  featured?: boolean
 }
 
 const sponsorLogos: SponsorLogo[] = [
@@ -19,6 +21,13 @@ const sponsorLogos: SponsorLogo[] = [
     name: "Treos",
     src: "/images/sponsors/treos-logo.svg",
     width: 160,
+  },
+  {
+    name: "Vlack",
+    src: "/images/sponsors/vlack-logo.webp",
+    width: 320,
+    url: "https://vlackhockey.com.ar",
+    featured: true,
   },
   {
     name: "Maraton",
@@ -46,17 +55,29 @@ export default function SponsorsSection() {
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
-          {sponsorLogos.map((logo) => (
-            <div key={logo.name} className="flex items-center justify-center">
+          {sponsorLogos.map((logo) => {
+            const image = (
               <ImageWithFallback
                 src={logo.src || "/placeholder.svg"}
                 alt={`${logo.name} - ${t("officialSponsor")}`}
                 fallbackSrc={`/placeholder.svg?height=64&width=${logo.width}&query=${logo.name}%20logo`}
-                className="h-12 md:h-16 w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
+                className={`${logo.featured ? "h-24 md:h-32" : "h-12 md:h-16"} w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity`}
                 style={{ maxWidth: logo.width }}
               />
-            </div>
-          ))}
+            )
+
+            return (
+              <div key={logo.name} className="flex items-center justify-center">
+                {logo.url ? (
+                  <a href={logo.url} target="_blank" rel="noopener noreferrer">
+                    {image}
+                  </a>
+                ) : (
+                  image
+                )}
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>
