@@ -24,13 +24,13 @@ export async function generateMetadata({
   const { locale } = await params
 
   const titles: Record<string, string> = {
-    es: "GOAT Sports - Entrenamiento y Academia de Hockey sobre Césped, Fútbol y Rugby",
-    en: "GOAT Sports - Field Hockey, Football and Rugby Training Academy",
+    es: "GOAT Sports - Entrenamiento y Academia de Hockey sobre Césped y Fútbol",
+    en: "GOAT Sports - Field Hockey and Football Training Academy",
   }
 
   const descriptions: Record<string, string> = {
-    es: "Academia deportiva especializada en hockey sobre césped, fútbol y rugby. Ofrecemos entrenamiento personalizado, campus deportivos y servicios de consultoría para clubes y colegios en Buenos Aires, Argentina.",
-    en: "Sports academy specializing in field hockey, football, and rugby. We offer personalized training, sports camps, and consulting services for clubs and schools in Buenos Aires, Argentina.",
+    es: "Academia deportiva especializada en hockey sobre césped y fútbol. Ofrecemos entrenamiento personalizado, campus deportivos y servicios de consultoría para clubes y colegios en Buenos Aires, Argentina.",
+    en: "Sports academy specializing in field hockey and football. We offer personalized training, sports camps, and consulting services for clubs and schools in Buenos Aires, Argentina.",
   }
 
   const ogTitles: Record<string, string> = {
@@ -39,8 +39,8 @@ export async function generateMetadata({
   }
 
   const ogDescriptions: Record<string, string> = {
-    es: "Entrenamiento experto de hockey sobre césped, fútbol y rugby. Formación personalizada y programas inmersivos para elevar tus habilidades al siguiente nivel.",
-    en: "Expert field hockey, football, and rugby training. Personalized coaching and immersive programs to take your skills to the next level.",
+    es: "Entrenamiento experto de hockey sobre césped y fútbol. Formación personalizada y programas inmersivos para elevar tus habilidades al siguiente nivel.",
+    en: "Expert field hockey and football training. Personalized coaching and immersive programs to take your skills to the next level.",
   }
 
   return {
@@ -55,7 +55,6 @@ export async function generateMetadata({
       "hockey academy",
       "fútbol",
       "football",
-      "rugby",
       "campus deportivo",
       "sports camp",
       "consultoría deportiva",
@@ -169,8 +168,8 @@ export default async function LocaleLayout({
     image: `${baseUrl}/images/training-center.jpg`,
     description:
       locale === "es"
-        ? "Academia deportiva especializada en hockey sobre césped, fútbol y rugby en Buenos Aires, Argentina."
-        : "Sports academy specializing in field hockey, football, and rugby in Buenos Aires, Argentina.",
+        ? "Academia deportiva especializada en hockey sobre césped y fútbol en Buenos Aires, Argentina."
+        : "Sports academy specializing in field hockey and football in Buenos Aires, Argentina.",
     email: "hola@goatsports.ar",
     telephone: "+54 9 11 2657-8585",
     foundingDate: "2020",
@@ -201,8 +200,8 @@ export default async function LocaleLayout({
     name: "GOAT Sports",
     description:
       locale === "es"
-        ? "Centro de entrenamiento de elite para hockey sobre césped, fútbol y rugby."
-        : "Elite training center for field hockey, football, and rugby.",
+        ? "Centro de entrenamiento de elite para hockey sobre césped y fútbol."
+        : "Elite training center for field hockey and football.",
     url: currentUrl,
     logo: `${baseUrl}/images/goat-sports-logo.png`,
     image: [
@@ -270,7 +269,7 @@ export default async function LocaleLayout({
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: locale === "es" ? "Academias de Hockey y Rugby" : "Hockey and Rugby Academies",
+            name: locale === "es" ? "Academia de Hockey" : "Hockey Academy",
             description:
               locale === "es"
                 ? "Programa estructurado con sesiones regulares de entrenamiento"

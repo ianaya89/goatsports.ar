@@ -1,7 +1,7 @@
 {
   "name": "GOAT Sports - Academia Deportiva de Elite",
   "short_name": "GOAT Sports",
-  "description": "Academia deportiva especializada en hockey sobre césped, fútbol y rugby. Entrenamiento personalizado, campus deportivos y servicios de consultoría en Buenos Aires, Argentina.",
+  "description": "Academia deportiva especializada en hockey sobre césped y fútbol. Entrenamiento personalizado, campus deportivos y servicios de consultoría en Buenos Aires, Argentina.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

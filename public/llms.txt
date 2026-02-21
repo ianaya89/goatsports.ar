@@ -1,6 +1,6 @@
 # GOAT Sports - AI Content Guide
 
-> GOAT Sports es una academia deportiva de elite especializada en hockey sobre césped, fútbol y rugby en Buenos Aires, Argentina.
+> GOAT Sports es una academia deportiva de elite especializada en hockey sobre césped y fútbol en Buenos Aires, Argentina.
 
 ## Información General
 
@@ -19,10 +19,9 @@ Sesiones individuales adaptadas a las necesidades específicas del atleta. Inclu
 - Horarios: Lunes a Viernes 8:00-21:00, Sábados 9:00-13:00
 - Duración: 60 o 90 minutos por sesión
 
-### 2. Academias de Hockey y Rugby
+### 2. Academia de Hockey
 Programa estructurado con sesiones regulares de entrenamiento en grupos reducidos (máximo 8 jugadores por entrenador).
 - Hockey: Lunes a Viernes 18:00-21:00
-- Rugby: Miércoles y Viernes 17:00-19:00
 
 ### 3. Alquiler de Instalaciones para Equipos
 Canchas de césped sintético profesional disponibles para alquiler.

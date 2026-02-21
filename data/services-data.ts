@@ -36,7 +36,7 @@ export function getServicesData(t: (key: string) => string): ServiceDetails[] {
       title: t("academies.title"),
       description: t("academies.description"),
       longDescription: t("academies.longDescription"),
-      schedule: [t("academies.schedule.0"), t("academies.schedule.1"), t("academies.schedule.2")],
+      schedule: [t("academies.schedule.0"), t("academies.schedule.1")],
       features: [
         t("academies.features.0"),
         t("academies.features.1"),
@@ -50,15 +50,11 @@ export function getServicesData(t: (key: string) => string): ServiceDetails[] {
         },
         {
           src: "/images/hockey-academy-2.jpeg",
-          alt: "Entrenamiento juvenil de rugby",
+          alt: "Entrenamiento juvenil de hockey",
         },
         {
           src: "/images/hockey-academy-3.jpeg",
           alt: "Práctica de equipo de hockey",
-        },
-        {
-          src: "/images/rugby-training-indoor.jpeg",
-          alt: "Taller de habilidades de rugby",
         },
       ],
     },
@@ -86,7 +82,7 @@ export function getServicesData(t: (key: string) => string): ServiceDetails[] {
         },
         {
           src: "/images/team-recovery-session.jpeg",
-          alt: "Sesión de entrenamiento de equipo de rugby",
+          alt: "Sesión de entrenamiento de equipo",
         },
       ],
     },
@@ -126,19 +122,18 @@ export const servicesData: ServiceDetails[] = [
       },
       {
         src: "/images/personalizado-hockey-3.jpeg",
-        alt: "Entrenamiento juvenil de rugby",
+        alt: "Entrenamiento juvenil de hockey",
       },
     ],
   },
   {
-    title: "Academias de Hockey y Rugby",
+    title: "Academia de Hockey",
     description:
-      "Unite a nuestro programa estructurado con sesiones regulares de entrenamiento, talleres de desarrollo de habilidades y oportunidades de juego competitivo en hockey y rugby.",
+      "Unite a nuestro programa estructurado con sesiones regulares de entrenamiento, talleres de desarrollo de habilidades y oportunidades de juego competitivo en hockey.",
     longDescription:
-      "Las Academias GOAT Sports ofrecen un programa integral de desarrollo para jugadores de hockey y rugby de todos los niveles. Los participantes entrenan en grupos reducidos organizados por edad y nivel, lo que permite una atención integral dentro de un entorno de equipo.",
+      "La Academia GOAT Sports ofrece un programa integral de desarrollo para jugadores de hockey de todos los niveles. Los participantes entrenan en grupos reducidos organizados por edad y nivel, lo que permite una atención integral dentro de un entorno de equipo.",
     schedule: [
       "Hockey - Lunes a Viernes 18:00 - 21:00",
-      "Rugby - Miercoles y Viernes de 17:00 a 19:00",
       "Sesiones adicionales de preparación física",
     ],
     features: [
@@ -154,15 +149,11 @@ export const servicesData: ServiceDetails[] = [
       },
       {
         src: "/images/hockey-academy-2.jpeg",
-        alt: "Entrenamiento juvenil de rugby",
+        alt: "Entrenamiento juvenil de hockey",
       },
       {
         src: "/images/hockey-academy-3.jpeg",
         alt: "Práctica de equipo de hockey",
-      },
-      {
-        src: "/images/rugby-training-indoor.jpeg",
-        alt: "Taller de habilidades de rugby",
       },
     ],
   },
@@ -192,7 +183,7 @@ export const servicesData: ServiceDetails[] = [
       },
       {
         src: "/images/team-recovery-session.jpeg",
-        alt: "Sesión de entrenamiento de equipo de rugby",
+        alt: "Sesión de entrenamiento de equipo",
       },
     ],
   },

@@ -51,17 +51,16 @@
       "0": "Entrenamiento personal de hockey",
       "1": "Entrenamiento personal de hockey",
       "2": "Análisis de rendimiento deportivo",
-      "3": "Entrenamiento juvenil de rugby"
+      "3": "Entrenamiento juvenil de hockey"
     }
   },
   "academies": {
-    "title": "Academias de Hockey y Rugby",
-    "description": "Unite a nuestro programa estructurado con sesiones regulares de entrenamiento, talleres de desarrollo de habilidades y oportunidades de juego competitivo en hockey y rugby.",
-    "longDescription": "Las Academias GOAT Sports ofrecen un programa integral de desarrollo para jugadores de hockey y rugby de todos los niveles. Los participantes entrenan en grupos reducidos organizados por edad y nivel, lo que permite una atención integral dentro de un entorno de equipo.",
+    "title": "Academia de Hockey",
+    "description": "Unite a nuestro programa estructurado con sesiones regulares de entrenamiento, talleres de desarrollo de habilidades y oportunidades de juego competitivo en hockey.",
+    "longDescription": "La Academia GOAT Sports ofrece un programa integral de desarrollo para jugadores de hockey de todos los niveles. Los participantes entrenan en grupos reducidos organizados por edad y nivel, lo que permite una atención integral dentro de un entorno de equipo.",
     "schedule": {
       "0": "Hockey - Lunes a Viernes 18:00 - 21:00",
-      "1": "Rugby - Miercoles y Viernes de 17:00 a 19:00",
-      "2": "Sesiones adicionales de preparación física"
+      "1": "Sesiones adicionales de preparación física"
     },
     "features": {
       "0": "Grupos reducidos (máximo 8 jugadores por entrenador)",
@@ -392,9 +391,9 @@
     "whatsappMessage": "Hola, me gustaría obtener más información sobre GOAT Sports. Gracias!"
   },
   "metadata": {
-    "title": "GOAT Sports - Entrenamiento y Academia de Hockey sobre Césped, Fútbol y Rugby",
-    "description": "Academia deportiva especializada en hockey sobre césped, fútbol y rugby. Ofrecemos entrenamiento personalizado, campus deportivos y servicios de consultoría para clubes y colegios en Buenos Aires, Argentina.",
+    "title": "GOAT Sports - Entrenamiento y Academia de Hockey sobre Césped y Fútbol",
+    "description": "Academia deportiva especializada en hockey sobre césped y fútbol. Ofrecemos entrenamiento personalizado, campus deportivos y servicios de consultoría para clubes y colegios en Buenos Aires, Argentina.",
     "ogTitle": "GOAT Sports - Academia Deportiva de Elite",
-    "ogDescription": "Entrenamiento experto de hockey sobre césped, fútbol y rugby. Formación personalizada y programas inmersivos para elevar tus habilidades al siguiente nivel."
+    "ogDescription": "Entrenamiento experto de hockey sobre césped y fútbol. Formación personalizada y programas inmersivos para elevar tus habilidades al siguiente nivel."
   }
 }

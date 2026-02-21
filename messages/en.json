@@ -51,17 +51,16 @@
       "0": "Personal hockey training",
       "1": "Personal hockey training",
       "2": "Sports performance analysis",
-      "3": "Youth rugby training"
+      "3": "Youth hockey training"
     }
   },
   "academies": {
-    "title": "Hockey and Rugby Academies",
-    "description": "Join our structured program with regular training sessions, skill development workshops, and competitive play opportunities in hockey and rugby.",
-    "longDescription": "GOAT Sports Academies offer a comprehensive development program for hockey and rugby players of all levels. Participants train in small groups organized by age and level, allowing for comprehensive attention within a team environment.",
+    "title": "Hockey Academy",
+    "description": "Join our structured program with regular training sessions, skill development workshops, and competitive play opportunities in hockey.",
+    "longDescription": "GOAT Sports Academy offers a comprehensive development program for hockey players of all levels. Participants train in small groups organized by age and level, allowing for comprehensive attention within a team environment.",
     "schedule": {
       "0": "Hockey - Monday to Friday 6:00 PM - 9:00 PM",
-      "1": "Rugby - Wednesday and Friday 5:00 PM - 7:00 PM",
-      "2": "Additional fitness preparation sessions"
+      "1": "Additional fitness preparation sessions"
     },
     "features": {
       "0": "Small groups (maximum 8 players per coach)",
@@ -392,9 +391,9 @@
     "whatsappMessage": "Hi, I would like to get more information about GOAT Sports. Thanks!"
   },
   "metadata": {
-    "title": "GOAT Sports - Field Hockey, Football and Rugby Training Academy",
-    "description": "Sports academy specializing in field hockey, football, and rugby. We offer personalized training, sports camps, and consulting services for clubs and schools in Buenos Aires, Argentina.",
+    "title": "GOAT Sports - Field Hockey and Football Training Academy",
+    "description": "Sports academy specializing in field hockey and football. We offer personalized training, sports camps, and consulting services for clubs and schools in Buenos Aires, Argentina.",
     "ogTitle": "GOAT Sports - Elite Sports Academy",
-    "ogDescription": "Expert field hockey, football, and rugby training. Personalized coaching and immersive programs to take your skills to the next level."
+    "ogDescription": "Expert field hockey and football training. Personalized coaching and immersive programs to take your skills to the next level."
   }
 }
