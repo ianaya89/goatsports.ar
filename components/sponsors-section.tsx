@@ -15,12 +15,12 @@ const sponsorLogos: SponsorLogo[] = [
   {
     name: "Dole",
     src: "/images/sponsors/dole-logo.svg",
-    width: 140,
+    width: 100,
   },
   {
     name: "Treos",
     src: "/images/sponsors/treos-logo.svg",
-    width: 160,
+    width: 110,
   },
   {
     name: "Vlack",
@@ -32,12 +32,12 @@ const sponsorLogos: SponsorLogo[] = [
   {
     name: "Maraton",
     src: "/images/sponsors/maraton.png",
-    width: 100,
+    width: 70,
   },
   {
     name: "Algabo",
     src: "/images/sponsors/algabo.png",
-    width: 140,
+    width: 100,
   },
 ]
 
@@ -45,23 +45,43 @@ export default function SponsorsSection() {
   const t = useTranslations("sponsors")
 
   return (
-    <section className="py-12 bg-gray-900">
+    <section className="py-16 bg-gray-950 relative overflow-hidden">
+      {/* Subtle top border */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+
       <div className="container mx-auto px-4">
-        <div className="text-center mb-8">
-          <h2 className="text-2xl font-bold text-white mb-2">{t("title")}</h2>
-          <p className="text-white/80 max-w-2xl mx-auto text-sm">
-            {t("description")}
-          </p>
+        <div className="text-center mb-12">
+          <span className="text-accent-400 font-semibold text-xs uppercase tracking-widest mb-3 block">
+            Partners
+          </span>
+          <h2 className="text-2xl font-bold text-white">{t("title")}</h2>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
-          {sponsorLogos.map((logo) => {
+        {/* Featured sponsor */}
+        {sponsorLogos.filter((l) => l.featured).map((logo) => (
+          <div key={logo.name} className="flex flex-col items-center mb-10">
+            <span className="text-white/50 text-xs uppercase tracking-widest mb-4">Main Sponsor</span>
+            <a href={logo.url} target="_blank" rel="noopener noreferrer">
+              <ImageWithFallback
+                src={logo.src || "/placeholder.svg"}
+                alt={`${logo.name} - ${t("officialSponsor")}`}
+                fallbackSrc={`/placeholder.svg?height=64&width=${logo.width}&query=${logo.name}%20logo`}
+                className="h-20 md:h-24 w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-105"
+                style={{ maxWidth: logo.width }}
+              />
+            </a>
+          </div>
+        ))}
+
+        {/* Other sponsors */}
+        <div className="flex flex-wrap items-center justify-center gap-10 md:gap-14">
+          {sponsorLogos.filter((l) => !l.featured).map((logo) => {
             const image = (
               <ImageWithFallback
                 src={logo.src || "/placeholder.svg"}
                 alt={`${logo.name} - ${t("officialSponsor")}`}
                 fallbackSrc={`/placeholder.svg?height=64&width=${logo.width}&query=${logo.name}%20logo`}
-                className={`${logo.featured ? "h-24 md:h-32" : "h-12 md:h-16"} w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity`}
+                className="h-9 md:h-12 w-auto object-contain filter brightness-0 invert opacity-40 hover:opacity-80 transition-all duration-300 hover:scale-105"
                 style={{ maxWidth: logo.width }}
               />
             )

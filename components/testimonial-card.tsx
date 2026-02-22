@@ -1,45 +1,41 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Quote } from "lucide-react"
-import ImageWithFallback from "./image-with-fallback"
-
 interface TestimonialCardProps {
   quote: string
   name: string
   title: string
-  // imageQuery: string
 }
 
-export default function TestimonialCard({ quote, name, title, imageQuery }: TestimonialCardProps) {
+export default function TestimonialCard({ quote, name, title }: TestimonialCardProps) {
+  const initials = name
+    .split(" ")
+    .map((n) => n[0])
+    .join("")
+    .slice(0, 2)
+
   return (
-    <Card className="group h-full border-0 bg-white/80 backdrop-blur-sm hover:bg-white hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover-lift relative overflow-hidden">
-      {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+    <div className="group h-full bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-500 relative flex flex-col">
+      {/* Accent top line */}
+      <div className="absolute top-0 left-6 right-6 h-0.5 bg-gradient-to-r from-blue-500 to-accent-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-      <CardContent className="p-6 flex flex-col h-full relative z-10">
-        <div className="flex justify-between items-start mb-4">
-          <Quote className="h-8 w-8 text-blue-600 group-hover:text-blue-700 group-hover:scale-110 transform transition-all duration-300" />
-          <div className="flex space-x-1">
-            {[...Array(5)].map((_, i) => (
-              <div key={i} className="w-1 h-1 bg-blue-300 rounded-full group-hover:bg-blue-500 transition-colors duration-300"></div>
-            ))}
-          </div>
+      {/* Quote icon */}
+      <div className="w-9 h-9 rounded-full bg-blue-50 group-hover:bg-accent-50 flex items-center justify-center mb-4 transition-colors duration-500">
+        <svg className="w-4 h-4 text-blue-400 group-hover:text-accent-500 transition-colors duration-500" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11h4v10H0z" />
+        </svg>
+      </div>
+
+      <p className="text-gray-600 leading-relaxed text-sm flex-grow">
+        {quote}
+      </p>
+
+      <div className="flex items-center gap-3 pt-5 mt-6 border-t border-gray-100">
+        <div className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center flex-shrink-0">
+          <span className="text-white text-xs font-semibold">{initials}</span>
         </div>
-
-        <p className="text-gray-600 group-hover:text-gray-700 mb-6 flex-grow leading-relaxed transition-colors duration-300 italic">
-          "{quote}"
-        </p>
-
-        <div className="flex items-center">
-          {/* Avatar placeholder with gradient */}
-          <div className="h-12 w-12 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 mr-4 flex items-center justify-center text-white font-bold text-lg group-hover:scale-105 transition-transform duration-300">
-            {name.charAt(0)}
-          </div>
-          <div>
-            <h4 className="font-semibold group-hover:text-blue-700 transition-colors duration-300">{name}</h4>
-            <p className="text-sm text-gray-500 group-hover:text-gray-600 transition-colors duration-300">{title}</p>
-          </div>
+        <div>
+          <h4 className="font-semibold text-gray-900 text-sm leading-tight">{name}</h4>
+          <p className="text-xs text-gray-500">{title}</p>
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   )
 }

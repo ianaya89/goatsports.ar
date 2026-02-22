@@ -12,7 +12,9 @@
       "WebFetch(domain:usa.goatsports.ar)",
       "WebSearch",
       "WebFetch(domain:unsplash.com)",
-      "Bash(npx next build:*)"
+      "Bash(npx next build:*)",
+      "Bash(lsof:*)",
+      "Bash(xargs kill -9:*)"
     ],
     "deny": [],
     "ask": []

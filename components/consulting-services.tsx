@@ -52,19 +52,19 @@ export default function ConsultingServices() {
           />
         </div>
         <div className="lg:col-span-5 order-1 lg:order-2">
-          <h2 className="text-2xl font-bold mb-6 text-white">{t("servicesTitle")}</h2>
+          <h2 className="text-2xl font-bold mb-6">{t("servicesTitle")}</h2>
 
           <div className="space-y-5">
             {services.map((service, index) => {
               const Icon = service.icon
               return (
                 <div key={index} className="flex items-start">
-                  <div className="bg-white/20 p-3 rounded-full mr-4 flex-shrink-0">
-                    <Icon className="h-5 w-5 text-white" />
+                  <div className="bg-blue-100 p-3 rounded-full mr-4 flex-shrink-0">
+                    <Icon className="h-5 w-5 text-blue-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg text-white">{service.title}</h3>
-                    <p className="text-white/90 text-sm">{service.description}</p>
+                    <h3 className="font-semibold text-lg">{service.title}</h3>
+                    <p className="text-gray-600 text-sm">{service.description}</p>
                   </div>
                 </div>
               )
@@ -73,7 +73,7 @@ export default function ConsultingServices() {
 
           <div className="mt-8 flex justify-center">
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-              <Button className="bg-white text-blue-600 hover:bg-white/90 flex items-center gap-2">
+              <Button className="bg-blue-600 text-white hover:bg-blue-700 font-semibold flex items-center gap-2">
                 <MessageCircle className="h-5 w-5" />
                 {t("cta")}
               </Button>

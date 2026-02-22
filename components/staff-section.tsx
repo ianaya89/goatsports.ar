@@ -62,7 +62,7 @@ export default function StaffSection() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
         <div className="relative group">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-accent-500/10 rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
           <img
             src="/images/staff.jpg"
             alt="Equipo de Entrenadores de GOAT Sports"
@@ -95,11 +95,11 @@ export default function StaffSection() {
 
       <div className="relative">
         <div className="absolute top-0 left-1/4 w-32 h-32 bg-blue-100/30 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-0 right-1/4 w-24 h-24 bg-purple-100/30 rounded-full blur-2xl animate-float animation-delay-2000"></div>
+        <div className="absolute bottom-0 right-1/4 w-24 h-24 bg-accent-100/30 rounded-full blur-2xl animate-float animation-delay-2000"></div>
 
         <div className="text-center mb-8 relative z-10">
           <h3 className="text-3xl font-bold mb-4">{t("teamTitle")}</h3>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-accent-400 mx-auto rounded-full"></div>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto leading-relaxed">{t("teamDescription")}</p>
         </div>
 

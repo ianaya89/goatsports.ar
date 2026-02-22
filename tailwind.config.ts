@@ -18,6 +18,10 @@ const config: Config = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["var(--font-body)", "system-ui", "sans-serif"],
+        heading: ["var(--font-heading)", "system-ui", "sans-serif"],
+      },
       screens: {
         tablet: "980px", // Nuevo breakpoint personalizado en 980px
       },
@@ -34,6 +38,19 @@ const config: Config = {
           800: "#001352",
           900: "#000c33",
           950: "#00051a",
+        },
+        accent: {
+          50: "#fffbeb",
+          100: "#fef3c7",
+          200: "#fde68a",
+          300: "#fcd34d",
+          400: "#fbbf24",
+          500: "#f59e0b",
+          600: "#d97706",
+          700: "#b45309",
+          800: "#92400e",
+          900: "#78350f",
+          950: "#451a03",
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

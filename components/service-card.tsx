@@ -14,9 +14,10 @@ interface ServiceCardProps {
   icon: string
   imageSrc: string
   details: ServiceDetails
+  index?: number
 }
 
-export default function ServiceCard({ title, description, icon, imageSrc, details }: ServiceCardProps) {
+export default function ServiceCard({ title, description, icon, imageSrc, details, index }: ServiceCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const getIcon = (): JSX.Element => {
@@ -43,6 +44,12 @@ export default function ServiceCard({ title, description, icon, imageSrc, detail
   return (
     <>
       <Card className="group overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10 h-full border-0 bg-white hover-lift relative">
+        {/* Decorative number */}
+        {index !== undefined && (
+          <span className="absolute top-4 right-5 text-7xl font-heading font-bold text-gray-100 group-hover:text-accent-100 transition-colors duration-500 select-none z-30 leading-none" aria-hidden="true">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+        )}
 
         <div className="h-48 overflow-hidden relative">
           {/* Shimmer effect on hover */}
@@ -69,7 +76,7 @@ export default function ServiceCard({ title, description, icon, imageSrc, detail
 
           <Button
             variant="outline"
-            className="w-full border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white mt-auto transition-all duration-300 font-semibold hover:shadow-lg hover:shadow-blue-500/25 group-hover:border-blue-700 relative overflow-hidden"
+            className="w-full border-accent-500 text-accent-700 hover:bg-accent-500 hover:text-white mt-auto transition-all duration-300 font-semibold hover:shadow-lg hover:shadow-accent-500/25 group-hover:border-accent-600 relative overflow-hidden"
             onClick={() => setIsModalOpen(true)}
           >
             Más Información

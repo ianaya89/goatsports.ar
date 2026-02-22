@@ -73,6 +73,10 @@
   body {
     @apply bg-background text-foreground;
   }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading), system-ui, sans-serif;
+    @apply tracking-tight;
+  }
 }
 
 @keyframes gradient {
@@ -225,7 +229,7 @@
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4);
+    background: linear-gradient(135deg, #3b82f6, #fbbf24, #f59e0b);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;

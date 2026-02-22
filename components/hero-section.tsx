@@ -60,23 +60,23 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative py-16 md:py-24 overflow-hidden"
-      style={{
-        background: "linear-gradient(135deg, #00237c 0%, #1a56db 50%, #3b82f6 100%)",
-      }}
+      className="relative py-20 md:py-28 overflow-hidden"
     >
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img
+          src="/fondo.jpeg"
+          alt=""
+          className="w-full h-full object-cover"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-950/90 via-blue-900/85 to-blue-800/80"></div>
+      </div>
+
+      {/* Subtle decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-24 -left-24 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-        <div className="absolute top-0 -right-24 w-96 h-96 bg-blue-700 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-24 left-1/3 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
-
-        <div className="absolute top-20 left-10 w-4 h-4 bg-white/20 rotate-45 animate-float"></div>
-        <div className="absolute top-32 right-20 w-6 h-6 bg-white/15 rounded-full animate-float animation-delay-2000"></div>
-        <div className="absolute bottom-40 left-1/4 w-3 h-8 bg-white/10 animate-float animation-delay-4000"></div>
-        <div className="absolute bottom-20 right-1/3 w-5 h-5 bg-white/20 rotate-12 animate-float"></div>
-
-        <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"></div>
-        <div className="absolute bottom-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer animation-delay-2000"></div>
+        <div className="absolute -top-24 -left-24 w-96 h-96 bg-blue-400 rounded-full filter blur-3xl opacity-10 animate-blob"></div>
+        <div className="absolute top-0 -right-24 w-96 h-96 bg-accent-400 rounded-full filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-4 h-full flex flex-col items-center justify-center text-center">
@@ -92,14 +92,14 @@ export default function HeroSection() {
                 ${isChanging ? "opacity-0 transform translate-y-8" : "opacity-100 transform translate-y-0"}
               `}
               style={{
-                background: "linear-gradient(45deg, #ffffff, #60a5fa, #a78bfa, #ffffff)",
+                background: "linear-gradient(45deg, #ffffff, #fbbf24, #f59e0b, #ffffff)",
                 WebkitBackgroundClip: "text",
                 backgroundClip: "text",
                 color: "transparent",
                 fontWeight: "800",
                 animation: "gradient 4s linear infinite",
                 backgroundSize: "300% auto",
-                textShadow: "0 0 30px rgba(255,255,255,0.3)",
+                textShadow: "0 0 30px rgba(251,191,36,0.2)",
               }}
             >
               {displayedObjetivo}
@@ -121,7 +121,7 @@ export default function HeroSection() {
           <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
             <Button
               size="lg"
-              className="bg-white text-blue-700 hover:bg-blue-50 flex items-center gap-2 w-full sm:w-auto hover-lift transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/25"
+              className="bg-white text-blue-700 hover:bg-gray-100 flex items-center gap-2 w-full sm:w-auto hover-lift transition-all duration-300 hover:shadow-2xl hover:shadow-white/25 font-semibold"
             >
               <MessageCircle className="h-5 w-5" aria-hidden="true" />
               {t("bookSession")}
