@@ -11,7 +11,7 @@ export default function PartnershipsSection() {
   return (
     <section className="relative overflow-hidden" id="becas-usa">
       <div
-        className="py-16 tablet:py-24 relative"
+        className="py-10 tablet:py-12 relative"
         style={{
           background: "linear-gradient(135deg, #00237c 0%, #1a56db 50%, #3b82f6 100%)",
         }}
@@ -52,8 +52,8 @@ export default function PartnershipsSection() {
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-10 tablet:mb-14">
-            <h2 className="text-3xl tablet:text-5xl desktop:text-6xl font-black mb-6 text-white tracking-tight uppercase">
+          <div className="text-center mb-6 tablet:mb-8">
+            <h2 className="text-3xl tablet:text-4xl desktop:text-5xl font-black mb-4 text-white tracking-tight uppercase">
               {t("headline")}
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-200">
@@ -62,7 +62,7 @@ export default function PartnershipsSection() {
             </h2>
           </div>
 
-          <div className="flex flex-col tablet:flex-row items-center justify-center gap-6 tablet:gap-10 mb-8">
+          <div className="flex flex-col tablet:flex-row items-center justify-center gap-4 tablet:gap-8 mb-6">
             <div>
               <ImageWithFallback
                 src="/images/partnerships/us-full-ride-logo.png"
@@ -86,16 +86,16 @@ export default function PartnershipsSection() {
             </div>
           </div>
 
-          <div className="text-center mb-12">
-            <p className="text-xl tablet:text-2xl desktop:text-3xl font-bold text-white uppercase tracking-wide">
+          <div className="text-center mb-6">
+            <p className="text-lg tablet:text-xl desktop:text-2xl font-bold text-white uppercase tracking-wide">
               {t("tagline")}
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto mb-12">
-            <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 tablet:p-10 border border-white/20">
-              <h3 className="text-2xl tablet:text-3xl font-bold text-white mb-6 text-center">{t("allianceTitle")}</h3>
-              <p className="text-white/90 text-lg tablet:text-xl leading-relaxed text-center mb-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-6 tablet:p-8 border border-white/20">
+              <h3 className="text-xl tablet:text-2xl font-bold text-white mb-4 text-center">{t("allianceTitle")}</h3>
+              <p className="text-white/90 text-base tablet:text-lg leading-relaxed text-center mb-6">
                 <strong className="text-cyan-300">GOAT Sports</strong> y{" "}
                 <strong className="text-cyan-300">US Full Ride</strong> {t("allianceDescription")}
               </p>
@@ -145,20 +145,6 @@ export default function PartnershipsSection() {
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-4 tablet:gap-8 max-w-3xl mx-auto mb-8">
-            <div className="text-center">
-              <div className="text-3xl tablet:text-5xl font-black text-white mb-1">100+</div>
-              <div className="text-white/60 text-sm tablet:text-base">{t("stats.athletes")}</div>
-            </div>
-            <div className="text-center border-x border-white/20">
-              <div className="text-3xl tablet:text-5xl font-black text-white mb-1">50+</div>
-              <div className="text-white/60 text-sm tablet:text-base">{t("stats.universities")}</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl tablet:text-5xl font-black text-white mb-1">100%</div>
-              <div className="text-white/60 text-sm tablet:text-base">{t("stats.guidedProcess")}</div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

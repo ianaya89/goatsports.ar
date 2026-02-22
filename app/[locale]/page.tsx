@@ -120,6 +120,15 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-gray-950/90 via-gray-900/85 to-gray-950/90"></div>
 
+        {/* Watermark */}
+        <img
+          src="/mosca.svg"
+          alt=""
+          aria-hidden="true"
+          className="absolute right-[-5%] top-1/2 -translate-y-1/2 h-[80%] w-auto opacity-[0.07] pointer-events-none select-none"
+          style={{ filter: "brightness(0) invert(1)" }}
+        />
+
         <div className="container mx-auto px-4 relative z-10">
           <AnimateOnScroll>
             <div className="text-center mb-16">
@@ -182,6 +191,14 @@ export default function Home() {
         className="py-16 tablet:py-24 bg-gray-50 relative overflow-hidden"
         id="consulting"
       >
+        {/* Watermark */}
+        <img
+          src="/mosca.svg"
+          alt=""
+          aria-hidden="true"
+          className="absolute left-[-5%] top-1/2 -translate-y-1/2 h-[80%] w-auto opacity-[0.04] pointer-events-none select-none"
+        />
+
         <div className="container mx-auto px-4 relative z-10">
           <AnimateOnScroll>
             <div className="mb-16">

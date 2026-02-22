@@ -80,6 +80,11 @@ export default function HeroSection() {
       </div>
 
       <div className="relative z-10 container mx-auto px-4 h-full flex flex-col items-center justify-center text-center">
+        <img
+          src="/images/horizontal-logo-white.png"
+          alt="GOAT Sports"
+          className="h-16 tablet:h-20 w-auto mb-8 animate-fade-in-up opacity-90"
+        />
         <h1 className="text-4xl md:text-5xl tablet:text-6xl font-bold text-white animate-fade-in-up">
           <span className="block mb-4">{t("title")}</span>
 

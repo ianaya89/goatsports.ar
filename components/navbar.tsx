@@ -52,7 +52,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <img src="/images/goat-sports-logo.png" alt="GOAT Sports Logo" width={120} height={40} className="h-8 tablet:h-10 w-auto" />
+              <img src="/images/goat-sports-logo.png" alt="GOAT Sports Logo" width={160} height={48} className="h-10 tablet:h-12 w-auto" />
             </Link>
           </div>
 
