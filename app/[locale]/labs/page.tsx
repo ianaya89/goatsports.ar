@@ -50,38 +50,8 @@ export default function LabsPage() {
         <div className="labs-scan-line"></div>
       </div>
 
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-40 bg-blue-950/80 backdrop-blur-xl border-b border-white/[0.08]">
-        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <Link
-            href="/"
-            className="flex items-center gap-3"
-          >
-            <img
-              src="/images/horizontal-logo-white.png"
-              alt="GOAT Sports"
-              className="h-8 tablet:h-9 w-auto"
-            />
-          </Link>
-          <div className="flex items-center gap-2">
-            <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-accent-400 font-semibold bg-accent-400/10 border border-accent-400/20 px-3 py-1 rounded-full">
-              Labs
-            </span>
-          </div>
-          <a
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-accent-500 hover:bg-accent-400 text-blue-950 px-4 py-2 rounded-full text-xs font-semibold transition-all"
-          >
-            <MessageCircle className="w-3.5 h-3.5" />
-            <span className="hidden sm:inline">{t("heroCta")}</span>
-          </a>
-        </div>
-      </nav>
-
       {/* ===== HERO ===== */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Grid background */}
         <div className="absolute inset-0 labs-grid-bg"></div>
 
@@ -109,7 +79,7 @@ export default function LabsPage() {
                 <img
                   src="/images/horizontal-logo-white.png"
                   alt="GOAT Sports"
-                  className="h-14 tablet:h-16 w-auto"
+                  className="h-16 tablet:h-24 w-auto"
                 />
                 <div className="inline-flex items-center gap-2 border border-accent-400/30 bg-accent-400/[0.08] rounded-full px-4 py-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-accent-400 animate-pulse"></span>
@@ -150,7 +120,7 @@ export default function LabsPage() {
                   href={whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-3 bg-accent-500 hover:bg-accent-400 text-blue-950 font-semibold px-8 py-4 rounded-full text-sm transition-all hover:shadow-[0_0_40px_rgba(245,158,11,0.3)] hover:scale-105 active:scale-95"
+                  className="group flex items-center gap-3 bg-white text-blue-950 font-semibold px-8 py-4 rounded-full text-sm transition-all hover:bg-accent-400 hover:shadow-[0_0_40px_rgba(245,158,11,0.3)] hover:scale-105 active:scale-95"
                 >
                   {t("heroCta")}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
