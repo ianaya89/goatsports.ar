@@ -15,7 +15,8 @@
       "Bash(npx next build:*)",
       "Bash(lsof:*)",
       "Bash(xargs kill -9:*)",
-      "Bash(npx next dev:*)"
+      "Bash(npx next dev:*)",
+      "Skill(keybindings-help)"
     ],
     "deny": [],
     "ask": []
