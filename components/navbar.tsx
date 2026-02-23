@@ -5,7 +5,7 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import { useTranslations } from "next-intl"
 import { Link } from "@/i18n/routing"
-import { Menu, X, GraduationCap } from "lucide-react"
+import { Menu, X, GraduationCap, FlaskConical } from "lucide-react"
 import LanguageSwitcher from "./language-switcher"
 
 export default function Navbar() {
@@ -65,6 +65,13 @@ export default function Navbar() {
               <GraduationCap className="w-4 h-4" aria-hidden="true" />
               {t("studyInUSA")}
             </a>
+            <Link
+              href="/labs"
+              className="flex items-center gap-1.5 text-emerald-700 hover:text-emerald-800 font-semibold bg-emerald-50 hover:bg-emerald-100 px-3 py-1.5 rounded-full transition-colors border border-emerald-200"
+            >
+              <FlaskConical className="w-4 h-4" aria-hidden="true" />
+              {t("labs")}
+            </Link>
             <a
               href="#services"
               className="text-gray-600 hover:text-blue-600 font-medium transition-colors"
@@ -137,6 +144,13 @@ export default function Navbar() {
               <GraduationCap className="w-5 h-5" aria-hidden="true" />
               {t("studyInUSA")}
             </a>
+            <Link
+              href="/labs"
+              className="flex items-center gap-2 text-emerald-700 font-semibold py-2 bg-emerald-50 px-3 rounded-lg border border-emerald-200"
+            >
+              <FlaskConical className="w-5 h-5" aria-hidden="true" />
+              {t("labs")}
+            </Link>
             <a
               href="#services"
               className="block text-gray-600 hover:text-blue-600 font-medium py-2"
