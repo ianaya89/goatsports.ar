@@ -35,6 +35,7 @@ const upcomingCampus: CampusEvent[] = [
     isPast: true,
     comingSoon: false,
     link: "https://summer.goatsports.ar",
+    galleryUrl: "https://photos.app.goo.gl/dL9YrX9dtnYV3DE5A",
     openRegistration: false,
   },
   {
