@@ -29,6 +29,15 @@ const upcomingCampus: CampusEvent[] = [
     openRegistration: true,
   },
   {
+    id: "montegrande-semana-santa-2026",
+    translationKey: "montegrandeSemanaSanta2026",
+    imageUrl: "/images/mgrc25.jpeg",
+    isPast: false,
+    comingSoon: false,
+    link: "https://montegrande.goatsports.ar",
+    openRegistration: true,
+  },
+  {
     id: "summer-2026",
     translationKey: "summer2026",
     imageUrl: "/images/campus-2026.jpeg",
