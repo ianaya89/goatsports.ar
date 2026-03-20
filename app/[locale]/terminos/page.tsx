@@ -326,56 +326,6 @@ export default function TerminosPage() {
                   </p>
                 </section>
 
-                <div className="border-t border-gray-200 pt-10 mt-10">
-                  <div className="bg-gray-50 rounded-xl p-6 tablet:p-8">
-                    <h3 className="text-lg font-bold text-gray-900 mb-6">
-                      Formulario de Aceptación
-                    </h3>
-                    <div className="grid grid-cols-1 tablet:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Fecha</label>
-                        <div className="h-10 border-b-2 border-gray-300 border-dashed"></div>
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          DNI/Pasaporte
-                        </label>
-                        <div className="h-10 border-b-2 border-gray-300 border-dashed"></div>
-                      </div>
-                      <div className="tablet:col-span-2">
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Nombre del participante
-                        </label>
-                        <div className="h-10 border-b-2 border-gray-300 border-dashed"></div>
-                      </div>
-                      <div className="tablet:col-span-2">
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Firma</label>
-                        <div className="h-20 border-2 border-gray-300 border-dashed rounded-lg"></div>
-                      </div>
-                    </div>
-
-                    <div className="mt-8 pt-6 border-t border-gray-200">
-                      <p className="text-sm font-medium text-gray-700 mb-4">
-                        En caso de menor de edad:
-                      </p>
-                      <div className="grid grid-cols-1 tablet:grid-cols-2 gap-6">
-                        <div className="tablet:col-span-2">
-                          <label className="block text-sm font-medium text-gray-700 mb-2">
-                            Nombre y firma del responsable
-                          </label>
-                          <div className="h-20 border-2 border-gray-300 border-dashed rounded-lg"></div>
-                        </div>
-                        <div className="tablet:col-span-2">
-                          <label className="block text-sm font-medium text-gray-700 mb-2">
-                            Teléfono de emergencia
-                          </label>
-                          <div className="h-10 border-b-2 border-gray-300 border-dashed"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
                 <div className="border-t border-gray-200 pt-8 mt-10">
                   <p className="text-sm text-gray-500 text-center">
                     © {new Date().getFullYear()} GOAT Sports. Todos los derechos reservados.
