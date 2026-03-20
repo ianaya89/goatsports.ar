@@ -171,6 +171,14 @@ export default function Footer() {
           <p className="text-gray-500 text-sm">
             &copy; {new Date().getFullYear()} {t("copyright")}
           </p>
+          <span className="hidden tablet:inline text-gray-600">·</span>
+          <Link
+            href="/terminos"
+            className="text-gray-400 hover:text-white text-sm transition-colors"
+          >
+            {t("termsAndConditions")}
+          </Link>
+          <span className="hidden tablet:inline text-gray-600">·</span>
           <a
             href="https://comercial.goatsports.ar"
             target="_blank"
