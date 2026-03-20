@@ -68,6 +68,24 @@ export default function TerminosPage() {
                     <span className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-semibold">
                       3
                     </span>
+                    Responsabilidad y Asunción de Riesgo
+                  </h2>
+                  <p className="text-gray-600 leading-relaxed mb-3">
+                    El participante reconoce y acepta los riesgos inherentes a la práctica deportiva,
+                    incluyendo, pero no limitándose a, lesiones, caídas, golpes o contacto físico
+                    propio del hockey.
+                  </p>
+                  <p className="text-gray-600 leading-relaxed">
+                    GOAT Sports no se responsabiliza por lesiones derivadas de la práctica deportiva,
+                    salvo dolo o negligencia comprobada.
+                  </p>
+                </section>
+
+                <section className="mb-10">
+                  <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-3">
+                    <span className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-semibold">
+                      4
+                    </span>
                     Responsabilidad Médica
                   </h2>
                   <ul className="space-y-3">
@@ -80,14 +98,15 @@ export default function TerminosPage() {
                     <li className="flex items-start gap-3 text-gray-600">
                       <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span>
                       <span>
-                        GOAT Sports no se responsabiliza por lesiones derivadas de la práctica
-                        deportiva, salvo dolo o negligencia comprobada.
+                        El participante declara no poseer lesiones o condiciones preexistentes que
+                        limiten su participación, o haberlas informado previamente.
                       </span>
                     </li>
                     <li className="flex items-start gap-3 text-gray-600">
                       <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span>
                       <span>
-                        En caso de emergencia, el participante autoriza la atención médica necesaria.
+                        En caso de emergencia, el participante autoriza la atención médica necesaria,
+                        incluyendo traslado a un centro de salud si fuera requerido.
                       </span>
                     </li>
                   </ul>
@@ -96,7 +115,7 @@ export default function TerminosPage() {
                 <section className="mb-10">
                   <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-3">
                     <span className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-semibold">
-                      4
+                      5
                     </span>
                     Seguro
                   </h2>
@@ -109,7 +128,7 @@ export default function TerminosPage() {
                 <section className="mb-10">
                   <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-3">
                     <span className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-semibold">
-                      5
+                      6
                     </span>
                     Conducta
                   </h2>
@@ -134,7 +153,7 @@ export default function TerminosPage() {
                 <section className="mb-10">
                   <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-3">
                     <span className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-semibold">
-                      6
+                      7
                     </span>
                     Pagos y Cancelaciones
                   </h2>
@@ -150,33 +169,43 @@ export default function TerminosPage() {
                         organización.
                       </span>
                     </li>
-                    <li className="flex items-start gap-3 text-gray-600">
-                      <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span>
-                      <span>
-                        En caso de suspensión por clima u otros factores, GOAT Sports podrá reprogramar
-                        la actividad.
-                      </span>
-                    </li>
                   </ul>
                 </section>
 
                 <section className="mb-10">
                   <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-3">
                     <span className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-semibold">
-                      7
+                      8
                     </span>
-                    Modificaciones
+                    Clima y Fuerza Mayor
                   </h2>
+                  <p className="text-gray-600 leading-relaxed mb-3">
+                    En caso de suspensión por condiciones climáticas, fuerza mayor o situaciones
+                    ajenas a la organización, GOAT Sports no estará obligado a realizar reembolsos.
+                  </p>
                   <p className="text-gray-600 leading-relaxed">
-                    GOAT Sports se reserva el derecho de modificar fechas, horarios, sedes o contenidos
-                    del evento por razones organizativas o de fuerza mayor.
+                    No obstante, la organización hará sus mejores esfuerzos para reprogramar la
+                    actividad o brindar una alternativa equivalente.
                   </p>
                 </section>
 
                 <section className="mb-10">
                   <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-3">
                     <span className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-semibold">
-                      8
+                      9
+                    </span>
+                    Traslados
+                  </h2>
+                  <p className="text-gray-600 leading-relaxed">
+                    GOAT Sports no se responsabiliza por los traslados hacia o desde el lugar del
+                    evento, salvo que se indique expresamente lo contrario.
+                  </p>
+                </section>
+
+                <section className="mb-10">
+                  <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-3">
+                    <span className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-semibold">
+                      10
                     </span>
                     Uso de Imagen
                   </h2>
@@ -218,7 +247,7 @@ export default function TerminosPage() {
                 <section className="mb-10">
                   <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-3">
                     <span className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-semibold">
-                      9
+                      11
                     </span>
                     Protección de Datos
                   </h2>
@@ -231,7 +260,7 @@ export default function TerminosPage() {
                 <section className="mb-10">
                   <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-3">
                     <span className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-semibold">
-                      10
+                      12
                     </span>
                     Equipamiento
                   </h2>
@@ -244,7 +273,37 @@ export default function TerminosPage() {
                 <section className="mb-10">
                   <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-3">
                     <span className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-semibold">
-                      11
+                      13
+                    </span>
+                    Menores de Edad
+                  </h2>
+                  <p className="text-gray-600 leading-relaxed mb-4">
+                    En caso de participantes menores de edad:
+                  </p>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3 text-gray-600">
+                      <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span>
+                      <span>
+                        La inscripción deberá ser realizada por un padre, madre o tutor legal.
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3 text-gray-600">
+                      <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span>
+                      <span>
+                        El responsable autoriza expresamente la participación del menor en la actividad.
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3 text-gray-600">
+                      <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span>
+                      <span>Se deberá proporcionar un contacto de emergencia.</span>
+                    </li>
+                  </ul>
+                </section>
+
+                <section className="mb-10">
+                  <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-3">
+                    <span className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-semibold">
+                      14
                     </span>
                     Propiedad Intelectual
                   </h2>
@@ -254,10 +313,10 @@ export default function TerminosPage() {
                   </p>
                 </section>
 
-                <section className="mb-6">
+                <section className="mb-10">
                   <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-3">
                     <span className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-semibold">
-                      12
+                      15
                     </span>
                     Jurisdicción
                   </h2>
@@ -266,6 +325,56 @@ export default function TerminosPage() {
                     sometiéndose a los tribunales ordinarios de la Ciudad de Buenos Aires.
                   </p>
                 </section>
+
+                <div className="border-t border-gray-200 pt-10 mt-10">
+                  <div className="bg-gray-50 rounded-xl p-6 tablet:p-8">
+                    <h3 className="text-lg font-bold text-gray-900 mb-6">
+                      Formulario de Aceptación
+                    </h3>
+                    <div className="grid grid-cols-1 tablet:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Fecha</label>
+                        <div className="h-10 border-b-2 border-gray-300 border-dashed"></div>
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          DNI/Pasaporte
+                        </label>
+                        <div className="h-10 border-b-2 border-gray-300 border-dashed"></div>
+                      </div>
+                      <div className="tablet:col-span-2">
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Nombre del participante
+                        </label>
+                        <div className="h-10 border-b-2 border-gray-300 border-dashed"></div>
+                      </div>
+                      <div className="tablet:col-span-2">
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Firma</label>
+                        <div className="h-20 border-2 border-gray-300 border-dashed rounded-lg"></div>
+                      </div>
+                    </div>
+
+                    <div className="mt-8 pt-6 border-t border-gray-200">
+                      <p className="text-sm font-medium text-gray-700 mb-4">
+                        En caso de menor de edad:
+                      </p>
+                      <div className="grid grid-cols-1 tablet:grid-cols-2 gap-6">
+                        <div className="tablet:col-span-2">
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Nombre y firma del responsable
+                          </label>
+                          <div className="h-20 border-2 border-gray-300 border-dashed rounded-lg"></div>
+                        </div>
+                        <div className="tablet:col-span-2">
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Teléfono de emergencia
+                          </label>
+                          <div className="h-10 border-b-2 border-gray-300 border-dashed"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 <div className="border-t border-gray-200 pt-8 mt-10">
                   <p className="text-sm text-gray-500 text-center">
