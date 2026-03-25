@@ -186,7 +186,8 @@
     "badges": {
       "openRegistration": "Registration open",
       "finished": "Finished",
-      "comingSoon": "Coming soon"
+      "comingSoon": "Coming soon",
+      "rescheduled": "Rescheduled"
     },
     "buttons": {
       "followInstagram": "Follow us on Instagram",

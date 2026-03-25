@@ -23,7 +23,7 @@ import { getServicesData } from "@/data/services-data"
 export default function Home() {
   const t = useTranslations()
   const [isPromoModalOpen, setIsPromoModalOpen] = useState(false)
-  const isPromoEnabled = true
+  const isPromoEnabled = false
 
   useEffect(() => {
     if (!isPromoEnabled) return
