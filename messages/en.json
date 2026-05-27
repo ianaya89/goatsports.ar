@@ -203,10 +203,28 @@
         "description": "Start 2026 strong! Our Summer Campus at GEBA is already a classic that surpasses itself year after year. Start the season with the best preparation, the best coaches, and all the GOAT energy. Follow us on Instagram to be the first to know when we open registration."
       },
       "showcaseUsa2026": {
-        "title": "Showcase Buenos Aires - USA Scholarships",
+        "title": "Elite Campus · US Universities",
         "date": "March 23, 2026",
         "location": "GEBA, Buenos Aires City",
-        "description": "GOAT Sports and US Full Ride invite you to the USA Showcase: a day of technical and tactical evaluation with specialized coaches, video recording for your athletic profile, and an informational session about the U.S. university system and scholarship process. Scholarships covering up to 100% including tuition, housing, meals, books, and sports equipment. For hockey players aged 14 to 22."
+        "description": "University-oriented campus presented by GOAT Sports and US Full Ride. Technical evaluation, video recording for your athletic profile, and an informational session on the U.S. university system and NCAA scholarship process. Scholarships up to 100%: tuition, housing, meals, books, and equipment. For players born from 2008 onwards."
+      },
+      "usFullRide2026": {
+        "title": "Elite Category · US Full Ride",
+        "date": "July/August 2026",
+        "location": "GEBA, Buenos Aires City",
+        "description": "A category within Winter Campus 2026 oriented toward players who want to study at U.S. universities. Technical evaluation, video for your athletic profile, and NCAA scholarship process. For players born from 2008 onwards."
+      },
+      "winter2026": {
+        "title": "Winter Campus 2026 at GEBA",
+        "date": "July/August 2026",
+        "location": "GEBA, Buenos Aires City",
+        "description": "Winter Campus 2026 at GEBA with an Elite category oriented toward U.S. universities, presented by US Full Ride. Technical evaluation, video for your athletic profile, and NCAA scholarship process. For players born from 2008 onwards with university aspirations."
+      },
+      "rosario2026": {
+        "title": "Rosario Campus 2026",
+        "date": "Coming Soon",
+        "location": "Rosario, Santa Fe",
+        "description": "We're returning to Rosario with a new GOAT campus edition at the world-class facilities of Estancia Damfield. The same great experience, in one of Argentina's best hockey cities."
       },
       "montegrandeSemanaSanta2026": {
         "title": "Easter Campus 2026 at MGRC",

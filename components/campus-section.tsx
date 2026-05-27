@@ -19,17 +19,39 @@ interface CampusEvent {
   comingSoon?: boolean
   openRegistration?: boolean
   rescheduled?: boolean
+  isBranch?: boolean
+  branchOf?: string
 }
 
 const campusEvents: CampusEvent[] = [
   {
-    id: "showcase-usa-2026",
-    translationKey: "showcaseUsa2026",
-    imageUrl: "/images/showcase-usa.jpg",
-    isPast: true,
+    id: "winter-2026",
+    translationKey: "winter2026",
+    imageUrl: "/images/winter25.jpeg",
+    isPast: false,
     comingSoon: false,
-    link: "https://usa.goatsports.ar",
-    openRegistration: false,
+    link: "https://winter.goatsports.ar",
+    openRegistration: true,
+  },
+  {
+    id: "us-full-ride-2026",
+    translationKey: "usFullRide2026",
+    imageUrl: "/images/showcase.png",
+    isPast: false,
+    comingSoon: false,
+    link: "https://winter.goatsports.ar",
+    openRegistration: true,
+    isBranch: true,
+    branchOf: "Campus Invierno 2026 GEBA",
+  },
+  {
+    id: "rosario-2026",
+    translationKey: "rosario2026",
+    imageUrl: "https://rosario.goatsports.ar/images/portada.jpg",
+    isPast: false,
+    comingSoon: false,
+    link: "https://rosario.goatsports.ar",
+    openRegistration: true,
   },
   {
     id: "montegrande-semana-santa-2026",
@@ -39,7 +61,15 @@ const campusEvents: CampusEvent[] = [
     comingSoon: false,
     link: "https://montegrande.goatsports.ar",
     openRegistration: true,
-    rescheduled: true,
+  },
+  {
+    id: "showcase-usa-2026",
+    translationKey: "showcaseUsa2026",
+    imageUrl: "/images/showcase-usa.jpg",
+    isPast: true,
+    comingSoon: false,
+    link: "https://usa.goatsports.ar",
+    openRegistration: false,
   },
   {
     id: "summer-2026",
@@ -126,39 +156,71 @@ export default function CampusSection() {
 
   return (
     <div className="max-w-6xl mx-auto">
-      {/* Active events - large cards */}
+      {/* Active events */}
       {activeEvents.length > 0 && (
-        <div className={`grid grid-cols-1 ${activeEvents.length > 1 ? "md:grid-cols-2" : "max-w-2xl mx-auto"} gap-8 mb-12`}>
+        <>
+          <div className="flex items-center gap-3 mb-6">
+            <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse flex-shrink-0" />
+            <h3 className="text-xl font-bold text-gray-900">{t("badges.openRegistration")}</h3>
+            <div className="h-px flex-1 bg-gray-200" />
+            <span className="text-sm font-semibold text-gray-400">{activeEvents.filter(e => !e.isBranch).length} campus</span>
+          </div>
+        </>
+      )}
+      {activeEvents.length > 0 && (
+        <div className={`grid grid-cols-1 ${activeEvents.length === 1 ? "max-w-2xl mx-auto" : "md:grid-cols-2"} gap-8 mb-12`}>
           {activeEvents.map((campus) => (
             <Card
               key={campus.id}
               className="overflow-hidden border border-gray-200 bg-white shadow-lg flex flex-col relative"
             >
-              <div className="h-40 overflow-hidden">
+              {/* Branch indicator strip */}
+              {campus.isBranch && (
+                <div className="flex items-center gap-2 px-4 py-2 bg-[#00237c]">
+                  <span className="text-[10px] font-extrabold text-cyan-300 uppercase tracking-wide">
+                    US Full Ride
+                  </span>
+                  <span className="text-[10px] text-white/40 font-bold">+</span>
+                  <span className="text-[9px] uppercase tracking-[0.12em] text-white/50 font-semibold">
+                    Categoría dentro de {campus.branchOf}
+                  </span>
+                </div>
+              )}
+
+              <div className={`overflow-hidden ${campus.isBranch ? "h-44" : "h-40"}`}>
                 <ImageWithFallback
                   src={campus.imageUrl || "/placeholder.svg"}
-                  alt={`${t(`events.${campus.translationKey}.title`)} - Grupo de participantes en campo de hockey`}
-                  fallbackSrc="/placeholder-kngc1.png"
+                  alt={`${t(`events.${campus.translationKey}.title`)}`}
+                  fallbackSrc="/images/showcase-usa.jpg"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                 />
               </div>
-              {campus.rescheduled && (
-                <span className="absolute top-3 left-3 bg-amber-500 text-white text-xs font-semibold px-2 py-1 rounded">
-                  {t("badges.rescheduled")}
-                </span>
+
+              {/* Badge — only for non-branch cards */}
+              {!campus.isBranch && (
+                <>
+                  {campus.rescheduled && (
+                    <span className="absolute top-3 left-3 bg-amber-500 text-white text-xs font-semibold px-2 py-1 rounded">
+                      {t("badges.rescheduled")}
+                    </span>
+                  )}
+                  {campus.openRegistration && !campus.rescheduled && (
+                    <span className="absolute top-3 left-3 bg-green-600 text-white text-xs font-semibold px-2 py-1 rounded animate-pulse">
+                      {t("badges.openRegistration")}
+                    </span>
+                  )}
+                  {campus.comingSoon && !campus.isPast && !campus.rescheduled && (
+                    <span className="absolute top-3 left-3 bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded">
+                      {t("badges.comingSoon")}
+                    </span>
+                  )}
+                </>
               )}
-              {campus.openRegistration && !campus.rescheduled && (
-                <span className="absolute top-3 left-3 bg-green-600 text-white text-xs font-semibold px-2 py-1 rounded animate-pulse">
-                  {t("badges.openRegistration")}
-                </span>
-              )}
-              {campus.comingSoon && !campus.isPast && !campus.rescheduled && (
-                <span className="absolute top-3 left-3 bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded">
-                  {t("badges.comingSoon")}
-                </span>
-              )}
+
               <CardContent className="p-5 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold mb-3">{t(`events.${campus.translationKey}.title`)}</h3>
+                <h3 className={`text-xl font-bold mb-3 ${campus.isBranch ? "text-[#00237c]" : ""}`}>
+                  {t(`events.${campus.translationKey}.title`)}
+                </h3>
                 <div className="flex items-center mb-2">
                   <Calendar className="h-4 w-4 text-blue-600 mr-2" aria-hidden="true" />
                   <span className="text-gray-700 text-sm">{t(`events.${campus.translationKey}.date`)}</span>
@@ -176,18 +238,14 @@ export default function CampusSection() {
                       </Button>
                     </a>
                   ) : (
-                    <>
-                      <a href={`${campus.link}/inscripcion`} target="_blank" rel="noopener noreferrer" className="block">
-                        <Button size="sm" className="bg-blue-600 hover:bg-blue-700 w-full">
-                          {t("buttons.registerNow")}
-                        </Button>
-                      </a>
-                      <a href={campus.link} target="_blank" rel="noopener noreferrer" className="block">
-                        <Button variant="outline" size="sm" className="w-full border-blue-600 text-blue-600 hover:bg-blue-50">
-                          {t("buttons.moreInfo")}
-                        </Button>
-                      </a>
-                    </>
+                    <a href={campus.link} target="_blank" rel="noopener noreferrer" className="block">
+                      <Button
+                        size="sm"
+                        className={`w-full ${campus.isBranch ? "bg-[#00237c] hover:bg-[#001a5e]" : "bg-blue-600 hover:bg-blue-700"}`}
+                      >
+                        {t("buttons.registerNow")}
+                      </Button>
+                    </a>
                   )}
                 </div>
               </CardContent>

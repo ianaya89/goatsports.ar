@@ -396,4 +396,9 @@
     -webkit-mask-composite: xor;
     mask-composite: exclude;
   }
+
+  @keyframes progress-bar {
+    from { width: 0% }
+    to { width: 100% }
+  }
 }

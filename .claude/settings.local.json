@@ -16,7 +16,14 @@
       "Bash(lsof:*)",
       "Bash(xargs kill -9:*)",
       "Bash(npx next dev:*)",
-      "Skill(keybindings-help)"
+      "Skill(keybindings-help)",
+      "Bash(exiftool:*)",
+      "Bash(pdfinfo:*)",
+      "Bash(python3:*)",
+      "Bash(pip3 list:*)",
+      "Bash(pip3 install:*)",
+      "Bash(brew install:*)",
+      "Bash(npx tsc *)"
     ],
     "deny": [],
     "ask": []

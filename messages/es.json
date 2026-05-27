@@ -203,10 +203,28 @@
         "description": "¡Empezá el 2026 con todo! Nuestro Campus de Verano en GEBA ya es un clásico que se supera año tras año. Arrancá la temporada con la mejor preparación, los mejores coaches y toda la energía GOAT. Seguinos en Instagram para enterarte primero cuando abramos inscripciones."
       },
       "showcaseUsa2026": {
-        "title": "Showcase Buenos Aires - Becas USA",
+        "title": "Campus Elite · Universidades USA",
         "date": "23 de Marzo, 2026",
         "location": "GEBA, Ciudad de Buenos Aires",
-        "description": "GOAT Sports y US Full Ride te invitan al Showcase USA: una jornada de evaluación técnica y táctica con coaches especializados, grabación en video para tu perfil deportivo y una charla informativa sobre el sistema universitario en Estados Unidos y el proceso de becas. Becas de hasta el 100% que incluyen matrícula, alojamiento, comida, libros y equipamiento deportivo. Para jugadoras de hockey de 14 a 22 años."
+        "description": "Campus de orientación universitaria presentado por GOAT Sports y US Full Ride. Evaluación técnica, grabación en video para tu perfil deportivo y charla sobre el sistema universitario en Estados Unidos. Becas de hasta el 100%: matrícula, alojamiento, comida, libros y equipamiento. Para jugadoras nacidas desde 2008."
+      },
+      "usFullRide2026": {
+        "title": "Categoría Elite · US Full Ride",
+        "date": "Julio/Agosto 2026",
+        "location": "GEBA, Ciudad de Buenos Aires",
+        "description": "Categoría dentro del Campus Invierno 2026 orientada a jugadoras que quieren estudiar en universidades de Estados Unidos. Evaluación técnica, video para tu perfil deportivo y proceso de becas NCAA. Para jugadoras nacidas desde 2008."
+      },
+      "winter2026": {
+        "title": "Campus Invierno 2026 en GEBA",
+        "date": "Julio/Agosto 2026",
+        "location": "GEBA, Ciudad de Buenos Aires",
+        "description": "Campus Invierno 2026 en GEBA con categoría Elite orientada a universidades de Estados Unidos, presentada por US Full Ride. Evaluación técnica, video para tu perfil deportivo y proceso de becas NCAA. Para jugadoras nacidas desde 2008 con proyección universitaria."
+      },
+      "rosario2026": {
+        "title": "Campus Rosario 2026",
+        "date": "Próximamente",
+        "location": "Rosario, Santa Fe",
+        "description": "Volvemos a Rosario con una nueva edición del campus GOAT en las instalaciones de primer nivel de Estancia Damfield. La misma experiencia de siempre, en la ciudad más futbolera de Argentina."
       },
       "montegrandeSemanaSanta2026": {
         "title": "Campus Semana Santa 2026 en MGRC",
