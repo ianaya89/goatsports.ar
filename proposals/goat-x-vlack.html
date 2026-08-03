@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta GOAT × Vlack</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#00237c;
+    --blue-700:#001a66;
+    --blue-900:#000c33;
+    --blue-950:#00051a;
+    --gold:#f59e0b;
+    --gold-300:#fcd34d;
+    --ink:#0b1636;
+    --muted:#5b678a;
+    --line:#e3e7f2;
+    --paper:#ffffff;
+    --tint:#f4f6fc;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+
+  body{
+    font-family:'DM Sans',system-ui,sans-serif;
+    color:var(--ink);
+    background:#c9ced9;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3,h4,.font-head{font-family:'Space Grotesk',system-ui,sans-serif;letter-spacing:-0.02em}
+
+  /* ---------- A4 page shell ---------- */
+  .page{
+    position:relative;
+    width:210mm;
+    min-height:297mm;
+    margin:8mm auto;
+    background:var(--paper);
+    box-shadow:0 10px 40px rgba(0,12,51,.28);
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+  }
+
+  /* subtle background goat-mark watermark */
+  .watermark{
+    position:absolute;
+    color:var(--blue);
+    opacity:.035;
+    pointer-events:none;
+    z-index:0;
+  }
+  .watermark.wm-1{position:absolute;z-index:0;width:150mm;bottom:-30mm;right:-40mm;transform:rotate(8deg)}
+
+  .page > *{position:relative;z-index:1}
+
+  /* ---------- Hero band ---------- */
+  .hero{
+    background:
+      radial-gradient(120% 140% at 85% -10%, rgba(245,158,11,.22), transparent 55%),
+      linear-gradient(150deg,var(--blue) 0%,var(--blue-900) 78%,var(--blue-950) 100%);
+    color:#fff;
+    padding:7mm 16mm 5mm;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+    background-size:9mm 9mm;
+    mask-image:radial-gradient(120% 100% at 70% 0%,#000,transparent 75%);
+    -webkit-mask-image:radial-gradient(120% 100% at 70% 0%,#000,transparent 75%);
+    opacity:.5;
+  }
+  .hero-top{display:flex;align-items:center;justify-content:space-between;position:relative;z-index:2}
+  .brand{display:flex;align-items:center;gap:9px}
+  .brand .mark{width:34px;height:34px;color:#fff}
+  .brand .name{font-family:'Space Grotesk';font-weight:700;font-size:15px;letter-spacing:.14em;text-transform:uppercase}
+  .kicker{
+    font-family:'Space Grotesk';font-size:10.5px;font-weight:600;
+    letter-spacing:.32em;text-transform:uppercase;
+    color:var(--gold-300);
+    border:1px solid rgba(252,211,77,.4);
+    padding:5px 12px;border-radius:100px;
+  }
+
+  .hero-title{position:relative;z-index:2;margin-top:4mm;display:flex;align-items:center;gap:15px;flex-wrap:wrap}
+  .hero-title .goat-badge{
+    width:52px;height:52px;flex:none;color:#fff;
+    filter:drop-shadow(0 4px 14px rgba(0,0,0,.35));
+  }
+  .hero h1{
+    font-size:44px;font-weight:700;line-height:.98;letter-spacing:-0.035em;
+  }
+  .hero h1 .x{color:var(--gold);font-weight:500;padding:0 .12em}
+  .hero-title .vlack-logo{
+    height:32px;width:auto;
+    filter:drop-shadow(0 4px 14px rgba(0,0,0,.35));
+  }
+  .cobrand{display:flex;align-items:center;gap:11px}
+  .cobrand .vlack-logo{height:17px;width:auto;opacity:.95}
+  .cobrand .div{width:1px;height:18px;background:rgba(255,255,255,.25)}
+  .hero .sub{
+    position:relative;z-index:2;
+    margin-top:7px;
+    font-size:12.5px;color:rgba(255,255,255,.72);
+    max-width:150mm;line-height:1.45;
+    font-weight:400;
+  }
+  .hero .meta{
+    position:relative;z-index:2;
+    margin-top:3mm;display:flex;gap:26px;
+    padding-top:2.5mm;border-top:1px solid rgba(255,255,255,.14);
+  }
+  .hero .meta div{display:flex;flex-direction:column;gap:2px}
+  .hero .meta .lbl{font-family:'Space Grotesk';font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:rgba(252,211,77,.85)}
+  .hero .meta .val{font-size:12.5px;font-weight:500;color:#fff}
+
+  /* ---------- body ---------- */
+  .body{padding:4mm 16mm 3mm;flex:1}
+
+  .section{margin-bottom:3.5mm}
+  .section:last-child{margin-bottom:0}
+
+  .sec-head{display:flex;align-items:baseline;gap:11px;margin-bottom:2mm}
+  .sec-num{
+    font-family:'Space Grotesk';font-weight:700;font-size:12px;
+    color:var(--gold);letter-spacing:.05em;
+    width:26px;flex:none;
+  }
+  .sec-title{font-size:19px;font-weight:600;color:var(--blue)}
+  .sec-line{flex:1;height:1px;background:var(--line);align-self:center}
+  .sec-tag{font-family:'Space Grotesk';font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+
+  /* objetivos two-col */
+  .obj-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .obj-card{
+    border:1px solid var(--line);border-radius:12px;padding:9px 14px 10px;
+    background:linear-gradient(180deg,#fff,var(--tint));
+    position:relative;overflow:hidden;
+  }
+  .obj-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold)}
+  .obj-card.for-goat::before{background:var(--blue)}
+  .obj-card h3{
+    font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--blue);margin-bottom:8px;display:flex;align-items:center;gap:7px;
+  }
+  .obj-card.for-goat h3{color:var(--blue)}
+  .obj-card .chip{font-size:8.5px;font-family:'Space Grotesk';letter-spacing:.1em;color:#fff;background:var(--gold);padding:2px 7px;border-radius:100px;font-weight:600}
+  .obj-card.for-goat .chip{background:var(--blue)}
+  .obj-list{list-style:none;display:flex;flex-direction:column;gap:5px}
+  .obj-list li{font-size:11.5px;color:var(--ink);padding-left:15px;position:relative;line-height:1.35}
+  .obj-list li::before{content:"";position:absolute;left:0;top:6px;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+  .obj-card.for-goat .obj-list li::before{background:var(--blue)}
+
+  /* espacio intro */
+  .espacio-intro{
+    display:flex;align-items:center;gap:12px;
+    background:var(--blue);color:#fff;border-radius:12px;
+    padding:7px 16px;margin-bottom:2.5mm;position:relative;overflow:hidden;
+  }
+  .espacio-intro .ico{width:26px;height:26px;color:var(--gold-300);flex:none}
+  .espacio-intro b{font-family:'Space Grotesk';font-weight:600;font-size:14px}
+  .espacio-intro span{font-size:11.5px;color:rgba(255,255,255,.7)}
+  .espacio-intro .wm{position:absolute;right:10px;top:-14px;width:70px;color:#fff;opacity:.08}
+
+  /* zone grid */
+  .zones{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .zone{
+    border:1px solid var(--line);border-radius:12px;padding:8px 13px;
+    background:#fff;position:relative;
+  }
+  .zone .z-head{display:flex;align-items:center;gap:9px;margin-bottom:5px}
+  .zone .z-num{
+    font-family:'Space Grotesk';font-weight:700;font-size:12px;color:#fff;
+    background:var(--blue);width:22px;height:22px;border-radius:6px;
+    display:flex;align-items:center;justify-content:center;flex:none;
+  }
+  .zone .z-title{font-family:'Space Grotesk';font-weight:600;font-size:13px;color:var(--blue)}
+  .zone .z-desc{font-size:10.5px;color:var(--muted);margin-bottom:6px;line-height:1.35}
+
+  .cats{display:flex;flex-wrap:wrap;gap:5px}
+  .cat{
+    font-size:10.5px;font-weight:500;
+    border:1px solid var(--line);background:var(--tint);
+    padding:4px 9px;border-radius:100px;display:inline-flex;align-items:center;gap:5px;
+  }
+  .cat .e{font-size:11px}
+
+  .combos{display:flex;flex-direction:column;gap:6px}
+  .combo{
+    display:flex;align-items:center;gap:8px;
+    font-size:11px;font-weight:500;
+    padding:6px 10px;border-radius:9px;background:var(--tint);border:1px solid var(--line);
+  }
+  .combo .plus{color:var(--gold);font-weight:700;font-family:'Space Grotesk'}
+  .combo .save{margin-left:auto;font-size:8.5px;font-family:'Space Grotesk';font-weight:600;letter-spacing:.06em;color:#fff;background:var(--gold);padding:2px 7px;border-radius:100px}
+
+  .zone.wide{grid-column:1 / -1}
+  .challenge-body{display:flex;align-items:center;gap:14px}
+  .challenge-body .ring{
+    width:58px;height:58px;flex:none;border-radius:50%;
+    border:2px dashed var(--gold);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Space Grotesk';font-weight:700;font-size:9px;letter-spacing:.1em;text-align:center;color:var(--blue);
+  }
+  .challenge-steps{display:flex;gap:7px;flex:1}
+  .cstep{flex:1;text-align:center}
+  .cstep .cs-ico{font-size:16px;margin-bottom:3px}
+  .cstep .cs-t{font-family:'Space Grotesk';font-size:9.5px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:.06em}
+  .cstep .cs-d{font-size:9.5px;color:var(--muted);line-height:1.3;margin-top:2px}
+  .prize{
+    margin-left:auto;text-align:right;flex:none;
+    border-left:1px solid var(--line);padding-left:14px;
+  }
+  .prize .p-l{font-family:'Space Grotesk';font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600}
+  .prize .p-v{font-family:'Space Grotesk';font-size:12px;font-weight:600;color:var(--blue);line-height:1.15;margin-top:2px}
+
+  /* publicidad */
+  .pub{
+    grid-column:1 / -1;
+    background:linear-gradient(150deg,var(--blue),var(--blue-900));
+    color:#fff;border-radius:12px;padding:9px 16px;position:relative;overflow:hidden;
+  }
+  .pub .wm{position:absolute;right:-10px;bottom:-24px;width:110px;color:#fff;opacity:.07}
+  .pub .z-head{display:flex;align-items:center;gap:9px}
+  .pub .z-head .z-num{
+    background:var(--gold);color:var(--blue-900);
+    font-family:'Space Grotesk';font-weight:700;font-size:12px;
+    width:22px;height:22px;border-radius:6px;
+    display:flex;align-items:center;justify-content:center;flex:none;
+  }
+  .pub .z-title{color:#fff}
+  .pub .z-desc{color:rgba(255,255,255,.72)}
+  .pub .players{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:9px}
+  .pub .player{font-size:10px;font-weight:600;font-family:'Space Grotesk';background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:3px 10px;border-radius:100px}
+  .pub .acts{display:flex;gap:16px}
+  .pub .act{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:500}
+  .pub .act .a-ico{font-size:13px}
+
+  /* footer / closing */
+  .closing{
+    margin-top:auto;
+    background:var(--blue-950);color:#fff;
+    padding:4mm 16mm;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    position:relative;overflow:hidden;
+  }
+  .closing::before{
+    content:"";position:absolute;left:0;top:0;right:0;height:2px;
+    background:linear-gradient(90deg,var(--gold),transparent);
+  }
+  .closing .goat-big{position:absolute;right:-24px;bottom:-40px;width:130px;color:#fff;opacity:.06}
+  .closing .c-tag{font-family:'Space Grotesk';font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-300);margin-bottom:5px}
+  .closing h2{font-size:30px;font-weight:700;line-height:1}
+  .closing h2 .fire{color:var(--gold)}
+  .closing .c-right{text-align:right;position:relative;z-index:2}
+  .closing .c-right .cr-brand{display:flex;align-items:center;gap:8px;justify-content:flex-end}
+  .closing .c-right .cr-brand .mark{width:26px;height:26px;color:#fff}
+  .closing .c-right .cr-brand span{font-family:'Space Grotesk';font-weight:700;letter-spacing:.14em;font-size:12px;text-transform:uppercase}
+  .closing .c-right small{display:block;font-size:9px;color:rgba(255,255,255,.5);margin-top:4px;letter-spacing:.05em}
+
+  /* ---------- print ---------- */
+  @page{size:A4;margin:0}
+  @media print{
+    html,body{background:var(--blue-950)}
+    .page{margin:0;box-shadow:none;width:210mm;min-height:297mm;height:297mm}
+    .no-print{display:none}
+  }
+  .no-print{
+    max-width:210mm;margin:14px auto 0;text-align:center;
+    font-family:'Space Grotesk';font-size:12px;color:var(--blue-900);
+  }
+  .no-print button{
+    font-family:'Space Grotesk';font-weight:600;font-size:12px;
+    background:var(--blue);color:#fff;border:none;cursor:pointer;
+    padding:9px 20px;border-radius:100px;letter-spacing:.04em;
+  }
+</style>
+</head>
+<body>
+
+<!-- reusable goat mark -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="goat" viewBox="0 0 918.49 928.15">
+    <path fill="currentColor" d="M371.03,911.87l-4.38-.95h-.24l-.1-.07c-88.57-19.33-168.87-66.83-226.13-133.77l-.22-.25-.03-.32c-.34-3.61-.65-7.24-.91-10.89-.79-10.93-1.18-21.99-1.18-33,0-67.49,14.63-132.3,42.42-188.32,1.85-3.74,3.77-7.43,5.74-11.08,30.84-57.25,73.47-100.2,123.25-124.23l3.68-1.77-2.4,3.31c-43.64,60.25-67.68,138.27-67.68,219.7,0,41.16,6.01,81,17.34,117.93,20.18,65.84,57.25,122.44,107.21,160.91l3.64,2.79Z"/>
+    <path fill="currentColor" d="M726.54,827.43c-56.31-14.57-88.01-29.97-124.34-60.58-73.8-62.15-120.94-148.41-123.04-225.1-.06-2.45-.14-4.85-.23-7.21-.03-.84-.06-1.68-.09-2.5-.85,3.8-1.63,7.75-2.28,11.85-7.53,47.46.35,105,22.16,162.03,18.88,49.34,46.75,93.46,78.53,124.22l2.53,2.46-3.46-.71c-55.54-11.44-114.5-75.69-146.69-159.89-23.61-61.72-29.65-126.46-16.38-174.22-13.83,13.3-41.69,45.44-56.18,99.66,0,.03.01.06.01.09h-.04s-.02.07-.02.11l-.2.71-2-.49.14-.55c-2.8-18.28-.27-49.73,15.24-83.36,19.94-43.22,56.23-70.72,74.77-73.95l.18,1.02.74-.71c.59.61,1.14,1.41,1.67,2.39.04.08.08.14.12.2.01.02.03.05.04.07.1.18.23.37.36.58,3.93,6.02,19.8,23.95,30.96,35.77.89.94,1.75,1.83,2.56,2.69.77.8,1.5,1.56,2.19,2.27.55.55,1.12,1.13,1.75,1.75h.01c.27.26.56.54.84.8,1.97,1.86,4.15,3.84,6.52,5.88,1.28,1.11,2.63,2.26,4.01,3.42,9.96,8.39,22.55,18.18,35.26,27.44,7.08,5.15,14.17,10.14,20.87,14.63,14.41,9.67,31.78,17.25,47.31,22.84,16.73,6.02,31.33,9.73,37.74,11.25,3.94.94,7.58,1.98,10.81,3.12,1.92.67,3.63,1.35,5.15,2.02.04.02.08.03.11.05.11.05.22.1.33.14,3.45,1.56,5.97,3.08,7.84,4.41,1.66,1.18,2.81,2.21,3.68,3,.28.25.53.46.75.66.22.19.53.46.89.8.11.1.24.22.36.34.11.1.22.21.34.32.09.08.21.19.31.28,4.56,4.29,15.93,14.8,27.95,16.77,3.4.56,6.48.97,9.36,1.12,2.63.13,5.09.06,7.48-.32,3.9-.61,7.6-2.01,11.65-4.45,2.02-1.22,4.11-2.69,6.36-4.46,9.7-7.62,20.64-11.63,29.42-14.84,3.33-1.22,6.47-2.37,9.2-3.58,1.15-.5,2.19-1.36,3.13-2.47,5.82-6.91,7.64-24.1,6.79-34.99-.09-1.25-.23-2.41-.39-3.47-.13-.88-.26-1.85-.4-2.91-.06-.51-.13-1.05-.21-1.61-1.39-10.47-4.91-29.48-31.22-64.61-5.75-7.67-12.58-16.13-20.73-25.43-2.56-2.92-5.17-6.02-7.79-9.24-.09-.11-.19-.22-.27-.33-.08-.09-.15-.19-.23-.28-.83-1.03-1.66-2.07-2.49-3.12-41.89-52.85-78.8-127.45-100.85-172.03-2.82-5.71-5.37-10.84-7.61-15.31-18.21-36.21-54.03-49.05-61.73-51.45.69,5.66,2.8,25.39.43,39.71.13.05.29.11.42.16l-.7,1.94c-8.5-3.07-23.39-12.82-39.15-23.16-18.17-11.89-36.96-24.2-46.48-26.55l-1.16-.29c-7.34-1.82-17.41-4.33-30.74-2.02-23.44,4.05-43.51,16.26-55.07,33.49-4.92,7.34-8.15,15.37-9.57,23.84l-.24,1.37-1.25-.63c-1.35-.68-2.8-1.43-4.39-2.26-11.17-5.78-29.87-15.46-72.06-31.01-5.81-2.14-11.55-4.07-17.06-5.73-49.04-14.87-80.97-10.72-88.74-6.37-1.47.82-1.77,1.44-1.83,1.68-.45,1.7-.67,3.43-.67,5.17,0,13.87,13.53,28.55,25.65,38.93,13.53,11.57,26.76,19.12,30.48,21.16,16.49,9.05,62.19,13.65,84.16,15.85,3.98.4,7.41.74,9.8,1.03,6.8.79,17.02,4.14,30.41,9.93l3.1,1.35-3.33.61c-12.35,2.29-24.66,5.28-36.59,8.91-141.96,43.15-241.11,178.02-241.11,327.97,0,21.82,2.04,43.65,6.07,64.9l1.53,8.06-3.48-7.44c-22.71-48.62-34.22-100.41-34.22-153.93s12.05-107.7,35.81-157.26c22.77-47.51,55.09-89.52,96.05-124.94-26.19-19.04-67.48-54.99-58.86-87.39.44-1.65,2.05-3.2,4.78-4.62,15.98-8.29,78.75-14.45,170.72,19.46l1.08.4c.37.14.74.28,1.11.41,15.69-6.19,31.75-11.41,48.09-15.69-10.03-22.58-33.74-48.43-63.62-69.31-30.44-21.26-62.59-33.95-86.01-33.95-2.66,0-5.27.06-7.76.2l-4.07.21,3.48-2.12c25.66-15.6,54.69-23.85,83.97-23.85,24.08,0,55.74,13.12,86.84,36,30.37,22.35,54.44,50.14,64.37,74.36.73,1.78,1.36,3.61,1.89,5.47,3.09-.22,6.21-.4,9.32-.56-3.54-8.76-7.65-17.52-12.24-26.06-37.59-69.79-87.71-85.28-124.31-96.59l-3.37-1.04,2.08-1.18c.42-.24,42.49-23.46,96.96-6.64,52.19,16.12,97.87,62.24,135.83,137.12,92.95,15.77,177.91,61.93,239.23,130.05,30.51,33.89,54.32,72.06,70.77,113.44,17.02,42.84,25.65,87.95,25.65,134.09,0,111.32-51.44,217.01-141.13,289.99"/>
+    <path fill="currentColor" d="M659.72,428.65c-18.68-9.46-49.28-56.01-64.48-62.72-9.66-4.27-32.46-2.18-44.92-5.97-24.22-7.34-41.05-51.79-50.01-73.79l98.41,59.32c22.68,24.25,47.63,52.52,61,83.16Z"/>
+  </symbol>
+</svg>
+
+<div class="page">
+  <svg class="watermark wm-1"><use href="#goat"/></svg>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-top">
+      <div class="brand cobrand">
+        <svg class="mark"><use href="#goat"/></svg>
+        <span class="name">GOAT Sports</span>
+        <span class="div"></span>
+        <img class="vlack-logo" src="vlack-logo.png" alt="Vlack">
+      </div>
+      <span class="kicker">Propuesta de Activación</span>
+    </div>
+
+    <div class="hero-title">
+      <svg class="goat-badge"><use href="#goat"/></svg>
+      <h1>GOAT<span class="x">×</span></h1>
+      <img class="vlack-logo" src="vlack-logo.png" alt="Vlack">
+    </div>
+    <p class="sub">Una activación de marca premium dentro del evento GOAT: exhibición de producto, ventas en vivo, combos exclusivos y experiencia con jugadores. Una alianza pensada para explotar.</p>
+
+    <div class="meta">
+      <div>
+        <span class="lbl">Formato</span>
+        <span class="val">Gazebo + Activación</span>
+      </div>
+      <div>
+        <span class="lbl">Modelo</span>
+        <span class="val">Comisión por venta</span>
+      </div>
+      <div>
+        <span class="lbl">Pilares</span>
+        <span class="val">Producto · Promos · Skill · Publicidad</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- BODY -->
+  <main class="body">
+
+    <!-- OBJETIVOS -->
+    <section class="section">
+      <div class="sec-head">
+        <span class="sec-num">01</span>
+        <h2 class="sec-title">Objetivos de la alianza</h2>
+        <span class="sec-line"></span>
+        <span class="sec-tag">Win · Win</span>
+      </div>
+      <div class="obj-grid">
+        <div class="obj-card">
+          <h3><span class="chip">Marca</span> Para Vlack</h3>
+          <ul class="obj-list">
+            <li>Dar a conocer sus productos.</li>
+            <li>Generar ventas durante el evento.</li>
+            <li>Conseguir nuevos clientes.</li>
+            <li>Asociar su marca a una experiencia premium.</li>
+          </ul>
+        </div>
+        <div class="obj-card for-goat">
+          <h3><span class="chip">GOAT</span> Para nosotros</h3>
+          <ul class="obj-list">
+            <li>Mejorar la experiencia del evento.</li>
+            <li>Generar ingresos por comisión.</li>
+            <li>Dar un beneficio real a la comunidad.</li>
+            <li>Potenciar la alianza a largo plazo.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- EL ESPACIO -->
+    <section class="section">
+      <div class="sec-head">
+        <span class="sec-num">02</span>
+        <h2 class="sec-title">El espacio</h2>
+        <span class="sec-line"></span>
+        <span class="sec-tag">4 zonas</span>
+      </div>
+
+      <div class="espacio-intro">
+        <svg class="ico"><use href="#goat"/></svg>
+        <div>
+          <b>Gazebo con banners de la marca.</b>
+          <span> &nbsp;Punto de encuentro visible, branded y de alto tránsito.</span>
+        </div>
+        <svg class="wm"><use href="#goat"/></svg>
+      </div>
+
+      <div class="zones">
+        <!-- Zona 1 -->
+        <div class="zone">
+          <div class="z-head"><span class="z-num">1</span><span class="z-title">Zona de Producto</span></div>
+          <div class="z-desc">Una pared con todos los productos exhibidos, separados por categorías.</div>
+          <div class="cats">
+            <span class="cat"><span class="e">🏑</span>Palos</span>
+            <span class="cat"><span class="e">👕</span>Indumentaria</span>
+            <span class="cat"><span class="e">🎒</span>Mochilas</span>
+            <span class="cat"><span class="e">🧤</span>Guantes</span>
+            <span class="cat"><span class="e">🦵</span>Canilleras</span>
+            <span class="cat"><span class="e">🧦</span>Accesorios</span>
+          </div>
+        </div>
+
+        <!-- Zona 2 -->
+        <div class="zone">
+          <div class="z-head"><span class="z-num">2</span><span class="z-title">Promociones</span></div>
+          <div class="z-desc">Combos exclusivos del evento, con descuento que solo se consigue en el día.</div>
+          <div class="combos">
+            <div class="combo"><span>🏑 Palo</span><span class="plus">+</span><span>Grip</span><span class="save">Combo</span></div>
+            <div class="combo"><span>👕 Remera</span><span class="plus">+</span><span>Media</span><span class="save">Combo</span></div>
+            <div class="combo"><span>🎒 Mochila</span><span class="plus">+</span><span>Botella</span><span class="save">Combo</span></div>
+          </div>
+        </div>
+
+        <!-- Zona 3 -->
+        <div class="zone wide">
+          <div class="z-head"><span class="z-num">3</span><span class="z-title">Skill Challenge — Circuito GOAT × Vlack</span></div>
+          <div class="challenge-body">
+            <div class="ring">GOAT<br>×<br>VLACK</div>
+            <div class="challenge-steps">
+              <div class="cstep"><div class="cs-ico">🏑</div><div class="cs-t">Circuito</div><div class="cs-d">Recorrido de skills con producto Vlack.</div></div>
+              <div class="cstep"><div class="cs-ico">⏱️</div><div class="cs-t">Cronometrado</div><div class="cs-d">Cada participante corre contra el reloj.</div></div>
+              <div class="cstep"><div class="cs-ico">🏆</div><div class="cs-t">Ranking</div><div class="cs-d">Mejor tiempo del día encabeza la tabla.</div></div>
+            </div>
+            <div class="prize">
+              <div class="p-l">Premio</div>
+              <div class="p-v">Merchandising<br>Vlack</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Zona 4 -->
+        <div class="pub">
+          <svg class="wm"><use href="#goat"/></svg>
+          <div class="z-head"><span class="z-num">4</span><span class="z-title">Publicidad &amp; Jugadores</span></div>
+          <div class="z-desc">Si suman figuras del team Vlack, la activación pasa a otro nivel.</div>
+          <div class="players">
+            <span class="player">Agus Habif</span>
+            <span class="player">Pili Palacios</span>
+            <span class="player">+ jugadores/as Vlack</span>
+          </div>
+          <div class="acts">
+            <div class="act"><span class="a-ico">✍️</span>Firmas</div>
+            <div class="act"><span class="a-ico">📸</span>Fotos</div>
+            <div class="act"><span class="a-ico">🎙️</span>Charlas</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CLOSING -->
+  <footer class="closing">
+    <svg class="goat-big"><use href="#goat"/></svg>
+    <div>
+      <div class="c-tag">La proyección</div>
+      <h2>Va a <span class="fire">explotar</span>.</h2>
+    </div>
+    <div class="c-right">
+      <div class="cr-brand">
+        <svg class="mark"><use href="#goat"/></svg>
+        <span>×</span>
+        <img class="vlack-logo" src="vlack-logo.png" alt="Vlack" style="height:15px;width:auto">
+      </div>
+      <small>goatsports.ar · Propuesta de activación</small>
+    </div>
+  </footer>
+</div>
+
+<div class="no-print">
+  <button onclick="window.print()">Imprimir / Guardar PDF (A4)</button>
+</div>
+
+</body>
+</html>
