@@ -113,6 +113,15 @@
       }
     },
     "cta": "I want to know more",
+    "signed": {
+      "title": "Our first signed player",
+      "nicoleQuote": "From the very first moment they helped me with everything I needed to fulfill my dream, and they were always available to answer every one of my questions. They gave me a lot of confidence and helped me make the best decision to start my career as a student-athlete in the United States. After signing with Old Dominion University, they supported me throughout the entire process: from the paperwork with the university and the NCAA to booking the embassy appointment. I would definitely recommend them to any athlete who wants to fulfill the same dream.",
+      "nicoleName": "Nicole D.",
+      "nicoleRole": "Student-athlete · Old Dominion University",
+      "jorgeQuote": "US Full Ride gave us the chance to try something completely different from what we had already experienced. You can tell they not only have the experience as a company, but they also lived it as parents: they know the NCAA season, campus life, and the student's day-to-day inside out. Today I have a friend, a brother from afar, and an uncle for my daughter. They didn't just make our dream come true — now we're family.",
+      "jorgeName": "Jorge D.",
+      "jorgeRole": "Nicole's father"
+    },
     "stats": {
       "athletes": "Scholarship athletes",
       "universities": "Universities",
@@ -208,11 +217,17 @@
         "location": "GEBA, Buenos Aires City",
         "description": "University-oriented campus presented by GOAT Sports and US Full Ride. Technical evaluation, video recording for your athletic profile, and an informational session on the U.S. university system and NCAA scholarship process. Scholarships up to 100%: tuition, housing, meals, books, and equipment. For players born from 2008 onwards."
       },
-      "usFullRide2026": {
-        "title": "Elite Category · US Full Ride",
-        "date": "July/August 2026",
+      "cissab2026": {
+        "title": "CISSAB x GOAT Campus",
+        "date": "August 15, 2026",
+        "location": "CISSAB, Tristán Suárez, Buenos Aires",
+        "description": "The best hockey campus arrives at CISSAB for the first time. A day of technical, tactical, and recreational hockey with the GOAT Sports methodology, exclusive for CISSAB players. Snack included throughout the morning."
+      },
+      "showcase2026": {
+        "title": "Showcase by US Full Ride",
+        "date": "September 21, 2026",
         "location": "GEBA, Buenos Aires City",
-        "description": "A category within Winter Campus 2026 oriented toward players who want to study at U.S. universities. Technical evaluation, video for your athletic profile, and NCAA scholarship process. For players born from 2008 onwards."
+        "description": "Showcase presented by US Full Ride at GEBA. More information coming soon."
       },
       "winter2026": {
         "title": "Winter Campus 2026 at GEBA",
@@ -221,16 +236,16 @@
         "description": "Winter Campus 2026 at GEBA with an Elite category oriented toward U.S. universities, presented by US Full Ride. Technical evaluation, video for your athletic profile, and NCAA scholarship process. For players born from 2008 onwards with university aspirations."
       },
       "rosario2026": {
-        "title": "Rosario Campus 2026",
-        "date": "Coming Soon",
+        "title": "Winter Damfield Campus 2026",
+        "date": "2026",
         "location": "Rosario, Santa Fe",
         "description": "We're returning to Rosario with a new GOAT campus edition at the world-class facilities of Estancia Damfield. The same great experience, in one of Argentina's best hockey cities."
       },
       "montegrandeSemanaSanta2026": {
-        "title": "Easter Campus 2026 at MGRC",
-        "date": "Easter Week, April 2026",
+        "title": "Winter Campus 2026 at MGRC",
+        "date": "July 22, 2026",
         "location": "Monte Grande, Buenos Aires Province",
-        "description": "We're back in Monte Grande! Take advantage of Easter week to live a GOAT experience at Monte Grande Rugby Club. Days of intensive training with the best coaches, in a fun and professional environment. The same quality as always, closer to you."
+        "description": "We were back in Monte Grande! A GOAT experience at Monte Grande Rugby Club. Days of intensive training with the best coaches, in a fun and professional environment. The same quality as always, closer to you."
       },
       "rosario2025": {
         "title": "Summer Campus 2025 in Rosario",

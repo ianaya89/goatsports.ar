@@ -419,7 +419,7 @@ export default async function LocaleLayout({
   const structuredData = [organizationSchema, localBusinessSchema, websiteSchema, breadcrumbSchema, faqSchema]
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="shortcut icon" href="/favicon.ico" />

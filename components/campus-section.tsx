@@ -19,48 +19,52 @@ interface CampusEvent {
   comingSoon?: boolean
   openRegistration?: boolean
   rescheduled?: boolean
-  isBranch?: boolean
-  branchOf?: string
 }
 
 const campusEvents: CampusEvent[] = [
   {
-    id: "winter-2026",
-    translationKey: "winter2026",
-    imageUrl: "/images/winter25.jpeg",
+    id: "cissab-2026",
+    translationKey: "cissab2026",
+    imageUrl: "https://cissab.goatsports.ar/images/portada.jpg",
     isPast: false,
     comingSoon: false,
-    link: "https://winter.goatsports.ar",
+    link: "https://cissab.goatsports.ar",
     openRegistration: true,
   },
   {
-    id: "us-full-ride-2026",
-    translationKey: "usFullRide2026",
-    imageUrl: "/images/showcase.png",
+    id: "showcase-2026",
+    translationKey: "showcase2026",
+    imageUrl: "/images/orlando-experience.jpg",
     isPast: false,
+    comingSoon: true,
+    openRegistration: false,
+  },
+  {
+    id: "winter-2026",
+    translationKey: "winter2026",
+    imageUrl: "/images/winter25.jpeg",
+    isPast: true,
     comingSoon: false,
     link: "https://winter.goatsports.ar",
-    openRegistration: true,
-    isBranch: true,
-    branchOf: "Campus Invierno 2026 GEBA",
+    openRegistration: false,
   },
   {
     id: "rosario-2026",
     translationKey: "rosario2026",
     imageUrl: "https://rosario.goatsports.ar/images/portada.jpg",
-    isPast: false,
+    isPast: true,
     comingSoon: false,
     link: "https://rosario.goatsports.ar",
-    openRegistration: true,
+    openRegistration: false,
   },
   {
     id: "montegrande-semana-santa-2026",
     translationKey: "montegrandeSemanaSanta2026",
     imageUrl: "/images/mgrc25.jpeg",
-    isPast: false,
+    isPast: true,
     comingSoon: false,
     link: "https://montegrande.goatsports.ar",
-    openRegistration: true,
+    openRegistration: false,
   },
   {
     id: "showcase-usa-2026",
@@ -163,7 +167,7 @@ export default function CampusSection() {
             <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse flex-shrink-0" />
             <h3 className="text-xl font-bold text-gray-900">{t("badges.openRegistration")}</h3>
             <div className="h-px flex-1 bg-gray-200" />
-            <span className="text-sm font-semibold text-gray-400">{activeEvents.filter(e => !e.isBranch).length} campus</span>
+            <span className="text-sm font-semibold text-gray-400">{activeEvents.length} campus</span>
           </div>
         </>
       )}
@@ -174,20 +178,7 @@ export default function CampusSection() {
               key={campus.id}
               className="overflow-hidden border border-gray-200 bg-white shadow-lg flex flex-col relative"
             >
-              {/* Branch indicator strip */}
-              {campus.isBranch && (
-                <div className="flex items-center gap-2 px-4 py-2 bg-[#00237c]">
-                  <span className="text-[10px] font-extrabold text-cyan-300 uppercase tracking-wide">
-                    US Full Ride
-                  </span>
-                  <span className="text-[10px] text-white/40 font-bold">+</span>
-                  <span className="text-[9px] uppercase tracking-[0.12em] text-white/50 font-semibold">
-                    Categoría dentro de {campus.branchOf}
-                  </span>
-                </div>
-              )}
-
-              <div className={`overflow-hidden ${campus.isBranch ? "h-44" : "h-40"}`}>
+              <div className="overflow-hidden h-40">
                 <ImageWithFallback
                   src={campus.imageUrl || "/placeholder.svg"}
                   alt={`${t(`events.${campus.translationKey}.title`)}`}
@@ -196,29 +187,24 @@ export default function CampusSection() {
                 />
               </div>
 
-              {/* Badge — only for non-branch cards */}
-              {!campus.isBranch && (
-                <>
-                  {campus.rescheduled && (
-                    <span className="absolute top-3 left-3 bg-amber-500 text-white text-xs font-semibold px-2 py-1 rounded">
-                      {t("badges.rescheduled")}
-                    </span>
-                  )}
-                  {campus.openRegistration && !campus.rescheduled && (
-                    <span className="absolute top-3 left-3 bg-green-600 text-white text-xs font-semibold px-2 py-1 rounded animate-pulse">
-                      {t("badges.openRegistration")}
-                    </span>
-                  )}
-                  {campus.comingSoon && !campus.isPast && !campus.rescheduled && (
-                    <span className="absolute top-3 left-3 bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded">
-                      {t("badges.comingSoon")}
-                    </span>
-                  )}
-                </>
+              {campus.rescheduled && (
+                <span className="absolute top-3 left-3 bg-amber-500 text-white text-xs font-semibold px-2 py-1 rounded">
+                  {t("badges.rescheduled")}
+                </span>
+              )}
+              {campus.openRegistration && !campus.rescheduled && (
+                <span className="absolute top-3 left-3 bg-green-600 text-white text-xs font-semibold px-2 py-1 rounded animate-pulse">
+                  {t("badges.openRegistration")}
+                </span>
+              )}
+              {campus.comingSoon && !campus.isPast && !campus.rescheduled && (
+                <span className="absolute top-3 left-3 bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded">
+                  {t("badges.comingSoon")}
+                </span>
               )}
 
               <CardContent className="p-5 flex flex-col flex-grow">
-                <h3 className={`text-xl font-bold mb-3 ${campus.isBranch ? "text-[#00237c]" : ""}`}>
+                <h3 className="text-xl font-bold mb-3">
                   {t(`events.${campus.translationKey}.title`)}
                 </h3>
                 <div className="flex items-center mb-2">
@@ -239,10 +225,7 @@ export default function CampusSection() {
                     </a>
                   ) : (
                     <a href={campus.link} target="_blank" rel="noopener noreferrer" className="block">
-                      <Button
-                        size="sm"
-                        className={`w-full ${campus.isBranch ? "bg-[#00237c] hover:bg-[#001a5e]" : "bg-blue-600 hover:bg-blue-700"}`}
-                      >
+                      <Button size="sm" className="w-full bg-blue-600 hover:bg-blue-700">
                         {t("buttons.registerNow")}
                       </Button>
                     </a>

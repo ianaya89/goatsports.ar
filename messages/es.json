@@ -113,6 +113,15 @@
       }
     },
     "cta": "Quiero saber más",
+    "signed": {
+      "title": "Nuestra primera jugadora firmada",
+      "nicoleQuote": "Desde el primer momento me ayudaron con todo lo que necesitaba para poder cumplir mi sueño, y siempre estuvieron disponibles para responder cada una de mis dudas. Me brindaron muchísima confianza y me ayudaron a tomar la mejor decisión para comenzar mi carrera como student-athlete en Estados Unidos. Luego de la firma del contrato con Old Dominion University, me acompañaron en todo el proceso: desde los trámites con la universidad y la NCAA hasta sacar el turno con la embajada. Sin dudas los recomiendo a cualquier deportista que quiera cumplir el mismo sueño.",
+      "nicoleName": "Nicole D.",
+      "nicoleRole": "Student-athlete · Old Dominion University",
+      "jorgeQuote": "US Full Ride fue para nosotros la posibilidad de probar una alternativa totalmente distinta a lo que ya habíamos vivido. Se nota que no solo tienen la experiencia como empresa, sino que también la vivieron como padres: conocen a fondo la temporada de la NCAA, la vida en el campus y el día a día del estudiante. Hoy tengo un amigo, un hermano a la distancia y un tío para mi hija. No solo nos cumplieron el sueño, ahora somos familia.",
+      "jorgeName": "Jorge D.",
+      "jorgeRole": "Padre de Nicole"
+    },
     "stats": {
       "athletes": "Atletas becados",
       "universities": "Universidades",
@@ -208,11 +217,17 @@
         "location": "GEBA, Ciudad de Buenos Aires",
         "description": "Campus de orientación universitaria presentado por GOAT Sports y US Full Ride. Evaluación técnica, grabación en video para tu perfil deportivo y charla sobre el sistema universitario en Estados Unidos. Becas de hasta el 100%: matrícula, alojamiento, comida, libros y equipamiento. Para jugadoras nacidas desde 2008."
       },
-      "usFullRide2026": {
-        "title": "Categoría Elite · US Full Ride",
-        "date": "Julio/Agosto 2026",
+      "cissab2026": {
+        "title": "Campus CISSAB x GOAT",
+        "date": "15 de Agosto 2026",
+        "location": "CISSAB, Tristán Suárez, Buenos Aires",
+        "description": "El mejor campus de hockey llega por primera vez a CISSAB. Una jornada de hockey técnico, táctico y recreativo con la metodología GOAT Sports, exclusiva para jugadores de CISSAB. Colación incluida durante toda la mañana."
+      },
+      "showcase2026": {
+        "title": "Showcase by US Full Ride",
+        "date": "21 de Septiembre 2026",
         "location": "GEBA, Ciudad de Buenos Aires",
-        "description": "Categoría dentro del Campus Invierno 2026 orientada a jugadoras que quieren estudiar en universidades de Estados Unidos. Evaluación técnica, video para tu perfil deportivo y proceso de becas NCAA. Para jugadoras nacidas desde 2008."
+        "description": "Showcase presentado por US Full Ride en GEBA. Muy pronto más información."
       },
       "winter2026": {
         "title": "Campus Invierno 2026 en GEBA",
@@ -221,16 +236,16 @@
         "description": "Campus Invierno 2026 en GEBA con categoría Elite orientada a universidades de Estados Unidos, presentada por US Full Ride. Evaluación técnica, video para tu perfil deportivo y proceso de becas NCAA. Para jugadoras nacidas desde 2008 con proyección universitaria."
       },
       "rosario2026": {
-        "title": "Campus Rosario 2026",
-        "date": "Próximamente",
+        "title": "Campus Winter Damfield 2026",
+        "date": "2026",
         "location": "Rosario, Santa Fe",
         "description": "Volvemos a Rosario con una nueva edición del campus GOAT en las instalaciones de primer nivel de Estancia Damfield. La misma experiencia de siempre, en la ciudad más futbolera de Argentina."
       },
       "montegrandeSemanaSanta2026": {
-        "title": "Campus Semana Santa 2026 en MGRC",
-        "date": "Semana Santa, Abril 2026",
+        "title": "Campus Invierno 2026 en MGRC",
+        "date": "22 de Julio 2026",
         "location": "Monte Grande, Provincia de Buenos Aires",
-        "description": "¡Volvemos a Monte Grande! Aprovechá Semana Santa para vivir una experiencia GOAT en Monte Grande Rugby Club. Días de entrenamiento intensivo con los mejores coaches, en un ambiente divertido y profesional. La misma calidad de siempre, más cerca tuyo."
+        "description": "¡Volvimos a Monte Grande! Una experiencia GOAT en Monte Grande Rugby Club. Días de entrenamiento intensivo con los mejores coaches, en un ambiente divertido y profesional. La misma calidad de siempre, más cerca tuyo."
       },
       "rosario2025": {
         "title": "Campus Verano 2025 en Rosario",

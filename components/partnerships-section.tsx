@@ -1,7 +1,7 @@
 "use client"
 
 import { useTranslations } from "next-intl"
-import { CheckCircle2, ArrowRight } from "lucide-react"
+import { CheckCircle2, ArrowRight, Quote } from "lucide-react"
 import ImageWithFallback from "./image-with-fallback"
 import { Button } from "@/components/ui/button"
 
@@ -141,6 +141,44 @@ export default function PartnershipsSection() {
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </a>
+              </div>
+            </div>
+          </div>
+
+          {/* First signed player */}
+          <div className="max-w-6xl mx-auto mt-10">
+            <h3 className="text-xl tablet:text-2xl font-bold text-white mb-6 text-center uppercase tracking-wide">
+              {t("signed.title")}
+            </h3>
+            <div className="grid grid-cols-1 tablet:grid-cols-2 gap-4 tablet:gap-6 items-stretch">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 tablet:p-6 border border-white/20 flex flex-col">
+                <div className="flex items-center gap-3 mb-4">
+                  <ImageWithFallback
+                    src="/images/nicole-avatar.jpg"
+                    alt="Nicole D."
+                    fallbackSrc="/placeholder-kngc1.png"
+                    className="w-14 h-14 tablet:w-16 tablet:h-16 rounded-full object-cover border-2 border-cyan-300/60 shadow-lg flex-shrink-0"
+                  />
+                  <div>
+                    <p className="text-cyan-300 font-bold text-sm tablet:text-base leading-tight">{t("signed.nicoleName")}</p>
+                    <p className="text-white/60 text-xs">{t("signed.nicoleRole")}</p>
+                  </div>
+                  <Quote className="w-6 h-6 text-cyan-300/40 ml-auto flex-shrink-0" aria-hidden="true" />
+                </div>
+                <p className="text-white/85 text-sm leading-relaxed italic">{t("signed.nicoleQuote")}</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 tablet:p-6 border border-white/20 flex flex-col">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-14 h-14 tablet:w-16 tablet:h-16 rounded-full bg-gradient-to-br from-cyan-400/30 to-blue-500/30 border-2 border-white/30 flex items-center justify-center flex-shrink-0">
+                    <span className="text-white font-black text-lg tablet:text-xl">JD</span>
+                  </div>
+                  <div>
+                    <p className="text-cyan-300 font-bold text-sm tablet:text-base leading-tight">{t("signed.jorgeName")}</p>
+                    <p className="text-white/60 text-xs">{t("signed.jorgeRole")}</p>
+                  </div>
+                  <Quote className="w-6 h-6 text-cyan-300/40 ml-auto flex-shrink-0" aria-hidden="true" />
+                </div>
+                <p className="text-white/85 text-sm leading-relaxed italic">{t("signed.jorgeQuote")}</p>
               </div>
             </div>
           </div>
