@@ -58,7 +58,8 @@
       "Bash(magick vlack-logo.webp -channel RGB -negate +channel -resize x250 __TRACKED_VAR__/vlack.png)",
       "Bash(identify -format 'treos %wx%h\\\\n' __TRACKED_VAR__/treos.png)",
       "Bash(identify -format 'vlack %wx%h\\\\n' __TRACKED_VAR__/vlack.png)",
-      "Bash(magick -size 4500x1350 xc:white __TRACKED_VAR__/treos.png -geometry +198+580 -composite __TRACKED_VAR__/vlack.png -geometry +1450+550 -composite __TRACKED_VAR__/dole.png -geometry +3270+580 -composite __TRACKED_VAR__/sponsors-banner.png)"
+      "Bash(magick -size 4500x1350 xc:white __TRACKED_VAR__/treos.png -geometry +198+580 -composite __TRACKED_VAR__/vlack.png -geometry +1450+550 -composite __TRACKED_VAR__/dole.png -geometry +3270+580 -composite __TRACKED_VAR__/sponsors-banner.png)",
+      "Bash(sips *)"
     ],
     "deny": [],
     "ask": []
