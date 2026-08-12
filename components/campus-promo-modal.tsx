@@ -11,18 +11,18 @@ interface CampusPromoModalProps {
 }
 
 const event = {
-  badge: "NFHCA Winter Escape Showcase",
-  title: "The Orlando Experience",
-  titleAccent: "Enero 2027",
+  badge: "Inscripciones abiertas",
+  title: "Showcase by US Full Ride",
+  titleAccent: "21 de Septiembre 2026",
   description:
-    "Competí frente a más de 120 entrenadores NCAA en un viaje diseñado para llevarte al siguiente paso de tu futuro universitario.",
+    "Mostrá tu nivel en GEBA y dá el próximo paso hacia el hockey universitario en USA. Cupos limitados.",
   image: "/images/orlando-experience.jpg",
-  link: "https://usfullride.com/the-orlando-experience/",
-  cta: "Quiero ser parte de la Experiencia",
+  link: "https://usa.goatsports.ar",
+  cta: "Quiero inscribirme",
   stats: [
-    { value: "Orlando", label: "USA" },
-    { value: "Enero", label: "2027" },
-    { value: "120+", label: "Entrenadores NCAA" },
+    { value: "21 Sept", label: "2026" },
+    { value: "GEBA", label: "Buenos Aires" },
+    { value: "US Full Ride", label: "Universidades USA" },
   ],
 }
 
@@ -40,7 +40,7 @@ export default function CampusPromoModal({ isOpen, onClose }: CampusPromoModalPr
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[520px] max-h-[90vh] w-[calc(100%-2rem)] overflow-y-auto p-0 border-0 rounded-2xl shadow-2xl shadow-blue-900/30 bg-[#00237c] [&>button:last-child]:hidden gap-0">
-        <DialogTitle className="sr-only">Próximo evento: The Orlando Experience</DialogTitle>
+        <DialogTitle className="sr-only">Próximo evento: Showcase by US Full Ride</DialogTitle>
 
         {/* Header */}
         <div className="flex items-center justify-between px-4 pt-4 pb-0">

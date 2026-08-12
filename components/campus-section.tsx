@@ -19,6 +19,7 @@ interface CampusEvent {
   comingSoon?: boolean
   openRegistration?: boolean
   rescheduled?: boolean
+  imagePosition?: string
 }
 
 const campusEvents: CampusEvent[] = [
@@ -36,8 +37,10 @@ const campusEvents: CampusEvent[] = [
     translationKey: "showcase2026",
     imageUrl: "/images/orlando-experience.jpg",
     isPast: false,
-    comingSoon: true,
-    openRegistration: false,
+    comingSoon: false,
+    link: "https://usa.goatsports.ar",
+    openRegistration: true,
+    imagePosition: "object-top",
   },
   {
     id: "winter-2026",
@@ -178,12 +181,12 @@ export default function CampusSection() {
               key={campus.id}
               className="overflow-hidden border border-gray-200 bg-white shadow-lg flex flex-col relative"
             >
-              <div className="overflow-hidden h-40">
+              <div className="overflow-hidden h-56">
                 <ImageWithFallback
                   src={campus.imageUrl || "/placeholder.svg"}
                   alt={`${t(`events.${campus.translationKey}.title`)}`}
                   fallbackSrc="/images/showcase-usa.jpg"
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  className={`w-full h-full object-cover ${campus.imagePosition || "object-center"} transition-transform duration-300 hover:scale-105`}
                 />
               </div>
 
