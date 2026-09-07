@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
-import { X, ArrowRight } from "lucide-react"
+import { X, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
 import ImageWithFallback from "./image-with-fallback"
 
 interface CampusPromoModalProps {
@@ -10,24 +10,66 @@ interface CampusPromoModalProps {
   onClose: () => void
 }
 
-const event = {
-  badge: "Inscripciones abiertas",
-  title: "Showcase by US Full Ride",
-  titleAccent: "21 de Septiembre 2026",
-  description:
-    "Mostrá tu nivel en GEBA y dá el próximo paso hacia el hockey universitario en USA. Cupos limitados.",
-  image: "/images/orlando-experience.jpg",
-  link: "https://usa.goatsports.ar",
-  cta: "Quiero inscribirme",
-  stats: [
-    { value: "21 Sept", label: "2026" },
-    { value: "GEBA", label: "Buenos Aires" },
-    { value: "US Full Ride", label: "Universidades USA" },
-  ],
+interface PromoEvent {
+  id: string
+  badge: string
+  title: string
+  titleAccent: string
+  description: string
+  image: string
+  imagePosition?: string
+  link: string
+  cta: string
+  stats: { value: string; label: string }[]
 }
+
+const events: PromoEvent[] = [
+  {
+    id: "matreros-2026",
+    badge: "Inscripciones abiertas",
+    title: "Clínica GOAT x Los Matreros",
+    titleAccent: "28 de Noviembre 2026",
+    description:
+      "Por primera vez la clínica GOAT llega a Los Matreros. Jugamos por la primera cancha de hockey de agua del club.",
+    image: "https://matreros.goatsports.ar/images/portada.jpg",
+    link: "https://matreros.goatsports.ar",
+    cta: "Quiero inscribirme",
+    stats: [
+      { value: "28 Nov", label: "9 a 13hs" },
+      { value: "Castelar", label: "Los Matreros" },
+      { value: "1ra Edición", label: "Por la cancha de agua" },
+    ],
+  },
+  {
+    id: "showcase-2026",
+    badge: "Inscripciones abiertas",
+    title: "Showcase by US Full Ride",
+    titleAccent: "21 de Septiembre 2026",
+    description:
+      "Mostrá tu nivel en GEBA y dá el próximo paso hacia el hockey universitario en USA. Cupos limitados.",
+    image: "/images/orlando-experience.jpg",
+    imagePosition: "object-top",
+    link: "https://usa.goatsports.ar",
+    cta: "Quiero inscribirme",
+    stats: [
+      { value: "21 Sept", label: "2026" },
+      { value: "GEBA", label: "Buenos Aires" },
+      { value: "US Full Ride", label: "Universidades USA" },
+    ],
+  },
+]
 
 export default function CampusPromoModal({ isOpen, onClose }: CampusPromoModalProps) {
   const [mounted, setMounted] = useState(false)
+  const [index, setIndex] = useState(0)
+
+  const event = events[index]
+  const hasMultiple = events.length > 1
+
+  const goTo = (next: number) => {
+    setMounted(false)
+    setIndex((next + events.length) % events.length)
+  }
 
   useEffect(() => {
     if (isOpen) {
@@ -35,19 +77,25 @@ export default function CampusPromoModal({ isOpen, onClose }: CampusPromoModalPr
       return () => clearTimeout(timer)
     }
     setMounted(false)
+    setIndex(0)
   }, [isOpen])
+
+  useEffect(() => {
+    const timer = setTimeout(() => setMounted(true), 100)
+    return () => clearTimeout(timer)
+  }, [index])
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[520px] max-h-[90vh] w-[calc(100%-2rem)] overflow-y-auto p-0 border-0 rounded-2xl shadow-2xl shadow-blue-900/30 bg-[#00237c] [&>button:last-child]:hidden gap-0">
-        <DialogTitle className="sr-only">Próximo evento: Showcase by US Full Ride</DialogTitle>
+        <DialogTitle className="sr-only">Próximo evento: {event.title}</DialogTitle>
 
         {/* Header */}
         <div className="flex items-center justify-between px-4 pt-4 pb-0">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
             <span className="text-[10px] uppercase tracking-[0.2em] text-blue-200/60 font-semibold font-heading">
-              Próximo evento
+              Próximos eventos
             </span>
           </div>
           <button
@@ -62,10 +110,11 @@ export default function CampusPromoModal({ isOpen, onClose }: CampusPromoModalPr
         {/* Image */}
         <div className="relative w-full h-44 sm:h-52 overflow-hidden mt-3">
           <ImageWithFallback
+            key={event.id}
             src={event.image}
             alt={event.title}
             fallbackSrc="/placeholder-kngc1.png"
-            className="w-full h-full object-cover object-top scale-105 transition-all duration-500"
+            className={`w-full h-full object-cover ${event.imagePosition || "object-center"} scale-105 transition-all duration-500`}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#00237c]/10 via-transparent to-[#00237c]" />
           <div
@@ -78,6 +127,25 @@ export default function CampusPromoModal({ isOpen, onClose }: CampusPromoModalPr
               {event.badge}
             </span>
           </div>
+
+          {hasMultiple && (
+            <>
+              <button
+                onClick={() => goTo(index - 1)}
+                className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-black/30 hover:bg-black/50 text-white flex items-center justify-center transition-colors touch-manipulation"
+                aria-label="Evento anterior"
+              >
+                <ChevronLeft className="h-4 w-4" strokeWidth={2.5} />
+              </button>
+              <button
+                onClick={() => goTo(index + 1)}
+                className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-black/30 hover:bg-black/50 text-white flex items-center justify-center transition-colors touch-manipulation"
+                aria-label="Evento siguiente"
+              >
+                <ChevronRight className="h-4 w-4" strokeWidth={2.5} />
+              </button>
+            </>
+          )}
         </div>
 
         {/* Content */}
@@ -116,6 +184,21 @@ export default function CampusPromoModal({ isOpen, onClose }: CampusPromoModalPr
                 </span>
               </div>
             </a>
+
+            {hasMultiple && (
+              <div className="flex items-center justify-center gap-2 pt-1">
+                {events.map((e, i) => (
+                  <button
+                    key={e.id}
+                    onClick={() => goTo(i)}
+                    className={`h-1.5 rounded-full transition-all ${i === index ? "w-6 bg-amber-400" : "w-1.5 bg-white/25 hover:bg-white/40"}`}
+                    aria-label={`Ver ${e.title}`}
+                    aria-current={i === index}
+                  />
+                ))}
+              </div>
+            )}
+
             <button
               onClick={onClose}
               className="w-full text-blue-300/30 hover:text-blue-200/50 py-1.5 text-xs font-medium transition-colors touch-manipulation"

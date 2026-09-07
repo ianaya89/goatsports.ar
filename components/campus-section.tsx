@@ -24,12 +24,12 @@ interface CampusEvent {
 
 const campusEvents: CampusEvent[] = [
   {
-    id: "cissab-2026",
-    translationKey: "cissab2026",
-    imageUrl: "https://cissab.goatsports.ar/images/portada.jpg",
+    id: "matreros-2026",
+    translationKey: "matreros2026",
+    imageUrl: "https://matreros.goatsports.ar/images/portada.jpg",
     isPast: false,
     comingSoon: false,
-    link: "https://cissab.goatsports.ar",
+    link: "https://matreros.goatsports.ar",
     openRegistration: true,
   },
   {
@@ -41,6 +41,15 @@ const campusEvents: CampusEvent[] = [
     link: "https://usa.goatsports.ar",
     openRegistration: true,
     imagePosition: "object-top",
+  },
+  {
+    id: "cissab-2026",
+    translationKey: "cissab2026",
+    imageUrl: "https://cissab.goatsports.ar/images/portada.jpg",
+    isPast: true,
+    comingSoon: false,
+    link: "https://cissab.goatsports.ar",
+    openRegistration: false,
   },
   {
     id: "winter-2026",
