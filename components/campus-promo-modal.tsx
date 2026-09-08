@@ -21,11 +21,13 @@ interface PromoEvent {
   link: string
   cta: string
   stats: { value: string; label: string }[]
+  hidden?: boolean
 }
 
-const events: PromoEvent[] = [
+const allEvents: PromoEvent[] = [
   {
     id: "matreros-2026",
+    hidden: true,
     badge: "Inscripciones abiertas",
     title: "Clínica GOAT x Los Matreros",
     titleAccent: "28 de Noviembre 2026",
@@ -58,6 +60,8 @@ const events: PromoEvent[] = [
     ],
   },
 ]
+
+const events = allEvents.filter((e) => !e.hidden)
 
 export default function CampusPromoModal({ isOpen, onClose }: CampusPromoModalProps) {
   const [mounted, setMounted] = useState(false)
