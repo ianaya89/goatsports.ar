@@ -36,10 +36,10 @@ const campusEvents: CampusEvent[] = [
     id: "showcase-2026",
     translationKey: "showcase2026",
     imageUrl: "/images/orlando-experience.jpg",
-    isPast: false,
+    isPast: true,
     comingSoon: false,
     link: "https://usa.goatsports.ar",
-    openRegistration: true,
+    openRegistration: false,
     imagePosition: "object-top",
   },
   {

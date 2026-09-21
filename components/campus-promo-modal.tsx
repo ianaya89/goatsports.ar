@@ -42,23 +42,6 @@ const allEvents: PromoEvent[] = [
       { value: "1ra Edición", label: "Por la cancha de agua" },
     ],
   },
-  {
-    id: "showcase-2026",
-    badge: "Inscripciones abiertas",
-    title: "Showcase by US Full Ride",
-    titleAccent: "21 de Septiembre 2026",
-    description:
-      "Mostrá tu nivel en GEBA y dá el próximo paso hacia el hockey universitario en USA. Cupos limitados.",
-    image: "/images/orlando-experience.jpg",
-    imagePosition: "object-top",
-    link: "https://usa.goatsports.ar",
-    cta: "Quiero inscribirme",
-    stats: [
-      { value: "21 Sept", label: "2026" },
-      { value: "GEBA", label: "Buenos Aires" },
-      { value: "US Full Ride", label: "Universidades USA" },
-    ],
-  },
 ]
 
 const events = allEvents.filter((e) => !e.hidden)
@@ -88,6 +71,8 @@ export default function CampusPromoModal({ isOpen, onClose }: CampusPromoModalPr
     const timer = setTimeout(() => setMounted(true), 100)
     return () => clearTimeout(timer)
   }, [index])
+
+  if (!event) return null
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
