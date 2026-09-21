@@ -47,6 +47,16 @@ const campusEvents: CampusEvent[] = [
     openRegistration: true,
   },
   {
+    id: "comu-2026",
+    translationKey: "comu2026",
+    imageUrl: "https://comu.goatsports.ar/images/portada.jpg",
+    clubLogo: "/images/clubs/comunicaciones.png",
+    isPast: false,
+    comingSoon: false,
+    link: "https://comu.goatsports.ar",
+    openRegistration: true,
+  },
+  {
     id: "showcase-2026",
     translationKey: "showcase2026",
     imageUrl: "/images/orlando-experience.jpg",
@@ -214,7 +224,7 @@ export default function CampusSection() {
         </>
       )}
       {activeEvents.length > 0 && (
-        <div className={`grid grid-cols-1 ${activeEvents.length === 1 ? "max-w-2xl mx-auto" : "md:grid-cols-2"} gap-8 mb-12`}>
+        <div className={`grid grid-cols-1 ${activeEvents.length === 1 ? "max-w-2xl mx-auto" : activeEvents.length === 2 ? "md:grid-cols-2" : "md:grid-cols-2 lg:grid-cols-3"} gap-8 mb-12`}>
           {activeEvents.map((campus) => (
             <Card
               key={campus.id}

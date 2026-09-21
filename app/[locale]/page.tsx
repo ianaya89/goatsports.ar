@@ -16,6 +16,7 @@ import NewsletterForm from "@/components/newsletter-form"
 import SponsorsSection from "@/components/sponsors-section"
 import PartnershipsSection from "@/components/partnerships-section"
 import CampusPromoModal from "@/components/campus-promo-modal"
+import TrustedBySection from "@/components/trusted-by-section"
 import FloatingWhatsApp from "@/components/floating-whatsapp"
 import AnimateOnScroll from "@/components/animate-on-scroll"
 import { getServicesData } from "@/data/services-data"
@@ -219,6 +220,8 @@ export default function Home() {
           </AnimateOnScroll>
         </div>
       </section>
+
+      <TrustedBySection />
 
       <section
         className="py-16 tablet:py-24 bg-white relative"

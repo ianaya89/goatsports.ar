@@ -229,6 +229,12 @@
         "location": "Club DAOM, Bajo Flores, Buenos Aires City",
         "description": "The GOAT clinic comes to Club DAOM for the first time. A morning of technical, tactical, and recreational hockey from 9am to 1pm on the club's pitch, with a welcome kit and snack included. Open to DAOM members and players from any club."
       },
+      "comu2026": {
+        "title": "GOAT x Club Comunicaciones Clinic",
+        "date": "December 13, 2026",
+        "location": "Club Comunicaciones, Av. San Martín 5125, Agronomía, Buenos Aires City",
+        "description": "The GOAT clinic comes to Club Comunicaciones for the first time. A morning of technical, tactical, and recreational hockey from 9am to 1pm on the club's pitch, with a welcome kit and snack included. Open to Comunicaciones members and players from any club."
+      },
       "cissab2026": {
         "title": "CISSAB x GOAT Campus",
         "date": "August 15, 2026",
@@ -313,6 +319,11 @@
     },
     "cta": "Request Information",
     "whatsappMessage": "Hi, I would like to get information about consulting services. Thanks!"
+  },
+  "trustedBy": {
+    "eyebrow": "Clubs",
+    "title": "They Trust Us",
+    "description": "Clubs and institutions that chose GOAT Sports for their camps and clinics."
   },
   "testimonials": {
     "title": "What Our Athletes Say",

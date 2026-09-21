@@ -229,6 +229,12 @@
         "location": "Club DAOM, Bajo Flores, CABA",
         "description": "Por primera vez la clínica GOAT llega al DAOM. Una mañana de hockey técnico, táctico y recreativo de 9 a 13hs en la cancha del club, con kit de bienvenida y colación incluida. Abierta a socios del DAOM y jugadores de cualquier club."
       },
+      "comu2026": {
+        "title": "Clínica GOAT x Club Comunicaciones",
+        "date": "13 de Diciembre 2026",
+        "location": "Club Comunicaciones, Av. San Martín 5125, Agronomía, CABA",
+        "description": "Por primera vez la clínica GOAT llega a Comunicaciones. Una mañana de hockey técnico, táctico y recreativo de 9 a 13hs en la cancha del club, con kit de bienvenida y colación incluida. Abierta a socios de Comunicaciones y jugadores de cualquier club."
+      },
       "cissab2026": {
         "title": "Campus CISSAB x GOAT",
         "date": "15 de Agosto 2026",
@@ -313,6 +319,11 @@
     },
     "cta": "Solicitar Información",
     "whatsappMessage": "Hola, me gustaría obtener información sobre los servicios de consultoría. Gracias!"
+  },
+  "trustedBy": {
+    "eyebrow": "Clubes",
+    "title": "Confían en Nosotros",
+    "description": "Clubes e instituciones que eligieron a GOAT Sports para sus campus y clínicas."
   },
   "testimonials": {
     "title": "Lo Que Dicen Nuestros Deportistas",
