@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Calendar, MapPin, ImageIcon, Instagram, ChevronLeft, ChevronRight } from "lucide-react"
 import { useState } from "react"
 import ImageWithFallback from "./image-with-fallback"
+import ClubLogo from "./club-logo"
 
 interface CampusEvent {
   id: string
@@ -21,6 +22,7 @@ interface CampusEvent {
   rescheduled?: boolean
   imagePosition?: string
   clubLogo?: string
+  clubLogoBadge?: boolean
 }
 
 const campusEvents: CampusEvent[] = [
@@ -48,6 +50,8 @@ const campusEvents: CampusEvent[] = [
     id: "showcase-2026",
     translationKey: "showcase2026",
     imageUrl: "/images/orlando-experience.jpg",
+    clubLogo: "/images/partnerships/us-full-ride-logo.png",
+    clubLogoBadge: true,
     isPast: true,
     comingSoon: false,
     link: "https://usa.goatsports.ar",
@@ -58,6 +62,8 @@ const campusEvents: CampusEvent[] = [
     id: "cissab-2026",
     translationKey: "cissab2026",
     imageUrl: "https://cissab.goatsports.ar/images/portada.jpg",
+    clubLogo: "/images/clubs/cissab.png",
+    clubLogoBadge: true,
     isPast: true,
     comingSoon: false,
     link: "https://cissab.goatsports.ar",
@@ -67,6 +73,7 @@ const campusEvents: CampusEvent[] = [
     id: "winter-2026",
     translationKey: "winter2026",
     imageUrl: "/images/winter25.jpeg",
+    clubLogo: "/images/clubs/geba.png",
     isPast: true,
     comingSoon: false,
     link: "https://winter.goatsports.ar",
@@ -76,6 +83,8 @@ const campusEvents: CampusEvent[] = [
     id: "rosario-2026",
     translationKey: "rosario2026",
     imageUrl: "https://rosario.goatsports.ar/images/portada.jpg",
+    clubLogo: "/images/clubs/damfield.png",
+    clubLogoBadge: true,
     isPast: true,
     comingSoon: false,
     link: "https://rosario.goatsports.ar",
@@ -85,6 +94,7 @@ const campusEvents: CampusEvent[] = [
     id: "montegrande-semana-santa-2026",
     translationKey: "montegrandeSemanaSanta2026",
     imageUrl: "/images/mgrc25.jpeg",
+    clubLogo: "/images/clubs/montegrande.png",
     isPast: true,
     comingSoon: false,
     link: "https://montegrande.goatsports.ar",
@@ -94,6 +104,8 @@ const campusEvents: CampusEvent[] = [
     id: "showcase-usa-2026",
     translationKey: "showcaseUsa2026",
     imageUrl: "/images/showcase-usa.jpg",
+    clubLogo: "/images/partnerships/us-full-ride-logo.png",
+    clubLogoBadge: true,
     isPast: true,
     comingSoon: false,
     link: "https://usa.goatsports.ar",
@@ -103,6 +115,7 @@ const campusEvents: CampusEvent[] = [
     id: "summer-2026",
     translationKey: "summer2026",
     imageUrl: "/images/campus-2026.jpeg",
+    clubLogo: "/images/clubs/geba.png",
     isPast: true,
     comingSoon: false,
     link: "https://summer.goatsports.ar",
@@ -113,6 +126,8 @@ const campusEvents: CampusEvent[] = [
     id: "rosario-2025",
     translationKey: "rosario2025",
     imageUrl: "/images/damfield.jpg",
+    clubLogo: "/images/clubs/damfield.png",
+    clubLogoBadge: true,
     isPast: true,
     link: "https://rosario.goatsports.ar",
     openRegistration: false,
@@ -121,6 +136,7 @@ const campusEvents: CampusEvent[] = [
     id: "summer-2025",
     translationKey: "summer2025",
     imageUrl: "/images/campus-coaches-players.jpg",
+    clubLogo: "/images/clubs/geba.png",
     isPast: true,
     comingSoon: false,
     link: "https://summer.goatsports.ar",
@@ -131,6 +147,7 @@ const campusEvents: CampusEvent[] = [
     id: "winter-2025",
     translationKey: "winter2025",
     imageUrl: "/images/winter25.jpeg",
+    clubLogo: "/images/clubs/geba.png",
     isPast: true,
     link: "https://winter25.goatsports.ar",
     galleryUrl: "https://drive.google.com/drive/folders/1EbotRoIMf4MHTL7ar82Q1Ku6ftFJKHo7",
@@ -139,6 +156,7 @@ const campusEvents: CampusEvent[] = [
     id: "gba-sur-2025",
     translationKey: "gbaSur2025",
     imageUrl: "/images/mgrc25.jpeg",
+    clubLogo: "/images/clubs/montegrande.png",
     isPast: true,
     link: "https://montegrande.goatsports.ar",
     galleryUrl: "https://drive.google.com/drive/u/0/folders/1eTnvBJl8nGCrNiUJOQlleytsRagyDOb_",
@@ -212,12 +230,7 @@ export default function CampusSection() {
               </div>
 
               {campus.clubLogo && (
-                <img
-                  src={campus.clubLogo}
-                  alt=""
-                  aria-hidden="true"
-                  className="absolute top-3 right-3 h-16 w-16 object-contain drop-shadow-[0_4px_10px_rgba(0,0,0,0.55)]"
-                />
+                <ClubLogo src={campus.clubLogo} badge={campus.clubLogoBadge} className="absolute top-3 right-3" />
               )}
 
               {campus.rescheduled && (
@@ -308,6 +321,14 @@ export default function CampusSection() {
                             <span className="absolute top-2 left-2 bg-gray-800 text-white text-[10px] font-semibold px-1.5 py-0.5 rounded">
                               {t("badges.finished")}
                             </span>
+                            {campus.clubLogo && (
+                              <ClubLogo
+                                src={campus.clubLogo}
+                                badge={campus.clubLogoBadge}
+                                size="sm"
+                                className="absolute top-2 right-2"
+                              />
+                            )}
                             <CardContent className="p-4 flex flex-col flex-grow">
                               <h3 className="text-base font-bold mb-2">{t(`events.${campus.translationKey}.title`)}</h3>
                               <div className="flex items-center mb-1.5">

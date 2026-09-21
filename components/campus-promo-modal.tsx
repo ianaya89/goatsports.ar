@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import { X, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
 import ImageWithFallback from "./image-with-fallback"
+import ClubLogo from "./club-logo"
 
 interface CampusPromoModalProps {
   isOpen: boolean
@@ -19,6 +20,7 @@ interface PromoEvent {
   image: string
   imagePosition?: string
   clubLogo?: string
+  clubLogoBadge?: boolean
   link: string
   cta: string
   stats: { value: string; label: string }[]
@@ -135,12 +137,11 @@ export default function CampusPromoModal({ isOpen, onClose }: CampusPromoModalPr
             </span>
           </div>
           {event.clubLogo && (
-            <img
+            <ClubLogo
               key={event.clubLogo}
               src={event.clubLogo}
-              alt=""
-              aria-hidden="true"
-              className={`absolute top-3 right-3 z-10 h-16 w-16 object-contain drop-shadow-[0_4px_10px_rgba(0,0,0,0.55)] transition-all duration-300 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2"}`}
+              badge={event.clubLogoBadge}
+              className={`absolute top-3 right-3 z-10 transition-all duration-300 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2"}`}
             />
           )}
 
