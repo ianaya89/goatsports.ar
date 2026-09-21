@@ -51,6 +51,8 @@ const config: Config = {
           800: "#92400e",
           900: "#78350f",
           950: "#451a03",
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -72,10 +74,6 @@ const config: Config = {
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
