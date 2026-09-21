@@ -20,6 +20,7 @@ interface CampusEvent {
   openRegistration?: boolean
   rescheduled?: boolean
   imagePosition?: string
+  clubLogo?: string
 }
 
 const campusEvents: CampusEvent[] = [
@@ -27,9 +28,20 @@ const campusEvents: CampusEvent[] = [
     id: "matreros-2026",
     translationKey: "matreros2026",
     imageUrl: "https://matreros.goatsports.ar/images/portada.jpg",
+    clubLogo: "/images/clubs/matreros.png",
     isPast: false,
     comingSoon: false,
     link: "https://matreros.goatsports.ar",
+    openRegistration: true,
+  },
+  {
+    id: "daom-2026",
+    translationKey: "daom2026",
+    imageUrl: "https://daom.goatsports.ar/images/portada.jpg",
+    clubLogo: "/images/clubs/daom.png",
+    isPast: false,
+    comingSoon: false,
+    link: "https://daom.goatsports.ar",
     openRegistration: true,
   },
   {
@@ -198,6 +210,15 @@ export default function CampusSection() {
                   className={`w-full h-full object-cover ${campus.imagePosition || "object-center"} transition-transform duration-300 hover:scale-105`}
                 />
               </div>
+
+              {campus.clubLogo && (
+                <img
+                  src={campus.clubLogo}
+                  alt=""
+                  aria-hidden="true"
+                  className="absolute top-3 right-3 h-16 w-16 object-contain drop-shadow-[0_4px_10px_rgba(0,0,0,0.55)]"
+                />
+              )}
 
               {campus.rescheduled && (
                 <span className="absolute top-3 left-3 bg-amber-500 text-white text-xs font-semibold px-2 py-1 rounded">

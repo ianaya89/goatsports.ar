@@ -18,6 +18,7 @@ interface PromoEvent {
   description: string
   image: string
   imagePosition?: string
+  clubLogo?: string
   link: string
   cta: string
   stats: { value: string; label: string }[]
@@ -27,19 +28,36 @@ interface PromoEvent {
 const allEvents: PromoEvent[] = [
   {
     id: "matreros-2026",
-    hidden: true,
     badge: "Inscripciones abiertas",
     title: "Clínica GOAT x Los Matreros",
     titleAccent: "28 de Noviembre 2026",
     description:
       "Por primera vez la clínica GOAT llega a Los Matreros. Jugamos por la primera cancha de hockey de agua del club.",
     image: "https://matreros.goatsports.ar/images/portada.jpg",
+    clubLogo: "/images/clubs/matreros.png",
     link: "https://matreros.goatsports.ar",
     cta: "Quiero inscribirme",
     stats: [
       { value: "28 Nov", label: "9 a 13hs" },
       { value: "Castelar", label: "Los Matreros" },
       { value: "1ra Edición", label: "Por la cancha de agua" },
+    ],
+  },
+  {
+    id: "daom-2026",
+    badge: "Inscripciones abiertas",
+    title: "Clínica GOAT x Club DAOM",
+    titleAccent: "12 de Diciembre 2026",
+    description:
+      "Por primera vez la clínica GOAT llega al DAOM. Una mañana de hockey técnico, táctico y recreativo en la cancha del club.",
+    image: "https://daom.goatsports.ar/images/portada.jpg",
+    clubLogo: "/images/clubs/daom.png",
+    link: "https://daom.goatsports.ar",
+    cta: "Quiero inscribirme",
+    stats: [
+      { value: "12 Dic", label: "9 a 13hs" },
+      { value: "Bajo Flores", label: "Club DAOM" },
+      { value: "1ra Edición", label: "Clínica de hockey" },
     ],
   },
 ]
@@ -116,6 +134,15 @@ export default function CampusPromoModal({ isOpen, onClose }: CampusPromoModalPr
               {event.badge}
             </span>
           </div>
+          {event.clubLogo && (
+            <img
+              key={event.clubLogo}
+              src={event.clubLogo}
+              alt=""
+              aria-hidden="true"
+              className={`absolute top-3 right-3 z-10 h-16 w-16 object-contain drop-shadow-[0_4px_10px_rgba(0,0,0,0.55)] transition-all duration-300 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2"}`}
+            />
+          )}
 
           {hasMultiple && (
             <>
