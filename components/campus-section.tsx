@@ -65,6 +65,7 @@ const campusEvents: CampusEvent[] = [
     isPast: true,
     comingSoon: false,
     link: "https://usa.goatsports.ar",
+    galleryUrl: "https://drive.google.com/drive/folders/1FtOibpYOv62KGio__XnkuAU5II8KfXTN",
     openRegistration: false,
     imagePosition: "object-top",
   },
@@ -77,6 +78,7 @@ const campusEvents: CampusEvent[] = [
     isPast: true,
     comingSoon: false,
     link: "https://cissab.goatsports.ar",
+    galleryUrl: "https://drive.google.com/drive/folders/11hakwFfMOQ-sF0sFCrxVbX6K0xxx1NUe",
     openRegistration: false,
   },
   {
@@ -87,6 +89,7 @@ const campusEvents: CampusEvent[] = [
     isPast: true,
     comingSoon: false,
     link: "https://winter.goatsports.ar",
+    galleryUrl: "https://drive.google.com/drive/folders/1b0lEi1sidNsDkexwCoDlg1gfTiNl4Cxb",
     openRegistration: false,
   },
   {
@@ -98,6 +101,7 @@ const campusEvents: CampusEvent[] = [
     isPast: true,
     comingSoon: false,
     link: "https://rosario.goatsports.ar",
+    galleryUrl: "https://drive.google.com/drive/folders/1OoL_ajWrlhbmSyTu2OrQiwjYsaHPLmXA",
     openRegistration: false,
   },
   {
