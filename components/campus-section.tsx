@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Calendar, MapPin, ImageIcon, Instagram, ChevronLeft, ChevronRight } from "lucide-react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import ImageWithFallback from "./image-with-fallback"
 import ClubLogo from "./club-logo"
 
@@ -14,6 +14,7 @@ interface CampusEvent {
   id: string
   translationKey: string
   imageUrl: string
+  extraImages?: string[]
   isPast: boolean
   link?: string
   galleryUrl?: string
@@ -95,7 +96,8 @@ const campusEvents: CampusEvent[] = [
   {
     id: "rosario-2026",
     translationKey: "rosario2026",
-    imageUrl: "https://rosario.goatsports.ar/images/portada.jpg",
+    imageUrl: "/images/damfield26-group.jpg",
+    extraImages: ["/images/damfield26-talk.jpg"],
     clubLogo: "/images/clubs/damfield.png",
     clubLogoBadge: true,
     isPast: true,
@@ -176,6 +178,33 @@ const campusEvents: CampusEvent[] = [
     galleryUrl: "https://drive.google.com/drive/u/0/folders/1eTnvBJl8nGCrNiUJOQlleytsRagyDOb_",
   },
 ]
+
+function CrossfadeCover({ images, alt }: { images: string[]; alt: string }) {
+  const [active, setActive] = useState(0)
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return
+    const id = setInterval(() => setActive((i) => (i + 1) % images.length), 4000)
+    return () => clearInterval(id)
+  }, [images.length])
+
+  return (
+    <div className="relative w-full h-full">
+      {images.map((src, i) => (
+        <img
+          key={src}
+          src={src}
+          alt={i === 0 ? alt : ""}
+          aria-hidden={i !== 0}
+          loading="lazy"
+          className={`absolute inset-0 w-full h-full object-cover transition-[opacity,transform] duration-[1500ms] ease-out ${
+            i === active ? "opacity-100 scale-105" : "opacity-0 scale-100"
+          }`}
+        />
+      ))}
+    </div>
+  )
+}
 
 export default function CampusSection() {
   const t = useTranslations("campus")
@@ -325,12 +354,19 @@ export default function CampusSection() {
                             className="overflow-hidden border border-gray-200 bg-white shadow-md flex flex-col relative"
                           >
                             <div className="h-36 overflow-hidden">
-                              <ImageWithFallback
-                                src={campus.imageUrl || "/placeholder.svg"}
-                                alt={`${t(`events.${campus.translationKey}.title`)} - Grupo de participantes en campo de hockey`}
-                                fallbackSrc="/placeholder-kngc1.png"
-                                className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                              />
+                              {campus.extraImages ? (
+                                <CrossfadeCover
+                                  images={[campus.imageUrl, ...campus.extraImages]}
+                                  alt={t(`events.${campus.translationKey}.title`)}
+                                />
+                              ) : (
+                                <ImageWithFallback
+                                  src={campus.imageUrl || "/placeholder.svg"}
+                                  alt={`${t(`events.${campus.translationKey}.title`)} - Grupo de participantes en campo de hockey`}
+                                  fallbackSrc="/placeholder-kngc1.png"
+                                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                                />
+                              )}
                             </div>
                             <span className="absolute top-2 left-2 bg-gray-800 text-white text-[10px] font-semibold px-1.5 py-0.5 rounded">
                               {t("badges.finished")}
