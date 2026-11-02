@@ -62,6 +62,40 @@ const allEvents: PromoEvent[] = [
       { value: "1ra Edición", label: "Clínica de hockey" },
     ],
   },
+  {
+    id: "comu-2026",
+    badge: "Inscripciones abiertas",
+    title: "Clínica GOAT x Comunicaciones",
+    titleAccent: "13 de Diciembre 2026",
+    description:
+      "Por primera vez la clínica GOAT llega a Comunicaciones. Una mañana de hockey técnico, táctico y recreativo en la cancha del club.",
+    image: "https://comu.goatsports.ar/images/portada.jpg",
+    clubLogo: "/images/clubs/comunicaciones.png",
+    link: "https://comu.goatsports.ar",
+    cta: "Quiero inscribirme",
+    stats: [
+      { value: "13 Dic", label: "9 a 13hs" },
+      { value: "Agronomía", label: "Club Comunicaciones" },
+      { value: "1ra Edición", label: "Clínica de hockey" },
+    ],
+  },
+  {
+    id: "summer-dic-2026",
+    badge: "Preventa abierta",
+    title: "Campus GOAT Summer en GEBA",
+    titleAccent: "14 al 18 de Diciembre 2026",
+    description:
+      "Cerrá el año arriba de la cancha. Entrenamiento técnico, táctico y recreativo en la cancha de agua de GEBA, con el staff GOAT y figuras del hockey.",
+    image: "https://summer.goatsports.ar/images/portada-grupo.jpg",
+    clubLogo: "/images/clubs/geba.png",
+    link: "https://summer.goatsports.ar",
+    cta: "Quiero inscribirme",
+    stats: [
+      { value: "14–18 Dic", label: "9 a 16hs" },
+      { value: "GEBA", label: "Sede San Martín" },
+      { value: "4", label: "Categorías" },
+    ],
+  },
 ]
 
 const events = allEvents.filter((e) => !e.hidden)
