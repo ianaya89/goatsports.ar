@@ -37,6 +37,17 @@ const campusEvents: CampusEvent[] = [
     openRegistration: true,
   },
   {
+    id: "rosario-verano-2026",
+    translationKey: "rosarioVerano2026",
+    imageUrl: "https://rosario.goatsports.ar/images/portada-grupo.jpg",
+    clubLogo: "/images/clubs/damfield.png",
+    clubLogoBadge: true,
+    isPast: false,
+    comingSoon: false,
+    link: "https://rosario.goatsports.ar",
+    openRegistration: true,
+  },
+  {
     id: "daom-2026",
     translationKey: "daom2026",
     imageUrl: "https://daom.goatsports.ar/images/portada.jpg",
@@ -194,6 +205,8 @@ export default function CampusSection() {
   const [touchEnd, setTouchEnd] = useState<number | null>(null)
 
   const activeEvents = campusEvents.filter((e) => !e.isPast)
+  // 5, 8… active: first row gets 2 wide cards so the 3-col grid has no orphan
+  const featuredRow = activeEvents.length > 4 && activeEvents.length % 3 === 2
   const pastEvents = campusEvents.filter((e) => e.isPast)
 
   const cardsPerPage = 4
@@ -238,13 +251,15 @@ export default function CampusSection() {
         </>
       )}
       {activeEvents.length > 0 && (
-        <div className={`grid grid-cols-1 ${activeEvents.length === 1 ? "max-w-2xl mx-auto" : activeEvents.length === 2 || activeEvents.length === 4 ? "md:grid-cols-2" : "md:grid-cols-2 lg:grid-cols-3"} gap-8 mb-12`}>
-          {activeEvents.map((campus) => (
+        <div className={`grid grid-cols-1 ${activeEvents.length === 1 ? "max-w-2xl mx-auto" : activeEvents.length === 2 || activeEvents.length === 4 ? "md:grid-cols-2" : featuredRow ? "md:grid-cols-2 lg:grid-cols-6" : "md:grid-cols-2 lg:grid-cols-3"} gap-8 mb-12`}>
+          {activeEvents.map((campus, i) => (
             <Card
               key={campus.id}
-              className="overflow-hidden border border-gray-200 bg-white shadow-lg flex flex-col relative"
+              className={`overflow-hidden border border-gray-200 bg-white shadow-lg flex flex-col relative ${
+                featuredRow ? (i < 2 ? "lg:col-span-3" : `${i === activeEvents.length - 1 ? "md:col-span-2" : ""} lg:col-span-2`) : ""
+              }`}
             >
-              <div className="overflow-hidden h-56">
+              <div className={`overflow-hidden ${featuredRow && i < 2 ? "h-56 lg:h-80" : "h-56"}`}>
                 <ImageWithFallback
                   src={campus.imageUrl || "/placeholder.svg"}
                   alt={`${t(`events.${campus.translationKey}.title`)}`}

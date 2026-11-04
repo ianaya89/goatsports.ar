@@ -1,10 +1,8 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
-import { X, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
-import ImageWithFallback from "./image-with-fallback"
-import ClubLogo from "./club-logo"
+import { X, ArrowUpRight } from "lucide-react"
 
 interface CampusPromoModalProps {
   isOpen: boolean
@@ -13,251 +11,283 @@ interface CampusPromoModalProps {
 
 interface PromoEvent {
   id: string
-  badge: string
-  title: string
-  titleAccent: string
-  description: string
+  kind: "Clínica" | "Campus"
+  club: string
+  start: string
+  end?: string
+  time: string
+  place: string
+  status?: string
+  statusUntil?: string
   image: string
-  imagePosition?: string
   clubLogo?: string
-  clubLogoBadge?: boolean
   link: string
-  cta: string
-  stats: { value: string; label: string }[]
   hidden?: boolean
 }
 
 const allEvents: PromoEvent[] = [
   {
     id: "matreros-2026",
-    badge: "Inscripciones abiertas",
-    title: "Clínica GOAT x Los Matreros",
-    titleAccent: "28 de Noviembre 2026",
-    description:
-      "Por primera vez la clínica GOAT llega a Los Matreros. Jugamos por la primera cancha de hockey de agua del club.",
+    kind: "Clínica",
+    club: "Los Matreros",
+    start: "2026-11-28",
+    time: "9 a 13hs",
+    place: "Castelar",
     image: "https://matreros.goatsports.ar/images/portada.jpg",
     clubLogo: "/images/clubs/matreros.png",
     link: "https://matreros.goatsports.ar",
-    cta: "Quiero inscribirme",
-    stats: [
-      { value: "28 Nov", label: "9 a 13hs" },
-      { value: "Castelar", label: "Los Matreros" },
-      { value: "1ra Edición", label: "Por la cancha de agua" },
-    ],
+  },
+  {
+    id: "rosario-verano-2026",
+    kind: "Campus",
+    club: "Estancia Damfield",
+    start: "2026-12-11",
+    end: "2026-12-13",
+    time: "Vie 17–21 · S/D 9–13hs",
+    place: "Funes, Rosario",
+    status: "Preventa",
+    statusUntil: "2026-11-10",
+    image: "https://rosario.goatsports.ar/images/portada-grupo.jpg",
+    clubLogo: "/images/clubs/damfield.png",
+    link: "https://rosario.goatsports.ar",
   },
   {
     id: "daom-2026",
-    badge: "Inscripciones abiertas",
-    title: "Clínica GOAT x Club DAOM",
-    titleAccent: "12 de Diciembre 2026",
-    description:
-      "Por primera vez la clínica GOAT llega al DAOM. Una mañana de hockey técnico, táctico y recreativo en la cancha del club.",
+    kind: "Clínica",
+    club: "Club DAOM",
+    start: "2026-12-12",
+    time: "9 a 13hs",
+    place: "Bajo Flores",
     image: "https://daom.goatsports.ar/images/portada.jpg",
     clubLogo: "/images/clubs/daom.png",
     link: "https://daom.goatsports.ar",
-    cta: "Quiero inscribirme",
-    stats: [
-      { value: "12 Dic", label: "9 a 13hs" },
-      { value: "Bajo Flores", label: "Club DAOM" },
-      { value: "1ra Edición", label: "Clínica de hockey" },
-    ],
   },
   {
     id: "comu-2026",
-    badge: "Inscripciones abiertas",
-    title: "Clínica GOAT x Comunicaciones",
-    titleAccent: "13 de Diciembre 2026",
-    description:
-      "Por primera vez la clínica GOAT llega a Comunicaciones. Una mañana de hockey técnico, táctico y recreativo en la cancha del club.",
+    kind: "Clínica",
+    club: "Comunicaciones",
+    start: "2026-12-13",
+    time: "9 a 13hs",
+    place: "Agronomía",
     image: "https://comu.goatsports.ar/images/portada.jpg",
     clubLogo: "/images/clubs/comunicaciones.png",
     link: "https://comu.goatsports.ar",
-    cta: "Quiero inscribirme",
-    stats: [
-      { value: "13 Dic", label: "9 a 13hs" },
-      { value: "Agronomía", label: "Club Comunicaciones" },
-      { value: "1ra Edición", label: "Clínica de hockey" },
-    ],
   },
   {
     id: "summer-dic-2026",
-    badge: "Preventa abierta",
-    title: "Campus GOAT Summer en GEBA",
-    titleAccent: "14 al 18 de Diciembre 2026",
-    description:
-      "Cerrá el año arriba de la cancha. Entrenamiento técnico, táctico y recreativo en la cancha de agua de GEBA, con el staff GOAT y figuras del hockey.",
+    kind: "Campus",
+    club: "GEBA · Summer",
+    start: "2026-12-14",
+    end: "2026-12-18",
+    time: "9 a 16hs",
+    place: "Sede San Martín",
+    status: "Preventa",
     image: "https://summer.goatsports.ar/images/portada-grupo.jpg",
     clubLogo: "/images/clubs/geba.png",
     link: "https://summer.goatsports.ar",
-    cta: "Quiero inscribirme",
-    stats: [
-      { value: "14–18 Dic", label: "9 a 16hs" },
-      { value: "GEBA", label: "Sede San Martín" },
-      { value: "4", label: "Categorías" },
-    ],
   },
 ]
 
-const events = allEvents.filter((e) => !e.hidden)
+const MONTHS = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+const WEEKDAYS = ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"]
+const DAY_MS = 86_400_000
+
+const parseDate = (iso: string) => new Date(`${iso}T00:00:00`)
+
+function countdown(start: Date, today: Date) {
+  const days = Math.round((start.getTime() - today.getTime()) / DAY_MS)
+  if (days <= 0) return "Hoy"
+  if (days === 1) return "Mañana"
+  return `En ${days} días`
+}
 
 export default function CampusPromoModal({ isOpen, onClose }: CampusPromoModalProps) {
   const [mounted, setMounted] = useState(false)
-  const [index, setIndex] = useState(0)
-
-  const event = events[index]
-  const hasMultiple = events.length > 1
-
-  const goTo = (next: number) => {
-    setMounted(false)
-    setIndex((next + events.length) % events.length)
-  }
 
   useEffect(() => {
-    if (isOpen) {
-      const timer = setTimeout(() => setMounted(true), 100)
-      return () => clearTimeout(timer)
-    }
-    setMounted(false)
-    setIndex(0)
+    if (!isOpen) return setMounted(false)
+    const timer = setTimeout(() => setMounted(true), 80)
+    return () => clearTimeout(timer)
   }, [isOpen])
 
-  useEffect(() => {
-    const timer = setTimeout(() => setMounted(true), 100)
-    return () => clearTimeout(timer)
-  }, [index])
+  const { today, groups, total } = useMemo(() => {
+    const today = new Date()
+    today.setHours(0, 0, 0, 0)
 
-  if (!event) return null
+    const upcoming = allEvents
+      .filter((e) => !e.hidden && parseDate(e.end ?? e.start) >= today)
+      .sort((a, b) => a.start.localeCompare(b.start))
+
+    const groups: { month: string; events: PromoEvent[] }[] = []
+    for (const e of upcoming) {
+      const d = parseDate(e.start)
+      const month = `${MONTHS[d.getMonth()]} ${d.getFullYear()}`
+      const last = groups[groups.length - 1]
+      if (last?.month === month) last.events.push(e)
+      else groups.push({ month, events: [e] })
+    }
+    return { today, groups, total: upcoming.length }
+  }, [isOpen])
+
+  if (total === 0) return null
+
+  const nextId = groups[0].events[0].id
+  let row = 0
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[520px] max-h-[90vh] w-[calc(100%-2rem)] overflow-y-auto p-0 border-0 rounded-2xl shadow-2xl shadow-blue-900/30 bg-[#00237c] [&>button:last-child]:hidden gap-0">
-        <DialogTitle className="sr-only">Próximo evento: {event.title}</DialogTitle>
+      <DialogContent className="sm:max-w-[560px] max-h-[90vh] w-[calc(100%-2rem)] flex flex-col p-0 border-0 rounded-2xl shadow-2xl shadow-blue-950/50 bg-[#00237c] overflow-hidden [&>button:last-child]:hidden gap-0">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 opacity-[0.07]"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(90deg, #fff 0 1px, transparent 1px 56px), repeating-linear-gradient(0deg, #fff 0 1px, transparent 1px 56px)",
+            maskImage: "linear-gradient(to bottom, black, transparent 45%)",
+          }}
+        />
+        <div aria-hidden="true" className="pointer-events-none absolute -top-24 -right-20 h-56 w-56 rounded-full bg-amber-400/20 blur-3xl" />
 
-        {/* Header */}
-        <div className="flex items-center justify-between px-4 pt-4 pb-0">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-            <span className="text-[10px] uppercase tracking-[0.2em] text-blue-200/60 font-semibold font-heading">
-              Próximos eventos
-            </span>
+        <header className="relative flex items-center justify-between gap-4 px-5 pt-4 pb-3 sm:px-6 sm:pt-5">
+          <div>
+            <div className="mb-1.5 flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-amber-400 animate-pulse" />
+              <span className="text-[10px] uppercase tracking-[0.25em] text-blue-200/70 font-semibold font-heading">
+                Agenda GOAT · {total} {total === 1 ? "fecha" : "fechas"}
+              </span>
+            </div>
+            <DialogTitle className="text-2xl sm:text-3xl font-black text-white font-heading leading-[0.9] tracking-tight">
+              Próximas <span className="text-amber-400">fechas</span>
+            </DialogTitle>
           </div>
           <button
             onClick={onClose}
-            className="w-8 h-8 rounded-full bg-white/10 text-white/60 hover:text-white hover:bg-white/20 transition-all flex items-center justify-center touch-manipulation"
+            className="shrink-0 w-9 h-9 rounded-full bg-white/10 text-white/60 hover:text-white hover:bg-white/20 transition-all flex items-center justify-center touch-manipulation"
             aria-label="Cerrar"
           >
-            <X className="h-3.5 w-3.5" strokeWidth={2.5} />
+            <X className="h-4 w-4" strokeWidth={2.5} />
           </button>
-        </div>
+        </header>
 
-        {/* Image */}
-        <div className="relative w-full h-44 sm:h-52 overflow-hidden mt-3">
-          <ImageWithFallback
-            key={event.id}
-            src={event.image}
-            alt={event.title}
-            fallbackSrc="/placeholder-kngc1.png"
-            className={`w-full h-full object-cover ${event.imagePosition || "object-center"} scale-105 transition-all duration-500`}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#00237c]/10 via-transparent to-[#00237c]" />
-          <div
-            className="absolute -bottom-1 left-0 right-0 h-12"
-            style={{ background: "#00237c", clipPath: "polygon(0 60%, 100% 0%, 100% 100%, 0% 100%)" }}
-          />
-          <div className={`absolute top-3 left-3 z-10 transition-all duration-300 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2"}`}>
-            <span className="inline-flex items-center gap-1.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider px-3 py-1.5 shadow-lg bg-amber-400 text-[#00237c]">
-              <span className="w-1.5 h-1.5 rounded-full bg-current opacity-60 animate-pulse" />
-              {event.badge}
-            </span>
-          </div>
-          {event.clubLogo && (
-            <ClubLogo
-              key={event.clubLogo}
-              src={event.clubLogo}
-              badge={event.clubLogoBadge}
-              className={`absolute top-3 right-3 z-10 transition-all duration-300 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2"}`}
-            />
-          )}
-
-          {hasMultiple && (
-            <>
-              <button
-                onClick={() => goTo(index - 1)}
-                className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-black/30 hover:bg-black/50 text-white flex items-center justify-center transition-colors touch-manipulation"
-                aria-label="Evento anterior"
-              >
-                <ChevronLeft className="h-4 w-4" strokeWidth={2.5} />
-              </button>
-              <button
-                onClick={() => goTo(index + 1)}
-                className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-black/30 hover:bg-black/50 text-white flex items-center justify-center transition-colors touch-manipulation"
-                aria-label="Evento siguiente"
-              >
-                <ChevronRight className="h-4 w-4" strokeWidth={2.5} />
-              </button>
-            </>
-          )}
-        </div>
-
-        {/* Content */}
-        <div className="relative px-5 pb-5 sm:px-6 sm:pb-6 -mt-1">
-
-          {/* Title */}
-          <div className={`text-center mb-3 transition-all duration-400 delay-100 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
-            <h2 className="text-2xl sm:text-3xl font-black text-white font-heading leading-[0.95] tracking-tight">
-              {event.title}
-              <span className="block text-amber-400">{event.titleAccent}</span>
-            </h2>
-          </div>
-
-          {/* Stats */}
-          <div className={`grid grid-cols-3 gap-2 mb-3 transition-all duration-400 delay-150 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
-            {event.stats.map((stat) => (
-              <div key={stat.label} className="bg-white/[0.06] border border-white/[0.08] rounded-xl py-2.5 px-2 text-center">
-                <p className="text-base sm:text-lg font-black text-white font-heading leading-none mb-0.5">{stat.value}</p>
-                <p className="text-[9px] uppercase tracking-wider text-blue-200/50 font-medium">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Description */}
-          <div className={`mb-4 transition-all duration-400 delay-200 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
-            <p className="text-xs sm:text-sm text-blue-100/70 text-center leading-relaxed">{event.description}</p>
-          </div>
-
-          {/* CTA */}
-          <div className={`space-y-2 transition-all duration-400 delay-[350ms] ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
-            <a href={event.link} target="_blank" rel="noopener noreferrer" className="group block w-full">
-              <div className="bg-amber-400 hover:bg-amber-300 text-[#00237c] font-extrabold py-3.5 text-center text-sm uppercase tracking-wide transition-colors duration-200 rounded-xl">
-                <span className="flex items-center justify-center gap-2 font-heading">
-                  {event.cta}
-                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+        <div className="relative min-h-0 flex-1 overflow-y-auto px-3 pb-1 sm:px-5">
+          {groups.map((group) => (
+            <section key={group.month} className="mb-2 last:mb-0">
+              <div className="flex items-center gap-3 px-1 py-1.5">
+                <span className="text-[10px] font-extrabold uppercase tracking-[0.3em] text-amber-400 font-heading">
+                  {group.month}
                 </span>
+                <span className="h-px flex-1 bg-gradient-to-r from-amber-400/40 to-transparent" />
               </div>
-            </a>
 
-            {hasMultiple && (
-              <div className="flex items-center justify-center gap-2 pt-1">
-                {events.map((e, i) => (
-                  <button
-                    key={e.id}
-                    onClick={() => goTo(i)}
-                    className={`h-1.5 rounded-full transition-all ${i === index ? "w-6 bg-amber-400" : "w-1.5 bg-white/25 hover:bg-white/40"}`}
-                    aria-label={`Ver ${e.title}`}
-                    aria-current={i === index}
-                  />
-                ))}
-              </div>
-            )}
+              <ol className="space-y-1.5">
+                {group.events.map((event) => {
+                  const start = parseDate(event.start)
+                  const end = event.end ? parseDate(event.end) : null
+                  const isNext = event.id === nextId
+                  const delay = 60 + row++ * 70
+                  const showStatus = event.status && (!event.statusUntil || parseDate(event.statusUntil) >= today)
 
-            <button
-              onClick={onClose}
-              className="w-full text-blue-300/30 hover:text-blue-200/50 py-1.5 text-xs font-medium transition-colors touch-manipulation"
-            >
-              Tal vez más tarde
-            </button>
-          </div>
+                  return (
+                    <li
+                      key={event.id}
+                      style={{ transitionDelay: `${delay}ms` }}
+                      className={`transition-all duration-500 ease-out ${mounted ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"}`}
+                    >
+                      <a
+                        href={event.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`group relative flex items-stretch overflow-hidden rounded-xl border transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 ${
+                          isNext
+                            ? "border-amber-400/50 bg-white/[0.07]"
+                            : "border-white/[0.08] bg-white/[0.04] hover:border-white/20"
+                        }`}
+                      >
+                        <img
+                          src={event.image}
+                          alt=""
+                          aria-hidden="true"
+                          loading="lazy"
+                          className={`absolute inset-0 h-full w-full object-cover transition-all duration-500 group-hover:scale-105 ${
+                            isNext ? "opacity-30" : "opacity-[0.12] group-hover:opacity-30"
+                          }`}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#00237c] via-[#00237c]/85 to-[#00237c]/40" />
+
+                        <div
+                          className={`relative flex w-16 sm:w-[72px] shrink-0 flex-col items-center justify-center border-r border-dashed py-2 ${
+                            isNext ? "border-amber-400/40 bg-amber-400 text-[#00237c]" : "border-white/15 text-white"
+                          }`}
+                        >
+                          <span className={`text-[9px] font-bold uppercase tracking-[0.15em] ${isNext ? "text-[#00237c]/70" : "text-blue-200/60"}`}>
+                            {end ? `${WEEKDAYS[start.getDay()]}–${WEEKDAYS[end.getDay()]}` : WEEKDAYS[start.getDay()]}
+                          </span>
+                          <span className={`font-heading font-black leading-none tabular-nums tracking-tighter ${end ? "text-lg sm:text-xl" : "text-2xl sm:text-[28px]"}`}>
+                            {end ? `${start.getDate()}–${end.getDate()}` : start.getDate()}
+                          </span>
+                        </div>
+
+                        <div className="relative flex min-w-0 flex-1 items-center gap-2.5 px-3 py-2 sm:px-4">
+                          <div className="min-w-0 flex-1">
+                            <div className="flex items-center gap-1.5">
+                              <h3 className="truncate font-heading text-[15px] sm:text-base font-black leading-tight text-white">
+                                {event.club}
+                              </h3>
+                              {isNext && (
+                                <span className="shrink-0 rounded-sm bg-amber-400 px-1.5 py-0.5 text-[9px] font-extrabold uppercase tracking-wider text-[#00237c]">
+                                  {countdown(start, today)}
+                                </span>
+                              )}
+                              {showStatus && (
+                                <span className="shrink-0 rounded-sm bg-amber-400/15 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-amber-300">
+                                  {event.status}
+                                </span>
+                              )}
+                            </div>
+                            <p className="mt-0.5 truncate text-[11px] text-blue-100/60">
+                              <span className="font-bold uppercase tracking-wider text-blue-100/80">{event.kind}</span>
+                              {" · "}
+                              {event.place}
+                              {" · "}
+                              {event.time}
+                            </p>
+                          </div>
+
+                          {event.clubLogo && (
+                            <img
+                              src={event.clubLogo}
+                              alt=""
+                              aria-hidden="true"
+                              className="hidden sm:block h-8 w-8 shrink-0 object-contain drop-shadow-[0_4px_10px_rgba(0,0,0,0.55)]"
+                            />
+                          )}
+
+                          <span
+                            className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition-all duration-300 group-hover:rotate-45 ${
+                              isNext ? "bg-amber-400 text-[#00237c]" : "bg-white/10 text-white group-hover:bg-amber-400 group-hover:text-[#00237c]"
+                            }`}
+                          >
+                            <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.5} aria-hidden="true" />
+                          </span>
+                        </div>
+                        <span className="sr-only">Inscribirme: {event.kind} {event.club}</span>
+                      </a>
+                    </li>
+                  )
+                })}
+              </ol>
+            </section>
+          ))}
         </div>
+
+        <footer className="relative px-5 pt-1 pb-3 sm:px-6">
+          <button
+            onClick={onClose}
+            className="w-full text-blue-300/50 hover:text-blue-200/80 py-1.5 text-xs font-medium transition-colors touch-manipulation"
+          >
+            Tal vez más tarde
+          </button>
+        </footer>
       </DialogContent>
     </Dialog>
   )
