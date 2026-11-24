@@ -113,6 +113,7 @@
       }
     },
     "cta": "I want to know more",
+    "vacanciesCta": "See open searches",
     "signed": {
       "title": "Our first signed player",
       "nicoleQuote": "From the very first moment they helped me with everything I needed to fulfill my dream, and they were always available to answer every one of my questions. They gave me a lot of confidence and helped me make the best decision to start my career as a student-athlete in the United States. After signing with Old Dominion University, they supported me throughout the entire process: from the paperwork with the university and the NCAA to booking the embassy appointment. I would definitely recommend them to any athlete who wants to fulfill the same dream.",
@@ -458,6 +459,107 @@
       "newRegistration": "Make another registration"
     },
     "error": "There was an error processing your registration. Please try again."
+  },
+  "usaVacancies": {
+    "back": "Back to US Scholarships",
+    "eyebrow": "US Full Ride × GOAT Sports",
+    "title": "Open searches",
+    "subtitle": "US universities are looking for field hockey players to award athletic scholarships. These are the searches open today: pick yours and tell us about your profile.",
+    "open": "Open",
+    "intakeLabel": "Intake",
+    "apply": "Apply",
+    "empty": "There are no open searches right now. Check back soon.",
+    "disclaimer": "Applying is not a registration or a pre-selection. Together with US Full Ride we will review every profile and, if it matches what a university is looking for, we will get in touch.",
+    "items": {
+      "hockey2027": {
+        "title": "Field hockey players",
+        "intake": "August 2027",
+        "description": "US universities are looking for field hockey players to award athletic scholarships starting August 2027."
+      }
+    },
+    "form": {
+      "back": "Back to open searches",
+      "intro": "Fill out this form so we can get to know your profile.",
+      "importantLabel": "Important:",
+      "important": "filling it out is not a registration or a pre-selection. Together with US Full Ride we will review every profile, and if it matches the requirements a university is looking for, we will get in touch. If we don't contact you, it's because your profile doesn't match the open searches for now.",
+      "privacy": "Your data is used only for this search and shared only with US Full Ride.",
+      "sectionLabel": "Section",
+      "sections": {
+        "player": "The player",
+        "hockey": "Hockey",
+        "english": "English",
+        "contact": "Contact"
+      },
+      "fields": {
+        "fullName": "Full name",
+        "birthDate": "Date of birth",
+        "province": "Province of residence",
+        "graduation": "When do you finish high school?",
+        "school": "School",
+        "club": "Club",
+        "category": "Category and division (2026)",
+        "position": "Main position",
+        "nationalTeam": "Have you been part of a provincial or national team?",
+        "hasVideos": "Do you have videos of you playing?",
+        "englishLevel": "English level",
+        "englishExam": "Have you taken any English exam?",
+        "playerPhone": "Player's phone",
+        "email": "Contact email",
+        "guardianName": "Name of mother, father or guardian",
+        "guardianPhone": "Phone of mother, father or guardian",
+        "source": "How did you hear about this?"
+      },
+      "hints": {
+        "category": "E.g. 5ta A",
+        "nationalTeam": "E.g. Leonas U16, Buenos Aires provincial team",
+        "englishExam": "E.g. First, TOEFL, Duolingo"
+      },
+      "selectProvince": "Select province",
+      "outsideArgentina": "Outside Argentina",
+      "options": {
+        "graduation": {
+          "dec2026": "December 2026",
+          "dec2027": "December 2027",
+          "finished": "Already finished",
+          "other": "Other"
+        },
+        "position": {
+          "forward": "Forward",
+          "midfielder": "Midfielder",
+          "defender": "Defender",
+          "goalkeeper": "Goalkeeper"
+        },
+        "hasVideos": {
+          "yes": "Yes",
+          "no": "No"
+        },
+        "englishLevel": {
+          "basic": "Basic",
+          "intermediate": "Intermediate",
+          "advanced": "Advanced",
+          "bilingual": "Bilingual"
+        },
+        "source": {
+          "instagram": "Instagram",
+          "poster": "Poster at the Training Center",
+          "coach": "My coach",
+          "friend": "A friend",
+          "other": "Other"
+        }
+      },
+      "consent": "I understand that GOAT and US Full Ride will review my profile and will get in touch only if it matches what a university is looking for.",
+      "submit": "Send my profile",
+      "submitting": "Sending...",
+      "error": "We couldn't send your profile. Please try again.",
+      "success": {
+        "title": "Thank you!",
+        "message": "We received your profile. We will review it together with US Full Ride and, if it matches an open search, we will contact you."
+      },
+      "notFound": {
+        "title": "Search not available",
+        "message": "This search is no longer open. See the open searches to apply."
+      }
+    }
   },
   "sponsors": {
     "title": "Our Sponsors",

@@ -113,6 +113,7 @@
       }
     },
     "cta": "Quiero saber más",
+    "vacanciesCta": "Ver búsquedas activas",
     "signed": {
       "title": "Nuestra primera jugadora firmada",
       "nicoleQuote": "Desde el primer momento me ayudaron con todo lo que necesitaba para poder cumplir mi sueño, y siempre estuvieron disponibles para responder cada una de mis dudas. Me brindaron muchísima confianza y me ayudaron a tomar la mejor decisión para comenzar mi carrera como student-athlete en Estados Unidos. Luego de la firma del contrato con Old Dominion University, me acompañaron en todo el proceso: desde los trámites con la universidad y la NCAA hasta sacar el turno con la embajada. Sin dudas los recomiendo a cualquier deportista que quiera cumplir el mismo sueño.",
@@ -458,6 +459,107 @@
       "newRegistration": "Realizar otra inscripción"
     },
     "error": "Hubo un error al procesar tu inscripción. Por favor, intenta nuevamente."
+  },
+  "usaVacancies": {
+    "back": "Volver a Becas USA",
+    "eyebrow": "US Full Ride × GOAT Sports",
+    "title": "Búsquedas activas",
+    "subtitle": "Universidades de Estados Unidos buscan jugadoras de hockey para otorgar becas deportivas. Estas son las búsquedas abiertas hoy: elegí la tuya y contanos tu perfil.",
+    "open": "Abierta",
+    "intakeLabel": "Ingreso",
+    "apply": "Postularme",
+    "empty": "En este momento no hay búsquedas abiertas. Volvé a mirar pronto.",
+    "disclaimer": "Postularte no es una inscripción ni una preselección. Junto a US Full Ride vamos a evaluar cada perfil y, si coincide con lo que busca alguna universidad, nos vamos a poner en contacto.",
+    "items": {
+      "hockey2027": {
+        "title": "Jugadoras de hockey",
+        "intake": "Agosto 2027",
+        "description": "Universidades de Estados Unidos buscan jugadoras de hockey para otorgar becas deportivas a partir de agosto 2027."
+      }
+    },
+    "form": {
+      "back": "Volver a búsquedas activas",
+      "intro": "Completá este formulario para que conozcamos tu perfil.",
+      "importantLabel": "Importante:",
+      "important": "completarlo no es una inscripción ni una preselección. Junto a US Full Ride vamos a evaluar cada perfil, y si concuerda con los requisitos que busca alguna universidad, nos vamos a poner en contacto. Si no te contactamos, es porque por ahora tu perfil no coincide con las búsquedas activas.",
+      "privacy": "Tus datos se usan solo para esta búsqueda y se comparten únicamente con US Full Ride.",
+      "sectionLabel": "Sección",
+      "sections": {
+        "player": "La jugadora",
+        "hockey": "Hockey",
+        "english": "Inglés",
+        "contact": "Contacto"
+      },
+      "fields": {
+        "fullName": "Nombre y apellido",
+        "birthDate": "Fecha de nacimiento",
+        "province": "Provincia de residencia",
+        "graduation": "¿Cuándo terminás el secundario?",
+        "school": "Colegio",
+        "club": "Club",
+        "category": "Categoría y división (2026)",
+        "position": "Posición principal",
+        "nationalTeam": "¿Integraste algún seleccionado Provincial o Nacional?",
+        "hasVideos": "¿Tenés videos jugando?",
+        "englishLevel": "Nivel de inglés",
+        "englishExam": "¿Rendiste algún examen de inglés?",
+        "playerPhone": "Teléfono de la jugadora",
+        "email": "Mail de contacto",
+        "guardianName": "Nombre de madre, padre o tutor",
+        "guardianPhone": "Teléfono de madre, padre o tutor",
+        "source": "¿Cómo te enteraste?"
+      },
+      "hints": {
+        "category": "Ej: 5ta A",
+        "nationalTeam": "Ej: Leonas Sub-16, Seleccionado de Buenos Aires",
+        "englishExam": "Ej: First, TOEFL, Duolingo"
+      },
+      "selectProvince": "Seleccionar provincia",
+      "outsideArgentina": "Fuera de Argentina",
+      "options": {
+        "graduation": {
+          "dec2026": "Diciembre 2026",
+          "dec2027": "Diciembre 2027",
+          "finished": "Ya terminé",
+          "other": "Otro"
+        },
+        "position": {
+          "forward": "Delantera",
+          "midfielder": "Volante",
+          "defender": "Defensora",
+          "goalkeeper": "Arquera"
+        },
+        "hasVideos": {
+          "yes": "Sí",
+          "no": "No"
+        },
+        "englishLevel": {
+          "basic": "Básico",
+          "intermediate": "Intermedio",
+          "advanced": "Avanzado",
+          "bilingual": "Bilingüe"
+        },
+        "source": {
+          "instagram": "Instagram",
+          "poster": "Cartel en el Training Center",
+          "coach": "Mi entrenador o entrenadora",
+          "friend": "Una amiga",
+          "other": "Otro"
+        }
+      },
+      "consent": "Entiendo que GOAT y US Full Ride van a evaluar mi perfil y que se pondrán en contacto solo si coincide con lo que busca alguna universidad.",
+      "submit": "Enviar mi perfil",
+      "submitting": "Enviando...",
+      "error": "No pudimos enviar tu perfil. Por favor, intentá de nuevo.",
+      "success": {
+        "title": "¡Gracias!",
+        "message": "Recibimos tu perfil. Lo vamos a evaluar junto a US Full Ride y, si coincide con alguna búsqueda activa, te vamos a contactar."
+      },
+      "notFound": {
+        "title": "Búsqueda no disponible",
+        "message": "Esta búsqueda ya no está abierta. Mirá las búsquedas activas para postularte."
+      }
+    }
   },
   "sponsors": {
     "title": "Nuestros Patrocinadores",

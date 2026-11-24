@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl"
 import { CheckCircle2, ArrowRight, Quote } from "lucide-react"
 import ImageWithFallback from "./image-with-fallback"
 import { Button } from "@/components/ui/button"
+import { Link } from "@/i18n/routing"
 
 export default function PartnershipsSection() {
   const t = useTranslations("partnerships")
@@ -131,7 +132,14 @@ export default function PartnershipsSection() {
                 </div>
               </div>
 
-              <div className="text-center">
+              <div className="flex flex-col tablet:flex-row items-center justify-center gap-4">
+                <Link
+                  href="/becas-usa"
+                  className="inline-flex items-center justify-center bg-white hover:bg-cyan-50 text-[#00237c] font-bold text-lg px-10 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 group uppercase tracking-wide"
+                >
+                  {t("vacanciesCta")}
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
                 <a href="https://usfullride.com/" target="_blank" rel="noopener noreferrer" className="inline-block">
                   <Button
                     size="lg"
