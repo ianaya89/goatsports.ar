@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 import { google } from "googleapis"
-import { getUsaVacancy } from "@/data/usa-vacancies"
+import { getUsaVacancy, vacancyLabel } from "@/data/usa-vacancies"
 
 const SPREADSHEET_ID = "1k_Zw8xqWX6AEdxuqygiTfAYnPqnHmiUmqOiAIu8qVf4"
 const NOTIFICATION_EMAIL = "hola@goatsports.ar"
@@ -25,7 +25,7 @@ const COLUMNS: { field: string; header: string; required?: boolean }[] = [
   { field: "source", header: "Cómo se enteró" },
 ]
 
-const HEADERS = ["Fecha", "Búsqueda", ...COLUMNS.map((column) => column.header)]
+const HEADERS = ["Fecha", "Búsqueda", "ID búsqueda", ...COLUMNS.map((column) => column.header)]
 const MAX_LENGTH = 200
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -85,7 +85,7 @@ export async function POST(request: Request) {
   }
 
   const submittedAt = new Date().toLocaleString("es-AR", { timeZone: "America/Argentina/Buenos_Aires" })
-  const row = [submittedAt, vacancy.id, ...values]
+  const row = [submittedAt, vacancyLabel(vacancy, "es"), vacancy.id, ...values]
 
   const results = await Promise.allSettled([saveToSheet(row), sendNotification(row, email)])
   results.forEach((result, index) => {
@@ -132,7 +132,7 @@ async function sendNotification(row: string[], replyTo: string) {
       from: `GOAT Sports Web <${process.env.BECAS_SENDER_EMAIL || NOTIFICATION_EMAIL}>`,
       to: [process.env.BECAS_NOTIFICATION_EMAIL || NOTIFICATION_EMAIL],
       reply_to: replyTo,
-      subject: `Nueva postulación Becas USA: ${fullName}`,
+      subject: `Postulación Becas USA · ${row[HEADERS.indexOf("Búsqueda")]}: ${fullName}`,
       text: HEADERS.map((header, index) => `${header}: ${row[index] || "-"}`).join("\n"),
     }),
   })

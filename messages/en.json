@@ -470,13 +470,6 @@
     "apply": "Apply",
     "empty": "There are no open searches right now. Check back soon.",
     "disclaimer": "Applying is not a registration or a pre-selection. Together with US Full Ride we will review every profile and, if it matches what a university is looking for, we will get in touch.",
-    "items": {
-      "hockey2027": {
-        "title": "Field hockey players",
-        "intake": "August 2027",
-        "description": "US universities are looking for field hockey players to award athletic scholarships starting August 2027."
-      }
-    },
     "form": {
       "back": "Back to open searches",
       "intro": "Fill out this form so we can get to know your profile.",

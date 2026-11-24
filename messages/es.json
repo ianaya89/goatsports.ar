@@ -470,13 +470,6 @@
     "apply": "Postularme",
     "empty": "En este momento no hay búsquedas abiertas. Volvé a mirar pronto.",
     "disclaimer": "Postularte no es una inscripción ni una preselección. Junto a US Full Ride vamos a evaluar cada perfil y, si coincide con lo que busca alguna universidad, nos vamos a poner en contacto.",
-    "items": {
-      "hockey2027": {
-        "title": "Jugadoras de hockey",
-        "intake": "Agosto 2027",
-        "description": "Universidades de Estados Unidos buscan jugadoras de hockey para otorgar becas deportivas a partir de agosto 2027."
-      }
-    },
     "form": {
       "back": "Volver a búsquedas activas",
       "intro": "Completá este formulario para que conozcamos tu perfil.",

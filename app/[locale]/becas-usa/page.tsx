@@ -1,14 +1,15 @@
 "use client"
 
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
 import { ArrowRight, CalendarDays, GraduationCap } from "lucide-react"
 import { Link } from "@/i18n/routing"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
-import { openUsaVacancies } from "@/data/usa-vacancies"
+import { localize, openUsaVacancies } from "@/data/usa-vacancies"
 
 export default function UsaVacanciesPage() {
   const t = useTranslations("usaVacancies")
+  const locale = useLocale()
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -54,12 +55,12 @@ export default function UsaVacanciesPage() {
                         </span>
                         <span className="inline-flex items-center gap-1 text-xs font-medium text-gray-600">
                           <CalendarDays className="w-3.5 h-3.5" aria-hidden="true" />
-                          {t("intakeLabel")}: {t(`items.${vacancy.translationKey}.intake`)}
+                          {t("intakeLabel")}: {localize(vacancy.intake, locale)}
                         </span>
                       </div>
-                      <h2 className="text-xl font-bold text-[#00237c]">{t(`items.${vacancy.translationKey}.title`)}</h2>
+                      <h2 className="text-xl font-bold text-[#00237c]">{localize(vacancy.title, locale)}</h2>
                       <p className="mt-1 text-gray-700 text-sm leading-relaxed">
-                        {t(`items.${vacancy.translationKey}.description`)}
+                        {localize(vacancy.description, locale)}
                       </p>
                     </div>
                     <Link
