@@ -7,7 +7,6 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>
 }): Promise<Metadata> {
   const { locale } = await params
-  const baseUrl = "https://goatsports.ar"
 
   const titles: Record<string, string> = {
     es: "Becas deportivas en EE.UU. · Búsquedas activas | GOAT Sports",
@@ -36,9 +35,15 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url: `${baseUrl}${path}`,
+      url: path,
       siteName: "GOAT Sports",
       type: "website",
+      locale: locale === "es" ? "es_AR" : "en_US",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
     },
   }
 }

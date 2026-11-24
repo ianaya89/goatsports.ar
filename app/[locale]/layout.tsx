@@ -80,7 +80,7 @@ export async function generateMetadata({
       address: false,
       telephone: false,
     },
-    metadataBase: new URL("https://goatsports.ar"),
+    metadataBase: new URL("https://www.goatsports.ar"),
     alternates: {
       canonical: locale === "es" ? "/" : `/${locale}`,
       languages: {
@@ -109,24 +109,15 @@ export async function generateMetadata({
       type: "website",
       locale: locale === "es" ? "es_AR" : "en_US",
       alternateLocale: locale === "es" ? "en_US" : "es_AR",
-      url: locale === "es" ? "https://goatsports.ar" : `https://goatsports.ar/${locale}`,
+      url: locale === "es" ? "/" : `/${locale}`,
       title: ogTitles[locale] || ogTitles.es,
       description: ogDescriptions[locale] || ogDescriptions.es,
       siteName: "GOAT Sports",
-      images: [
-        {
-          url: "https://goatsports.ar/og-image.png",
-          width: 1200,
-          height: 630,
-          alt: "GOAT Sports - Academia Deportiva",
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title: ogTitles[locale] || ogTitles.es,
       description: ogDescriptions[locale] || ogDescriptions.es,
-      images: ["https://goatsports.ar/twitter-image.jpg"],
       creator: "@goatsports",
       site: "@goatsports",
     },

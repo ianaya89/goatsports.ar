@@ -7,7 +7,6 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>
 }): Promise<Metadata> {
   const { locale } = await params
-  const baseUrl = "https://goatsports.ar"
 
   const titles: Record<string, string> = {
     es: "Inscripción Campus de Hockey | GOAT Sports",
@@ -43,23 +42,14 @@ export async function generateMetadata({
     openGraph: {
       title: titles[locale] || titles.es,
       description: descriptions[locale] || descriptions.es,
-      url: locale === "es" ? `${baseUrl}/inscripcion-campus` : `${baseUrl}/${locale}/inscripcion-campus`,
+      url: locale === "es" ? "/inscripcion-campus" : `/${locale}/inscripcion-campus`,
       siteName: "GOAT Sports",
       type: "website",
-      images: [
-        {
-          url: `${baseUrl}/images/campus-coaches-players.jpg`,
-          width: 1200,
-          height: 630,
-          alt: locale === "es" ? "Campus de Hockey GOAT Sports" : "GOAT Sports Hockey Camp",
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title: titles[locale] || titles.es,
       description: descriptions[locale] || descriptions.es,
-      images: [`${baseUrl}/images/campus-coaches-players.jpg`],
     },
   }
 }
