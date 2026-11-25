@@ -14,8 +14,8 @@ export async function generateMetadata({
   }
 
   const descriptions: Record<string, string> = {
-    es: "Universidades de Estados Unidos buscan jugadoras de hockey para otorgar becas deportivas. Mirá las búsquedas activas de GOAT Sports y US Full Ride y postulate.",
-    en: "US universities are looking for field hockey players to award athletic scholarships. See the open searches from GOAT Sports and US Full Ride and apply.",
+    es: "US Full Ride y GOAT buscan jugadoras de hockey para estudiar en USA con una beca deportiva. Mirá las búsquedas activas y postulate.",
+    en: "US Full Ride and GOAT are looking for field hockey players to study in the USA on an athletic scholarship. See the open searches and apply.",
   }
 
   const title = titles[locale] || titles.es
