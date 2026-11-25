@@ -7,7 +7,6 @@ import { getMessages, setRequestLocale } from "next-intl/server"
 import { routing } from "@/i18n/routing"
 import "../globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import IntercomProvider from "@/components/intercom-provider"
 import { Analytics } from "@vercel/analytics/next"
 
 const spaceGrotesk = Space_Grotesk({
@@ -480,7 +479,6 @@ fbq('track', 'PageView');`,
           <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
             {children}
             <Analytics />
-            {/* <IntercomProvider /> */}
 
             {/* Structured Data - Multiple Schemas */}
             {structuredData.map((schema, index) => (
