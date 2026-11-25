@@ -17,8 +17,8 @@ export const usaVacancies: UsaVacancy[] = [
     title: { es: "Jugadoras de hockey", en: "Field hockey players" },
     intake: { es: "Agosto 2027", en: "August 2027" },
     description: {
-      es: "Universidades de Estados Unidos buscan jugadoras de hockey para otorgar becas deportivas a partir de agosto 2027.",
-      en: "US universities are looking for field hockey players to award athletic scholarships starting August 2027.",
+      es: "US Full Ride y GOAT están en la búsqueda activa de jugadoras de hockey para estudiar en USA a través de una beca deportiva comenzando en agosto 2027 (si terminás el secundario en diciembre de 2026) o en agosto 2028 (si terminás el secundario en diciembre de 2027).",
+      en: "US Full Ride and GOAT are actively looking for field hockey players to study in the USA on an athletic scholarship starting August 2027 (if you finish high school in December 2026) or August 2028 (if you finish high school in December 2027).",
     },
   },
 ]

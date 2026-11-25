@@ -504,8 +504,7 @@
       },
       "hints": {
         "category": "Ej: 5ta A",
-        "nationalTeam": "Ej: Leonas Sub-16, Seleccionado de Buenos Aires",
-        "englishExam": "Ej: First, TOEFL, Duolingo"
+        "nationalTeam": "Ej: Leonas Sub-16, Seleccionado de Buenos Aires"
       },
       "selectProvince": "Seleccionar provincia",
       "outsideArgentina": "Fuera de Argentina",
@@ -529,8 +528,13 @@
         "englishLevel": {
           "basic": "Básico",
           "intermediate": "Intermedio",
-          "advanced": "Avanzado",
-          "bilingual": "Bilingüe"
+          "advanced": "Avanzado"
+        },
+        "englishExam": {
+          "ielts": "IELTS",
+          "toefl": "TOEFL",
+          "duolingo": "Duolingo",
+          "none": "Todavía no rendí ninguno"
         },
         "source": {
           "instagram": "Instagram",

@@ -4,7 +4,7 @@ import type React from "react"
 import { useState } from "react"
 import { useLocale, useTranslations } from "next-intl"
 import { Button } from "@/components/ui/button"
-import { type UsaVacancy, vacancyLabel } from "@/data/usa-vacancies"
+import { type UsaVacancy, localize, vacancyLabel } from "@/data/usa-vacancies"
 
 const PROVINCES = [
   "Buenos Aires",
@@ -54,7 +54,12 @@ const ENGLISH_OPTIONS = [
   { value: "Básico", key: "basic" },
   { value: "Intermedio", key: "intermediate" },
   { value: "Avanzado", key: "advanced" },
-  { value: "Bilingüe", key: "bilingual" },
+]
+const ENGLISH_EXAM_OPTIONS = [
+  { value: "IELTS", key: "ielts" },
+  { value: "TOEFL", key: "toefl" },
+  { value: "Duolingo", key: "duolingo" },
+  { value: "Todavía no rendí ninguno", key: "none" },
 ]
 const SOURCE_OPTIONS = [
   { value: "Instagram", key: "instagram" },
@@ -227,6 +232,7 @@ export default function UsaApplicationForm({ vacancy }: { vacancy: UsaVacancy })
       </h1>
 
       <div className="mt-5 border-l-4 border-cyan-400 bg-cyan-50 rounded-r-lg p-4 text-sm text-gray-800 space-y-2 leading-relaxed">
+        <p>{localize(vacancy.description, locale)}</p>
         <p>{t("form.intro")}</p>
         <p>
           <strong className="text-[#00237c]">{t("form.importantLabel")}</strong> {t("form.important")}
@@ -289,7 +295,7 @@ export default function UsaApplicationForm({ vacancy }: { vacancy: UsaVacancy })
           "english",
           <>
             {radioField("englishLevel", ENGLISH_OPTIONS, { required: true })}
-            {textField("englishExam", { hint: true })}
+            {radioField("englishExam", ENGLISH_EXAM_OPTIONS, { required: true })}
           </>,
         )}
 

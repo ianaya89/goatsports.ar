@@ -17,7 +17,7 @@ const COLUMNS: { field: string; header: string; required?: boolean }[] = [
   { field: "nationalTeam", header: "Seleccionado" },
   { field: "hasVideos", header: "Tiene videos", required: true },
   { field: "englishLevel", header: "Nivel de inglés", required: true },
-  { field: "englishExam", header: "Examen de inglés" },
+  { field: "englishExam", header: "Examen de inglés", required: true },
   { field: "playerPhone", header: "Teléfono jugadora", required: true },
   { field: "email", header: "Mail", required: true },
   { field: "guardianName", header: "Madre, padre o tutor", required: true },

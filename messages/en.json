@@ -504,8 +504,7 @@
       },
       "hints": {
         "category": "E.g. 5ta A",
-        "nationalTeam": "E.g. Leonas U16, Buenos Aires provincial team",
-        "englishExam": "E.g. First, TOEFL, Duolingo"
+        "nationalTeam": "E.g. Leonas U16, Buenos Aires provincial team"
       },
       "selectProvince": "Select province",
       "outsideArgentina": "Outside Argentina",
@@ -529,8 +528,13 @@
         "englishLevel": {
           "basic": "Basic",
           "intermediate": "Intermediate",
-          "advanced": "Advanced",
-          "bilingual": "Bilingual"
+          "advanced": "Advanced"
+        },
+        "englishExam": {
+          "ielts": "IELTS",
+          "toefl": "TOEFL",
+          "duolingo": "Duolingo",
+          "none": "I haven't taken any yet"
         },
         "source": {
           "instagram": "Instagram",
